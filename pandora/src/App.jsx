@@ -1,10 +1,10 @@
 import './App.css'
-import { Button } from "@/components/ui/button"
+import Footer from './layouts/Footer'
 function App() {
 
   return (
     <>
-      <p>Hello, world!</p>
+      <Footer />
     </>
   )
 }

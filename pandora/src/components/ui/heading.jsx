@@ -8,6 +8,7 @@ const Heading = ({ variant = "h1", children }) => {
         h4: "text-xl font-bold text-gray-600",
         h5: "text-lg font-semibold text-gray-500",
         h6: "text-base font-semibold text-gray-500",
+        p: "text-base text-gray-500", // p varyantı için stil
     };
 
     return <Tag className={headingStyles[variant]}>{children}</Tag>;
