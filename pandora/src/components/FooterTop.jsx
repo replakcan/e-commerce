@@ -4,9 +4,9 @@ const FooterTop = () => {
 
     return (
 
-        <div className="footerTop bg-footerTopBG">
+        <section className="footer-el footerTop bg-footerTopBG">
             <FeatureContent />
-        </div>
+        </section>
     )
 }
 

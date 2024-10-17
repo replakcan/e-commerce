@@ -6,11 +6,11 @@ const Footer = () => {
 
 
     return (
-        <>
+        <section className="layout flex flex-col gap-8">
             <FooterTop />
             <FooterMid />
             <FooterBottom />
-        </>
+        </section>
     )
 }
 
