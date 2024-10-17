@@ -11,12 +11,16 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid black;
-  background-color: rgb(31, 142, 170, 0.3);
+  /* border: 1px solid black;
+  background-color: rgb(31, 142, 170, 0.3); */
 }
 
 p {
   font-size: .75rem;
+}
+
+.footer-el {
+  @apply p-8 lg:pl-48 lg:pr-48 lg:p-4;
 }
 
 @layer base {
