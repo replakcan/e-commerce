@@ -17,6 +17,9 @@ export default {
 				"birincil": "#FF7B47",
 				"ikincil": "#0D5C63",
 				"ucuncul": "#17213C",
+
+				"footerTopBG": "#FAFAFA",
+
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {

@@ -8,6 +8,7 @@ const FeatureContent = () => {
             <FeatureCard />
             <FeatureCard />
             <FeatureCard />
+            <FeatureCard />
         </div>
     )
 }
