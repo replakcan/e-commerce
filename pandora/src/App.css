@@ -1,1 +1,29 @@
 /* TODO TASARIM BITINCE HER SECTION'UN (FOOTER-CLIENT-HEADER ETC) PADDINGLERININ VS HIZALI OLDUGUNDAN EMIN OL */
+
+/* .productCard {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 1fr;
+} */
+
+
+/* @media (min-width: 1024px) {
+
+    .productCardCover {
+        grid-column: 1/2;
+        grid-row: 1/-1;
+        background-image: url("./src/assets/productCard/card-cover-5.png");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    .productNav {
+        grid-column: 2/4;
+        grid-row: 1/2;
+    }
+    
+    .productContent {
+        grid-column: 2/4;
+    }
+} */

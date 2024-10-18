@@ -4,7 +4,7 @@ import Heading from "@/components/ui/heading";
 const Clients = () => {
 
     return (
-        <section className="flex flex-col gap-20 lg:flex-row lg:pl-48 lg:pr-48 p-8 lg:py-20">
+        <section className="flex flex-col gap-20 lg:flex-row lg:pl-48 lg:pr-48 p-8 lg:py-20 lg:justify-center">
             <div className="client-card flex flex-col text-center gap-2 items-center">
                 <Heading variant="h3">Subscribe For Latest Newsletter</Heading>
                 <p>The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th</p>

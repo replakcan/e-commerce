@@ -7,7 +7,7 @@ const ShopItem = () => {
         <div className="flex items-center p-6 border border-gray-300 rounded-lg max-w-lg bg-white w-fit">
             <div className="flex flex-col gap-4">
                 <p className="text-gray-500 text-sm">Your Space</p>
-                <Heading variant="h3" className="text-2xl font-bold text-gray-800">Unique Life</Heading>
+                <Heading variant="h3">Unique Life</Heading>
                 <p className="text-sm">Explore Items</p>
             </div>
             <div className="ml-4">
