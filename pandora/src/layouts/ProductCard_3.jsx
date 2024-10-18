@@ -17,8 +17,8 @@ const ProductCard_3 = () => {
                     <a href="">Accessories</a>
                 </div>
                 <div>
-                    <Button variant="icon">PREV</Button>
-                    <Button variant="icon">NEXT</Button>
+                <Button variant="icon"><i class="fa-solid fa-arrow-left"></i></Button>
+                <Button variant="icon"><i class="fa-solid fa-arrow-right"></i></Button>
                 </div>
             </nav>
             <div className="productContent flex flex-col items-center flex-wrap lg:col-span-2 lg:flex-row lg:justify-between">

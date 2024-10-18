@@ -8,7 +8,7 @@ const ProductCard_1 = () => {
     return (
 
         <section className="productCard flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-[min-content_1fr]">
-            <img className=" lg:col-start-1 col-end-2 lg:row-span-full bg-center bg-no-repeat w-full" src="./src/assets/productCard/card-cover-5.png"/>
+            <img className=" lg:col-start-1 col-end-2 lg:row-span-full bg-center bg-no-repeat w-full" src="./src/assets/productCard/card-cover-5.png" />
             <nav className="productNav flex flex-col items-center lg:col-span-2 lg:row-span-1 lg:flex-row lg:justify-between">
                 <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
                 <div className="flex gap-8">
@@ -17,8 +17,8 @@ const ProductCard_1 = () => {
                     <a href="">Accessories</a>
                 </div>
                 <div>
-                    <Button variant="icon">PREV</Button>
-                    <Button variant="icon">NEXT</Button>
+                    <Button variant="icon"><i class="fa-solid fa-arrow-left"></i></Button>
+                    <Button variant="icon"><i class="fa-solid fa-arrow-right"></i></Button>
                 </div>
             </nav>
             <div className="productContent flex flex-col items-center flex-wrap lg:col-span-2 lg:flex-row lg:justify-between">
