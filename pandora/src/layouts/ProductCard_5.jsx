@@ -7,7 +7,7 @@ const ProductCard_5 = () => {
             //TODO heading hizala
         <section>
             <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
-            <div className="flex flex-col items-center gap-2 md:flex-row">
+            <div className="flex flex-wrap items-center justify-around gap-2 md:flex-row">
                 <ShopItemVer />
                 <ShopItemVer />
                 <ShopItemVer />

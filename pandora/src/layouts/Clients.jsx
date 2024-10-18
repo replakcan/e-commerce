@@ -8,7 +8,7 @@ const Clients = () => {
             <div className="client-card flex flex-col text-center gap-2 items-center">
                 <Heading variant="h3">Subscribe For Latest Newsletter</Heading>
                 <p>The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th</p>
-                <div className="flex flex-col gap-1 md:flex-row">
+                <div className="flex flex-wrap justify-center gap-1 md:flex-row">
                     <Button variant="primary">Try Now</Button>
 
                     <Button variant="outline">Learn More</Button>
@@ -17,7 +17,7 @@ const Clients = () => {
             <div className="client-card flex flex-col text-center gap-2 items-center">
                 <Heading variant="h3">Subscribe For Latest Newsletter</Heading>
                 <p>The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th</p>
-                <div className="flex flex-col gap-4 md:flex-row">
+                <div className="flex flex-wrap justify-center gap-4 md:flex-row">
                     <img className="w-24 md:w-16" src="./src/assets/clients/reddit.svg" alt="" />
                     <img className="w-24 md:w-16" src="./src/assets/clients/stribe.svg" alt="" />
                     <img className="w-24 md:w-16" src="./src/assets/clients/lfyt.svg" alt="" />

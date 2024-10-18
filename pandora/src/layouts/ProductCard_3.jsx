@@ -8,7 +8,7 @@ const ProductCard_3 = () => {
     return (
 
         <section className="productCard flex flex-col md:grid md:grid-cols-3 md:grid-rows-[min-content_1fr]">
-            <img className=" md:col-start-3 md:row-span-full bg-center bg-no-repeat" src="./src/assets/productCard/col-md-4.png" />
+            <img className=" md:col-start-3 md:col-end-4 md:row-start-2 row-end-3 md:w-full " src="./src/assets/productCard/col-md-4.png" />
             <nav className="productNav flex flex-col items-center md:col-span-2 md:row-span-1 md:flex-row md:justify-between">
                 <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
                 <div className="flex gap-8">
@@ -17,11 +17,11 @@ const ProductCard_3 = () => {
                     <a href="">Accessories</a>
                 </div>
                 <div>
-                <Button variant="icon"><i class="fa-solid fa-arrow-left"></i></Button>
-                <Button variant="icon"><i class="fa-solid fa-arrow-right"></i></Button>
+                    <Button variant="icon"><i class="fa-solid fa-arrow-left"></i></Button>
+                    <Button variant="icon"><i class="fa-solid fa-arrow-right"></i></Button>
                 </div>
             </nav>
-            <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row md:justify-between">
+            <div className="productContent flex flex-wrap md:col-span-2 md:flex-row md:justify-between">
                 <ShopItemVer />
                 <ShopItemVer />
                 <ShopItemVer />
