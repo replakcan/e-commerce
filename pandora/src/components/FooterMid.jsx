@@ -4,9 +4,9 @@ const FooterMid = () => {
 
     return (
 
-        <section className="footer-el footerMid">
+        <div className="footer-el footerMid">
             <FooterInfoContent />
-        </section>
+        </div>
     )
 }
 
