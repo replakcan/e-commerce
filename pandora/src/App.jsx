@@ -8,11 +8,13 @@ function App() {
 
   return (
     <>
-      <Header />
-      <ShopCard />
-      <ProductCard_1/>
-      <Clients />
-      <Footer />
+      <main>
+        <Header />
+        <ShopCard />
+        <ProductCard_1 />
+        <Clients />
+        <Footer />
+      </main>
     </>
   )
 }

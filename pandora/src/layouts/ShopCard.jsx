@@ -5,7 +5,7 @@ const ShopCard = () => {
 
 
     return (
-        <section className="shop-card flex flex-col  lg:flex-row lg:justify-around items-center gap-2">
+        <section className="shop-card flex flex-col  lg:flex-row lg:justify-between items-center gap-2">
             <ShopItem />
             <ShopItem />
             <ShopItem />
