@@ -13,7 +13,7 @@ const BlogCard = () => {
                     <a href="">New</a>
                 </nav>
                 <Heading variant='h4'>Loudest à la Madison #1 (L'integral)</Heading>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, aperiam, alias ipsam facilis eius, dolores unde sunt maxime laboriosam recusandae voluptates illo nesciunt veritatis nemo dicta consectetur quo. Quos, quo!</p>
                 <div className='flex justify-between'>
                     <div className="flex gap-2">
                         <i class="fa-solid fa-clock"></i>

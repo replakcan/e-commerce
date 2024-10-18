@@ -1,3 +1,4 @@
+import Blog from '@/layouts/Blog'
 import Clients from '../layouts/Clients'
 import Footer from '../layouts/Footer'
 import Header from '../layouts/Header'
@@ -20,6 +21,7 @@ const HomePage = () => {
             <ProductCard_4 />
             <ProductCard_5 />  
             <Clients />
+            <Blog />
             <Footer />
         </>
     )
