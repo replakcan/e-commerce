@@ -10,6 +10,7 @@ const Button = ({ variant = "primary", size = "md", children }) => {
     success: "bg-green-500 text-white hover:bg-green-600",
     warning: "bg-yellow-500 text-black hover:bg-yellow-600",
     info: "bg-blue-400 text-white hover:bg-blue-500",
+    icon: "bg-transparent border rounded-full border-gray-400 text-gray-400 hover:border-gray-600 hover:text-gray-600",
   }[variant];
 
   // Size için Tailwind sınıflarını belirleme
