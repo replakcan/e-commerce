@@ -11,8 +11,8 @@
 * {
   margin: 0;
   padding: 0;
-  /* border: 1px solid black;
-  background-color: rgb(31, 142, 170, 0.1); */
+  border: 1px solid black;
+  background-color: rgb(31, 142, 170, 0.1);
 }
 
 p {
@@ -86,7 +86,7 @@ p {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
 
   .productCard_2 {
     display: grid;

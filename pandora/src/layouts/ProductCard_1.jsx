@@ -7,9 +7,9 @@ const ProductCard_1 = () => {
 
     return (
 
-        <section className="productCard flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-[min-content_1fr]">
-            <img className=" lg:col-start-1 col-end-2 lg:row-span-full bg-center bg-no-repeat w-full" src="./src/assets/productCard/card-cover-5.png" />
-            <nav className="productNav flex flex-col items-center lg:col-span-2 lg:row-span-1 lg:flex-row lg:justify-between">
+        <section className="productCard flex flex-col md:grid md:grid-cols-3 md:grid-rows-[min-content_1fr]">
+            <img className=" md:col-start-1 col-end-2 md:row-span-full bg-center bg-no-repeat w-full" src="./src/assets/productCard/card-cover-5.png" />
+            <nav className="productNav flex flex-col items-center md:col-span-2 md:row-span-1 md:flex-row md:justify-between">
                 <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
                 <div className="flex gap-8">
                     <a href="">Men</a>
@@ -21,7 +21,7 @@ const ProductCard_1 = () => {
                     <Button variant="icon"><i class="fa-solid fa-arrow-right"></i></Button>
                 </div>
             </nav>
-            <div className="productContent flex flex-col items-center flex-wrap lg:col-span-2 lg:flex-row lg:justify-between">
+            <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row md:justify-between">
                 <ShopItemVer />
                 <ShopItemVer />
                 <ShopItemVer />

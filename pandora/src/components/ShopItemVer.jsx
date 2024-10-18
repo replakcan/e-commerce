@@ -4,7 +4,7 @@ const ShopItemVer = () => {
 
     return (
 
-        <div className="flex flex-col items-center p-6 border border-gray-300 rounded-lg max-w-xs bg-white w-fit lg:w-1/3">
+        <div className="flex flex-col items-center p-6 border border-gray-300 rounded-lg max-w-xs bg-white w-fit md:w-1/3">
             <div className="mb-4">
                 <img src="https://placehold.co/600x800" alt="Caramel Cone Ice Cream" className="w-32 h-auto " />
             </div>

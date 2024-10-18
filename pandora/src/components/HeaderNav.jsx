@@ -5,7 +5,7 @@ import Heading from "./ui/heading";
 const HeaderNav = () => {
 
     return (
-        <div className="flex flex-col items-center gap-10 lg:flex-row">
+        <div className="flex flex-col items-center gap-10 md:flex-row">
             <div className="header-nav flex justify-between items-center gap-4 w-full">
                 <Heading variant="h3">Pandora</Heading>
                 <ul className="flex gap-4">
@@ -15,11 +15,11 @@ const HeaderNav = () => {
                     <i class="fa-solid fa-bars"></i>
                 </ul>
             </div>
-            <div className="flex flex-col gap-2 lg:flex-row">
-                <a className="lg:text-birincil">Home</a>
-                <a className="lg:text-birincil">Product</a>
-                <a className="lg:text-birincil">Pricing</a>
-                <a className="lg:text-birincil">Contact</a>
+            <div className="flex flex-col gap-2 md:flex-row">
+                <a className="md:text-birincil">Home</a>
+                <a className="md:text-birincil">Product</a>
+                <a className="md:text-birincil">Pricing</a>
+                <a className="md:text-birincil">Contact</a>
             </div>
         </div>
 

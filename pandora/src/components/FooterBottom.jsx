@@ -5,7 +5,7 @@ const FooterBottom = () => {
 
     return (
 
-        <div className="footer-el footerBottom flex flex-col gap-8 lg:flex-row lg:gap-0 lg:justify-between bg-footerTopBG">
+        <div className="footer-el footerBottom flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between bg-footerTopBG">
             <div>
                 <Heading variant="h3">Consulting Agency For Your Business</Heading>
                 <p>the quick fox jumps over the lazy dog</p>
