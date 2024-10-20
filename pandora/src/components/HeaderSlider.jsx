@@ -12,7 +12,7 @@ function HeaderSlider() {
         altText: "GROCERIES DELIVERY",
         caption: "GROCERIES DELIVERY",
         key: 1,
-        src: './src/assets/header/slider_1.png'
+        src: './images/header/slider_1.png'
       },
     ]}
     />
