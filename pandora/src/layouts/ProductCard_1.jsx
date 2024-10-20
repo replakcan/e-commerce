@@ -21,7 +21,7 @@ const ProductCard_1 = () => {
                     <Button variant="icon"><i class="fa-solid fa-arrow-right"></i></Button>
                 </div>
             </nav>
-            <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row md:justify-between">
+            <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row justify-between">
                 <ShopItemVer />
                 <ShopItemVer />
                 <ShopItemVer />

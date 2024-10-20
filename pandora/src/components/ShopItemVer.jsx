@@ -4,7 +4,7 @@ const ShopItemVer = () => {
 
     return (
 
-        <div className="shopItemVertical flex flex-col">
+        <div className="shopItemVertical flex flex-col md:w-[33%] text-center">
             <img src="https://placehold.co/300x300" />
             <div className="p-4 flex flex-col gap-3">
                 <Heading variant="h4">Graphic Design</Heading>
