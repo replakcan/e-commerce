@@ -6,9 +6,10 @@ export default {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
+
 		extend: {
 			borderRadius: {
-				lg: 'var(--radius)',
+				md: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
@@ -16,6 +17,9 @@ export default {
 				"birincil": "#FF7B47",
 				"ikincil": "#0D5C63",
 				"ucuncul": "#17213C",
+
+				"footerTopBG": "#FAFAFA",
+
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
