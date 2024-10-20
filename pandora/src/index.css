@@ -23,7 +23,9 @@ section {
   padding: 0 10%;
 }
 
-
+.shopItemVertical {
+  max-width: 33%;
+}
 
 @layer base {
   :root {

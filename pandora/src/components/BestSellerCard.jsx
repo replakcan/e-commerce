@@ -1,10 +1,10 @@
 import Heading from "./ui/heading";
 
-const ShopItemVer = () => {
+const BestSellerCard = () => {
 
     return (
 
-        <div className="shopItemVertical flex flex-col">
+        <div className="BestSellerCard flex flex-col md:w-1/4 items-center text-center">
             <img src="https://placehold.co/300x300" />
             <div className="p-4 flex flex-col gap-3">
                 <Heading variant="h4">Graphic Design</Heading>
@@ -17,4 +17,4 @@ const ShopItemVer = () => {
     )
 }
 
-export default ShopItemVer;
+export default BestSellerCard;

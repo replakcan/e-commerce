@@ -4,12 +4,12 @@ import HeaderSlider from "@/components/HeaderSlider";
 const Header = () => {
 
     return (
-        <section>
-
-        <HeaderNav />
-        <HeaderSlider />
-        
-        </section>
+        <>
+            <section>
+                <HeaderNav />
+            </section>
+            <HeaderSlider />
+        </>
     )
 }
 
