@@ -4,7 +4,7 @@ const Blog = () => {
 
     return (
 
-        <section className="flex flex-col items-center gap-3 md:flex-row">
+        <section className="flex flex-col flex-wrap items-center gap-3 md:flex-row justify-between">
             <BlogCard />
             <BlogCard />
             <BlogCard />
