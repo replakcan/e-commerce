@@ -6,7 +6,7 @@ const Footer = () => {
 
 
     return (
-        <section className="layout flex flex-col gap-8">
+        <section className="layout flex flex-col gap-8 bg-red-50">
             <FooterTop />
             <FooterMid />
             <FooterBottom />
