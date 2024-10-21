@@ -17,6 +17,7 @@ const HeaderNav = () => {
             </div>
             <div className="flex flex-col gap-2 md:flex-row">
                 <a href="" className="md:text-birincil">Home</a>
+                <a href="" className="md:text-birincil">Shop</a>
                 <a href="" className="md:text-birincil">Product</a>
                 <a href="" className="md:text-birincil">Pricing</a>
                 <a href="" className="md:text-birincil">Contact</a>
