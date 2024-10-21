@@ -10,7 +10,7 @@ const Shop = () => {
 
     return (
 
-        <div className="flex flex-col gap-6">
+        <div className="page flex flex-col gap-6">
 
             <section>
                 <HeaderNav />

@@ -12,18 +12,20 @@ import ProductCard_5 from '@/layouts/ProductCard_5'
 const HomePage = () => {
 
     return (
-        <>
+        <div className='page flex flex-col gap-6'>
+
             <Header />
             <ShopCard />
             <ProductCard_1 />
             <ProductCard_2 />
             <ProductCard_3 />
             <ProductCard_4 />
-            <ProductCard_5 />  
+            <ProductCard_5 />
             <Clients />
             <Blog />
             <Footer />
-        </>
+
+        </div>
     )
 
 }
