@@ -1,6 +1,6 @@
 import ShopItem from "@/components/ShopItem";
 
-
+//TODO ShopCard ismini Content olarak degistir proje bittiginde.
 const ShopCard = () => {
 
 
