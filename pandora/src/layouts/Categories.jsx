@@ -9,7 +9,7 @@ const Categories = () => {
             <section>
                 <CategoryTop />
             </section>
-            <section className="flex flex-col items-center gap-2 md:flex-row flex-wrap justify-around">
+            <section className="flex flex-col items-center gap-0 md:flex-row flex-wrap justify-between">
 
                 <CategoryCard />
                 <CategoryCard />
