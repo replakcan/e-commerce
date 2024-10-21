@@ -1,5 +1,5 @@
 /* eslint-disable-next-line react/prop-types */
-const Button = ({ variant = "primary", size = "md", children }) => {
+const Button = ({ variant = "primary", size = "md", children, onClick }) => {
   // Variant için Tailwind sınıflarını belirleme
   const variantClass = {
     primary: "bg-blue-500 text-white hover:bg-blue-600",
@@ -21,7 +21,7 @@ const Button = ({ variant = "primary", size = "md", children }) => {
   }[size];
 
   return (
-    <button
+    <button onClick={onClick}
       className={`rounded font-bold transition ${variantClass} ${sizeClass}`}
     >
       {children}

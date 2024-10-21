@@ -1,8 +1,12 @@
+import { useHistory } from "react-router-dom";
+import Button from "./ui/button";
 import Heading from "./ui/heading";
 
 
 //TODO CSS'I DUZELT
 const HeaderNav = () => {
+
+    let history = useHistory();
 
     return (
         <div className="flex flex-col items-center gap-10 md:flex-row bg-ikincil">
@@ -16,11 +20,11 @@ const HeaderNav = () => {
                 </ul>
             </div>
             <div className="flex flex-col gap-2 md:flex-row">
-                <a href="" className="md:text-birincil">Home</a>
-                <a href="" className="md:text-birincil">Shop</a>
-                <a href="" className="md:text-birincil">Product</a>
-                <a href="" className="md:text-birincil">Pricing</a>
-                <a href="" className="md:text-birincil">Contact</a>
+                <Button onClick={() => history.push("/")} variant="ghost" className="md:text-birincil">Home</Button>
+                <Button onClick={() => history.push("/shop")} variant="ghost" className="md:text-birincil">Shop</Button>
+                <Button onClick={() => history.push("/product")} variant="ghost" className="md:text-birincil">Product</Button>
+                <Button onClick={() => history.push("/pricing")} variant="ghost" className="md:text-birincil">Pricing</Button>
+                <Button onClick={() => history.push("/contact")} variant="ghost" className="md:text-birincil">Contact</Button>
             </div>
         </div>
 
