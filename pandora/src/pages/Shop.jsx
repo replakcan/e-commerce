@@ -7,7 +7,9 @@ const Shop = () => {
     return (
 
         <>
-            <HeaderNav />
+            <section>
+                <HeaderNav />
+            </section>
             <Categories />
         </>
 

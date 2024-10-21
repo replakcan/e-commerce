@@ -1,19 +1,24 @@
 import CategoryCard from "@/components/CategoryCard";
+import CategoryTop from "@/components/CategoryTop";
 
 const Categories = () => {
 
 
     return (
+        <>
+            <section>
+                <CategoryTop />
+            </section>
+            <section className="flex flex-col items-center gap-2 md:flex-row flex-wrap justify-around">
 
-        <section className="flex flex-col items-center gap-3">
+                <CategoryCard />
+                <CategoryCard />
+                <CategoryCard />
+                <CategoryCard />
+                <CategoryCard />
 
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-            <CategoryCard />
-
-        </section>
+            </section>
+        </>
     )
 }
 
