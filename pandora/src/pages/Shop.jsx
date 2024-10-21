@@ -10,7 +10,8 @@ const Shop = () => {
 
     return (
 
-        <>
+        <div className="flex flex-col gap-6">
+
             <section>
                 <HeaderNav />
             </section>
@@ -19,7 +20,8 @@ const Shop = () => {
             <ShopProductCards />
             <Clients />
             <Footer />
-        </>
+        
+        </div>
 
     )
 }

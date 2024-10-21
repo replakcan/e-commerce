@@ -5,7 +5,7 @@ const ShopPageCard = () => {
     return (
 
         <div className="ShopPageCard flex flex-col text-center flex-wrap w-fit">
-            <img src="https://placehold.co/300x250" />
+            <img src="https://placehold.co/300x300" />
             <div className="p-4 flex flex-col gap-3">
                 <Heading variant="h4">Graphic Design</Heading>
                 <p>English Department</p>
