@@ -3,7 +3,7 @@ import Heading from './ui/heading';
 
 const BlogCard = () => {
     return (
-        <div className='blogCard border flex flex-col gap-2 p-1 w-min grow'>
+        <div className='blogCard border flex flex-col gap-2 p-1 w-min grow bg-orange-50'>
             <img src="https://placehold.co/350x350" alt="" />
             <div className='flex flex-col gap-3 p-8'>
                 <nav className='flex gap-3'>

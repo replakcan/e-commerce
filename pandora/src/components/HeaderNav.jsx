@@ -5,7 +5,7 @@ import Heading from "./ui/heading";
 const HeaderNav = () => {
 
     return (
-        <div className="flex flex-col items-center gap-10 md:flex-row bg-birincil">
+        <div className="flex flex-col items-center gap-10 md:flex-row bg-ikincil">
             <div className="header-nav flex justify-between items-center gap-4 w-full">
                 <Heading variant="h3">Pandora</Heading>
                 <ul className="flex gap-4">

@@ -8,7 +8,7 @@ const ProductCard_5 = () => {
             //TODO heading hizala
         <section className="text-center">
             <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
-            <div className="flex flex-wrap items-center justify-center md:flex-row">
+            <div className="flex flex-wrap items-center justify-center md:flex-row ">
                 <BestSellerCard />
                 <BestSellerCard />
                 <BestSellerCard />

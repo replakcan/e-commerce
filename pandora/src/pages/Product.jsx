@@ -10,7 +10,7 @@ const Product = () => {
 
     return (
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 bg-blue-50">
 
             <HeaderNav />
             <ProductDetail />

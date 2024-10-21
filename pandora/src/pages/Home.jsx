@@ -12,7 +12,7 @@ import ProductCard_5 from '@/layouts/ProductCard_5'
 const HomePage = () => {
 
     return (
-        <div className='page flex flex-col gap-6'>
+        <div className='page flex flex-col gap-6 bg-blue-50'>
 
             <Header />
             <ShopCard />
