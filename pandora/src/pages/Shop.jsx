@@ -1,15 +1,15 @@
 import HeaderNav from "@/components/HeaderNav";
+import Categories from "@/layouts/Categories";
 
 const Shop = () => {
 
 
     return (
 
-        <section className="Shop page">
+        <>
             <HeaderNav />
-
-
-        </section>
+            <Categories />
+        </>
 
     )
 }
