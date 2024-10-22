@@ -4,7 +4,7 @@ import Heading from "@/components/ui/heading";
 const AboutOffer = () => {
 
     return (
-        <div className="flex flex-col md:flex-row bg-blue-200">
+        <div className="flex flex-col md:flex-row bg-[#2A7CC7] md:pl-[10%] text-white">
             <div className="flex flex-col items-center text-center gap-1 md:justify-center md:items-start md:p-20">
                 <p>WORK WITH US</p>
                 <Heading variant="h4">Now Let's grow Yours</Heading>

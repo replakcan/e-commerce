@@ -8,14 +8,16 @@ import AboutOffer from "../AboutOffer";
 const AboutContent = () => {
 
     return (
-        <section>
-            <AboutInfo />
-            <AboutContext />
-            <TeamMemberHead />
-            <TeamMembers />
+        <div className="flex flex-col gap-20">
+            <section className="flex flex-col gap-20">
+                <AboutInfo />
+                <AboutContext />
+                <TeamMemberHead />
+                <TeamMembers />
+            </section>
             <Clients />
             <AboutOffer />
-        </section>
+        </div>
     )
 
 }
