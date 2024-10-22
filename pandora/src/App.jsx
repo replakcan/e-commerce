@@ -12,7 +12,7 @@ import Footer from './layouts/Footer';
 function App() {
 
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col gap-y-24'>
       <HeaderNav />
       <Switch>
         <Route path="/product">

@@ -1,3 +1,4 @@
+import HeaderSlider from "@/components/HeaderSlider";
 import Blog from "../Blog";
 import Clients from "../Clients";
 import ProductCard_1 from "../ProductCard_1";
@@ -11,6 +12,7 @@ const HomeContent = () => {
 
     return (
         <section>
+            <HeaderSlider/>
             <ShopCard />
             <ProductCard_1 />
             <ProductCard_2 />
