@@ -18,7 +18,7 @@ export default {
 				"ikincil": "#0D5C63",
 				"ucuncul": "#17213C",
 				"footerBG": "#252B42",
-				"footerTopBG": "#FAFAFA",
+				"light_gray": "#FAFAFA",
 
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

@@ -6,7 +6,7 @@ const ProductCard_5 = () => {
 
     return (
             //TODO heading hizala
-        <div className="text-center">
+        <div className="text-center bg-light_gray md:px-[10%]">
             <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
             <div className="flex flex-wrap items-center justify-center md:flex-row ">
                 <BestSellerCard />

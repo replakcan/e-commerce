@@ -11,17 +11,23 @@ import ShopCard from "../ShopCard";
 const HomeContent = () => {
 
     return (
-        <section>
-            <HeaderSlider/>
+        <div className="flex flex-col gap-20">
+            <HeaderSlider />
             <ShopCard />
-            <ProductCard_1 />
-            <ProductCard_2 />
-            <ProductCard_3 />
-            <ProductCard_4 />
-            <ProductCard_5 />
-            <Clients />
-            <Blog />
-        </section>
+            <section className="flex flex-col gap-20">
+                <ProductCard_1 />
+                <ProductCard_2 />
+                <ProductCard_3 />
+                <ProductCard_4 />
+            </section>
+            <div>
+                <ProductCard_5 />
+                <Clients />
+            </div>
+            <section>
+                <Blog />
+            </section>
+        </div>
     )
 
 }
