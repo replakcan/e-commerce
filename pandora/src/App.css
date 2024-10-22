@@ -1,1 +1,8 @@
 /* TODO TASARIM BITINCE HER SECTION'UN (FOOTER-CLIENT-HEADER ETC) PADDINGLERININ VS HIZALI OLDUGUNDAN EMIN OL */
+
+.teamImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
