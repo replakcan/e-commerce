@@ -25,6 +25,7 @@ const HeaderNav = () => {
                 <Button onClick={() => history.push("/product")} variant="ghost" className="md:text-birincil">Product</Button>
                 <Button onClick={() => history.push("/pricing")} variant="ghost" className="md:text-birincil">Pricing</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" className="md:text-birincil">Contact</Button>
+                <Button onClick={() => history.push("/team")} variant="ghost" className="md:text-birincil">Team</Button>
             </div>
         </div>
 

@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Pricing from './pages/Pricing';
 import Product from './pages/Product';
 import Shop from './pages/Shop';
+import Team from './pages/Team';
 function App() {
 
   return (
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/team">
+          <Team />
         </Route>
       </Switch>
     </main >
