@@ -23,7 +23,7 @@ const HeaderNav = () => {
                 <Button onClick={() => history.push("/")} variant="ghost" className="md:text-birincil">Home</Button>
                 <Button onClick={() => history.push("/shop")} variant="ghost" className="md:text-birincil">Shop</Button>
                 <Button onClick={() => history.push("/product")} variant="ghost" className="md:text-birincil">Product</Button>
-                <Button onClick={() => history.push("/pricing")} variant="ghost" className="md:text-birincil">Pricing</Button>
+                <Button onClick={() => history.push("/about")} variant="ghost" className="md:text-birincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" className="md:text-birincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" className="md:text-birincil">Team</Button>
             </div>
