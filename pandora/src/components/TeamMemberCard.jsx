@@ -7,9 +7,9 @@ const TeamMemberCard = () => {
                 <p>Erhan ÖZDEMİR</p>
                 <p>Scrum Master</p>
                 <div className="flex gap-2 justify-center">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-instagram"></i>
                 </div>
             </div>
         </div>

@@ -4,7 +4,7 @@ import Heading from "@/components/ui/heading";
 const AboutInfo = () => {
 
     return (
-        <section className="flex flex-col gap-3 md:flex-row md:justify-between ">
+        <div className="flex flex-col gap-3 md:flex-row md:justify-between ">
             <div className="flex flex-col items-center md:w-1/2 md:items-start md:justify-center gap-4">
                 <p className="font-bold hidden md:block">ABOUT COMPANY</p>
                 <Heading variant="h2">ABOUT US</Heading>
@@ -14,7 +14,7 @@ const AboutInfo = () => {
             <div className=""> 
                 <img src="https://placehold.co/600x400" />
             </div>
-        </section>
+        </div>
     )
 }
 

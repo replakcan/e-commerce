@@ -6,7 +6,7 @@ const ProductCard_5 = () => {
 
     return (
             //TODO heading hizala
-        <section className="text-center">
+        <div className="text-center">
             <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
             <div className="flex flex-wrap items-center justify-center md:flex-row ">
                 <BestSellerCard />
@@ -14,7 +14,7 @@ const ProductCard_5 = () => {
                 <BestSellerCard />
                 <BestSellerCard />
             </div>
-        </section>
+        </div>
     )
 
 

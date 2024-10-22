@@ -5,7 +5,7 @@ const SupportInfo = () => {
 
     return (
 
-        <section className="flex flex-col  gap-4 w-full">
+        <div className="flex flex-col  gap-4 w-full">
             <div className="text-center">
                 <Heading variant="h6">VISIT OUR OFFICE</Heading>
                 <Heading variant="h2">We help small businesses with big ideas</Heading>
@@ -15,7 +15,7 @@ const SupportInfo = () => {
                 <SupportCard />
                 <SupportCard />
             </div>
-        </section>
+        </div>
     )
 }
 export default SupportInfo;

@@ -5,7 +5,7 @@ const ProductCard_4 = () => {
 
     return (
 
-        <section className="productCard_4 flex flex-col items-center">
+        <div className="productCard_4 flex flex-col items-center">
             <img className="popularImg" src="./images/productCard/col-md-9.png" />
             <div className="popular w-full h-full">
                 <div className="h-full flex flex-col justify-center gap-4 bg-footerTopBG px-8 py-2">
@@ -16,7 +16,7 @@ const ProductCard_4 = () => {
                     <p>$16.48<span className="text-ikincil">$16.48</span></p>
                 </div>
             </div>
-        </section>
+        </div>
     )
 }
 

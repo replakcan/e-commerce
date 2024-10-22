@@ -7,7 +7,7 @@ const ProductDescription = () => {
 
         <>
 
-            <section className="flex flex-col gap-4 md:grid grid-cols-3 grid-rows[mincontent_1fr">
+            <div className="flex flex-col gap-4 md:grid grid-cols-3 grid-rows[mincontent_1fr">
                 <div className="flex justify-between row-start-1 row-end-2 col-start-1 col-end-4">
                     <Button variant="ghost" size="md">Description</Button>
                     <Button variant="ghost" size="md">Additional information</Button>
@@ -38,7 +38,7 @@ const ProductDescription = () => {
                         </ul>
                     </div>
                 </div>
-            </section>
+            </div>
 
         </>
     )

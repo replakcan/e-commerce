@@ -1,4 +1,4 @@
-const VideoComponent = () => {
+/* const VideoComponent = () => {
     return (
 
         <div className="video-container relative flex justify-center w-full bg-red-50">
@@ -14,3 +14,4 @@ const VideoComponent = () => {
 
 export default VideoComponent;
 
+ */

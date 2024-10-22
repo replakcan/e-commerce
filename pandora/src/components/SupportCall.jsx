@@ -5,7 +5,7 @@ const SupportCall = () => {
 
     return (
 
-        <section className="flex flex-col items-center">
+        <div className="flex flex-col items-center">
             <i class="fa-solid fa-arrow-down"></i>
             <div className="text-center flex flex-col gap-3">
                 <Heading variant="h5">WE Can't WAIT TI MEET YOU</Heading>
@@ -13,7 +13,7 @@ const SupportCall = () => {
                 <Button variant="primary">Try it free now</Button>
             </div>
 
-        </section>
+        </div>
     )
 }
 export default SupportCall;

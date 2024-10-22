@@ -12,9 +12,9 @@ const Shop = () => {
 
         <div className="page flex flex-col gap-6 bg-blue-50">
 
-            <section>
+            <div>
                 <HeaderNav />
-            </section>
+            </div>
             <Categories />
             <SearchResults />
             <ShopProductCards />

@@ -3,7 +3,7 @@ import Button from "./ui/button";
 const SearchResults = () => {
     return (
 
-        <section className="flex flex-col items-center gap-2 md:flex-row md:justify-between">
+        <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between">
             <p> Showing all 12 results</p>
             <div className="search-icon-btns flex flex-row items-center gap-3">
                 <p>Views:</p>
@@ -15,7 +15,7 @@ const SearchResults = () => {
                 <Button variant="icon">Popularity</Button>
                 <Button>Filter</Button>
             </div>
-        </section>
+        </div>
     )
 }
 export default SearchResults;

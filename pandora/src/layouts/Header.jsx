@@ -5,9 +5,9 @@ const Header = () => {
 
     return (
         <>
-            <section>
+            <div>
                 <HeaderNav />
-            </section>
+            </div>
             <HeaderSlider />
         </>
     )

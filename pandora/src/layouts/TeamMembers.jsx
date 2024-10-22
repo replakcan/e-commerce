@@ -3,7 +3,7 @@ import TeamMemberCard from "@/components/TeamMemberCard";
 const TeamMembers = () => {
 
     return (
-        <section className="flex flex-col gap-8 md:flex-row flex-wrap md:justify-between">
+        <div className="flex flex-col gap-8 md:flex-row flex-wrap md:justify-between">
             <TeamMemberCard />
             <TeamMemberCard />
             <TeamMemberCard />
@@ -13,7 +13,7 @@ const TeamMembers = () => {
             <TeamMemberCard />
             <TeamMemberCard />
             <TeamMemberCard />        
-        </section>
+        </div>
     )
 }
 export default TeamMembers;

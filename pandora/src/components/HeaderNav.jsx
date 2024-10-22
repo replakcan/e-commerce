@@ -13,10 +13,10 @@ const HeaderNav = () => {
             <div className="header-nav flex justify-between items-center gap-4 w-full">
                 <Heading variant="h3">Pandora</Heading>
                 <ul className="flex gap-4">
-                    <i class="fa-regular fa-user"></i>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-solid fa-bars"></i>
+                    <i className="fa-regular fa-user"></i>
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                    <i className="fa-solid fa-cart-shopping"></i>
+                    <i className="fa-solid fa-bars"></i>
                 </ul>
             </div>
             <div className="flex flex-col gap-2 md:flex-row">

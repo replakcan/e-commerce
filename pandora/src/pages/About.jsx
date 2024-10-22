@@ -1,6 +1,6 @@
 import HeaderNav from "@/components/HeaderNav";
 import TeamMemberHead from "@/components/TeamMemberHead";
-import AboutContent from "@/layouts/AboutContent";
+import AboutContext from "@/layouts/AboutContext";
 import AboutInfo from "@/layouts/AboutInfo";
 import AboutOffer from "@/layouts/AboutOffer";
 import Clients from "@/layouts/Clients";
@@ -13,7 +13,7 @@ const About = () => {
         <>
             <HeaderNav />
             <AboutInfo />
-            <AboutContent />
+            <AboutContext />
             <TeamMemberHead />
             <TeamMembers />
             <Clients />

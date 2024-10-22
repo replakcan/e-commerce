@@ -1,7 +1,7 @@
 import Heading from "@/components/ui/heading";
-import VideoComponent from "@/components/VideoComponent";
+/* import VideoComponent from "@/components/VideoComponent"; */
 
-const AboutContent = () => {
+const AboutContext = () => {
 
     return (
         <div>
@@ -29,7 +29,7 @@ const AboutContent = () => {
                     <Heading variant="h5">Happy Customer</Heading>
                 </div>
             </div>
-                <VideoComponent />
+                {/* <VideoComponent /> */}
             <div>
 
             </div>
@@ -37,4 +37,4 @@ const AboutContent = () => {
         </div>
     )
 }
-export default AboutContent;
+export default AboutContext;

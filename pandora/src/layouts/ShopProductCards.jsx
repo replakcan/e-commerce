@@ -4,7 +4,7 @@ const ShopProductCards = () => {
 
     return (
 
-        <section className="flex flex-wrap justify-center md:justify-between gap-3">
+        <div className="flex flex-wrap justify-center md:justify-between gap-3">
 
             <ShopPageCard />
             <ShopPageCard />
@@ -19,7 +19,7 @@ const ShopProductCards = () => {
             <ShopPageCard />
             <ShopPageCard />
 
-        </section>
+        </div>
     )
 }
 

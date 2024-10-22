@@ -5,7 +5,7 @@ import Heading from "./ui/heading";
 const ProductDetail = () => {
 
     return (
-        <section className="flex flex-col gap-2 md:flex-row bg-red-50 py-4">
+        <div className="flex flex-col gap-2 md:flex-row bg-red-50 py-4">
             <div className="flex flex-col gap-3">
                 <div>
                     <img src="https://placehold.co/500x450" alt="" />
@@ -43,7 +43,7 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
     )
 }

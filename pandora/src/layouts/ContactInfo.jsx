@@ -3,7 +3,7 @@ import Heading from "@/components/ui/heading";
 const ContactInfo = () => {
 
     return (
-        <section className="flex flex-col gap-3 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-3 md:flex-row md:justify-between">
             <div className="flex flex-col items-center gap-3 md:w-1/2 md:items-start md:justify-between">
                 <Heading variant="h5">CONTACT US</Heading>
                 <Heading variant="h2">Get in touch <br /> today!</Heading>
@@ -22,7 +22,7 @@ const ContactInfo = () => {
             <div className=""> 
                 <img src="https://placehold.co/600x400" />
             </div>
-        </section>
+        </div>
     )
 }
 

@@ -6,10 +6,10 @@ const Categories = () => {
 
     return (
         <>
-            <section className="bg-red-100">
+            <div className="bg-red-100">
                 <CategoryTop />
-            </section>
-            <section className="flex flex-col items-center gap-0 md:flex-row flex-wrap justify-between bg-red-50">
+            </div>
+            <div className="flex flex-col items-center gap-0 md:flex-row flex-wrap justify-between bg-red-50">
 
                 <CategoryCard />
                 <CategoryCard />
@@ -17,7 +17,7 @@ const Categories = () => {
                 <CategoryCard />
                 <CategoryCard />
 
-            </section>
+            </div>
         </>
     )
 }
