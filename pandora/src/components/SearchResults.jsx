@@ -8,8 +8,8 @@ const SearchResults = () => {
             <div className="search-icon-btns flex flex-row items-center gap-3">
                 <p>Views:</p>
                 {/* //TODO BUTONLARA DOGRU ICON KOY */}
-                <Button variant="icon"><i class="fa-solid fa-arrow-left"></i></Button>
-                <Button variant="icon"><i class="fa-solid fa-arrow-left"></i></Button>
+                <Button variant="icon"><i className="fa-solid fa-arrow-left"></i></Button>
+                <Button variant="icon"><i className="fa-solid fa-arrow-left"></i></Button>
             </div>
             <div className="search-btns flex gap-3">
                 <Button variant="icon">Popularity</Button>

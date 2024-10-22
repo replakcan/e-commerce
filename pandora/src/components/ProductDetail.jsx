@@ -20,11 +20,11 @@ const ProductDetail = () => {
                     <Heading variant="h4">Floating Phone</Heading>
                     <div className="flex items-center gap-2">
                         <div>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-solid fa-star"></i>
+                            <i className="fa-regular fa-star"></i>
                         </div>
                         <p>10 Reviews</p>
                     </div>
@@ -37,9 +37,9 @@ const ProductDetail = () => {
                 <div className="flex items-center pt-4 justify-between md:justify-start md:gap-4">
                     <Button variant="primary">Select Options</Button>
                     <div className="flex gap-8">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                        <i className="fa-solid fa-star"></i>
+                        <i className="fa-solid fa-star"></i>
+                        <i className="fa-solid fa-star"></i>
                     </div>
                 </div>
             </div>

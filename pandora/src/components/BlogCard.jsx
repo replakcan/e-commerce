@@ -15,11 +15,11 @@ const BlogCard = () => {
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, aperiam, alias ipsam facilis eius, dolores unde sunt maxime laboriosam recusandae voluptates illo nesciunt veritatis nemo dicta consectetur quo. Quos, quo!</p>
                 <div className='flex justify-between'>
                     <div className="flex gap-2">
-                        <i class="fa-solid fa-clock"></i>
+                        <i className="fa-solid fa-clock"></i>
                         <p>22 April 2021</p>
                     </div>
                     <div className="flex gap-2">
-                        <i class="fa-solid fa-clock"></i>
+                        <i className="fa-solid fa-clock"></i>
                         <p>10 comments</p>
 
                     </div>

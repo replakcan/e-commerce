@@ -12,10 +12,10 @@ const TrialCard = () => {
                 <Button variant="primary">Try it free now</Button>
             </div>
             <div className="flex gap-2">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
             </div>
 
         </div>

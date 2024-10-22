@@ -13,10 +13,10 @@ const ContactInfo = () => {
                     <p className="font-bold">Fax : 123456</p>
                 </div>
                 <div className="socials flex gap-2">
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-github"></i>
-                    <i class="fa-brands fa-github"></i>
+                    <i className="fa-brands fa-github"></i>
+                    <i className="fa-brands fa-github"></i>
+                    <i className="fa-brands fa-github"></i>
+                    <i className="fa-brands fa-github"></i>
                 </div>
             </div>
             <div className=""> 
