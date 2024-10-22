@@ -1,4 +1,3 @@
-import { Divide } from "lucide-react";
 import Heading from "./ui/heading";
 
 const TeamGridHead = () => {
