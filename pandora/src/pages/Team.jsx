@@ -1,14 +1,11 @@
 import TeamContent from "@/layouts/PageContents/TeamContent";
 
-
 const Team = () => {
 
     return (
-        <div>
-      
-            <TeamContent/>
-       
-        </div>
+        <>
+            <TeamContent />
+        </>
     )
 }
 export default Team;
