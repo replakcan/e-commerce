@@ -7,12 +7,13 @@ import Product from './pages/Product';
 import Shop from './pages/Shop';
 import Team from './pages/Team';
 import About from './pages/About';
+import HeaderNav from './components/HeaderNav';
+import Footer from './layouts/Footer';
 function App() {
 
   return (
-
     <main className='flex flex-col'>
-
+      <HeaderNav />
       <Switch>
         <Route path="/product">
           <Product />
@@ -33,6 +34,7 @@ function App() {
           <HomePage />
         </Route>
       </Switch>
+      <Footer />
     </main >
 
   )

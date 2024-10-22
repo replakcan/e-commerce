@@ -10,9 +10,9 @@ const Product = () => {
 
         <div className="flex flex-col gap-8 bg-blue-50">
 
-            <HeaderNav />
+           
             <ProductContent/>
-            <Footer/>
+            
         
         </div>
     )
