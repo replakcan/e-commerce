@@ -3,10 +3,10 @@ import './App.css'
 
 import HomePage from './pages/Home'
 import Contact from './pages/Contact';
-import Pricing from './pages/Pricing';
 import Product from './pages/Product';
 import Shop from './pages/Shop';
 import Team from './pages/Team';
+import About from './pages/About';
 function App() {
 
   return (
@@ -23,8 +23,8 @@ function App() {
         <Route path="/shop">
           <Shop />
         </Route>
-        <Route path="/pricing">
-          <Pricing />
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/contact">
           <Contact />
