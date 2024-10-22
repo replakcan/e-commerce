@@ -4,7 +4,7 @@ const FooterMid = () => {
 
     return (
 
-        <div className="footer-el footerMid">
+        <div className="footer-el footerMid text-white">
             <FooterInfoContent />
         </div>
     )
