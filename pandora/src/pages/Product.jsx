@@ -1,9 +1,7 @@
 import HeaderNav from "@/components/HeaderNav";
-import ProductDescription from "@/components/ProductDescription";
-import ProductDetail from "@/components/ProductDetail";
-import Clients from "@/layouts/Clients";
 import Footer from "@/layouts/Footer";
-import MoreProducts from "@/layouts/MoreProducts";
+import ProductContent from "@/layouts/PageContents/ProductContent";
+
 
 
 const Product = () => {
@@ -13,10 +11,7 @@ const Product = () => {
         <div className="flex flex-col gap-8 bg-blue-50">
 
             <HeaderNav />
-            <ProductDetail />
-            <ProductDescription />
-            <MoreProducts />
-            <Clients />
+            <ProductContent/>
             <Footer/>
         
         </div>

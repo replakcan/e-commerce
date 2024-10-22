@@ -14,9 +14,6 @@ function App() {
     <main className='flex flex-col'>
 
       <Switch>
-        <Route path="/" exact>
-          <HomePage />
-        </Route>
         <Route path="/product">
           <Product />
         </Route>
@@ -31,6 +28,9 @@ function App() {
         </Route>
         <Route path="/team">
           <Team />
+        </Route>
+        <Route path="/">
+          <HomePage />
         </Route>
       </Switch>
     </main >
