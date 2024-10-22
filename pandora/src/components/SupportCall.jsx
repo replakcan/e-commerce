@@ -5,7 +5,7 @@ const SupportCall = () => {
 
     return (
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center py-12">
             <i className="fa-solid fa-arrow-down"></i>
             <div className="text-center flex flex-col gap-3">
                 <Heading variant="h5">WE Can't WAIT TI MEET YOU</Heading>

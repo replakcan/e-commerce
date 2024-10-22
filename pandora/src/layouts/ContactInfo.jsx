@@ -3,7 +3,7 @@ import Heading from "@/components/ui/heading";
 const ContactInfo = () => {
 
     return (
-        <div className="flex flex-col gap-3 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-3 md:flex-row md:justify-between py-12">
             <div className="flex flex-col items-center gap-3 md:w-1/2 md:items-start md:justify-between">
                 <Heading variant="h5">CONTACT US</Heading>
                 <Heading variant="h2">Get in touch <br /> today!</Heading>

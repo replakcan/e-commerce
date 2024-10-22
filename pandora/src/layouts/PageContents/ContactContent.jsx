@@ -5,7 +5,7 @@ import ContactInfo from "../ContactInfo";
 const ContactContent = () => {
 
     return (
-        <section>
+        <section className="flex flex-col gap-20">
             <ContactInfo />
             <SupportInfo />
             <SupportCall />
