@@ -6,12 +6,14 @@ import Categories from "../Categories";
 const ShopContent = () => {
 
     return (
-        <section>
+        <div className="flex flex-col gap-20">
             <Categories />
-            <SearchResults />
-            <ShopProductCards />
+            <section className="flex flex-col gap-20">
+                <SearchResults />
+                <ShopProductCards />
+            </section>
             <Clients />
-        </section>
+        </div>
     )
 
 }

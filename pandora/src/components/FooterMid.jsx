@@ -4,7 +4,7 @@ const FooterMid = () => {
 
     return (
 
-        <div className="footer-el footerMid text-white">
+        <div className="footer-el footerMid text-white px-[10%]">
             <FooterInfoContent />
         </div>
     )

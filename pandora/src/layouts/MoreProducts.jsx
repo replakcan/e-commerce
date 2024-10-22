@@ -5,11 +5,11 @@ const MoreProducts = () => {
 
     return (
         <>
-            <div className="m-auto">
+            <div className="m-auto md:px-[10%] bg-light_gray">
 
                 <Heading className="">BESTSELLER PRODUCTS</Heading>
             </div>
-            <div className="flex flex-wrap justify-center md:justify-between gap-3">
+            <div className="bg-light_gray md:px-[10%] flex flex-wrap justify-center md:justify-between gap-3">
                 <ShopPageCard />
                 <ShopPageCard />
                 <ShopPageCard />

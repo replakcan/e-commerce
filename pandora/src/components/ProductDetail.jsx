@@ -5,7 +5,7 @@ import Heading from "./ui/heading";
 const ProductDetail = () => {
 
     return (
-        <div className="flex flex-col gap-2 md:flex-row bg-red-50 py-4">
+        <div className="flex flex-col gap-2 md:flex-row bg-light_gray md:px-[10%] pb-12">
             <div className="flex flex-col gap-3">
                 <div>
                     <img src="https://placehold.co/500x450" alt="" />

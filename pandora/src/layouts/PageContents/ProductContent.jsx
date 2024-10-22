@@ -6,12 +6,16 @@ import ProductDetail from "@/components/ProductDetail";
 const ProductContent = () => {
 
     return (
-        <section>
+        <div>
             <ProductDetail />
-            <ProductDescription />
-            <MoreProducts />
+            <section>
+                <ProductDescription />
+            </section>
+            <div>
+                <MoreProducts />
+            </div>
             <Clients />
-        </section>
+        </div>
     )
 
 }

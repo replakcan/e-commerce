@@ -7,8 +7,8 @@ const ProductDescription = () => {
 
         <>
 
-            <div className="flex flex-col gap-4 md:grid grid-cols-3 grid-rows[mincontent_1fr">
-                <div className="flex justify-between row-start-1 row-end-2 col-start-1 col-end-4">
+            <div className="flex flex-col gap-4 md:grid grid-cols-3 grid-rows[mincontent_1fr] py-12">
+                <div className="flex justify-center gap-8 row-start-1 row-end-2 col-start-1 col-end-4 py-3 ">
                     <Button variant="ghost" size="md">Description</Button>
                     <Button variant="ghost" size="md">Additional information</Button>
                     <Button variant="ghost" size="md">Reviews <span className="text-ikincil">{(0)}</span></Button>
