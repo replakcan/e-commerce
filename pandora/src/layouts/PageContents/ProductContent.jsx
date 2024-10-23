@@ -6,7 +6,7 @@ import ProductDetail from "@/components/ProductDetail";
 const ProductContent = () => {
 
     return (
-        <div>
+        <div className="content">
             <ProductDetail />
             <section>
                 <ProductDescription />
