@@ -20,6 +20,7 @@ const HeaderNav = () => {
                 </ul>
             </div>
             <div className="flex flex-col gap-2 md:flex-row py-12 md:py-3">
+                <Button onClick={() => history.push("/signup")} variant="ghost" className="md:text-birincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" className="md:text-birincil">Home</Button>
                 <Button onClick={() => history.push("/shop")} variant="ghost" className="md:text-birincil">Shop</Button>
                 <Button onClick={() => history.push("/product")} variant="ghost" className="md:text-birincil">Product</Button>

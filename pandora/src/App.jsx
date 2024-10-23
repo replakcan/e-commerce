@@ -1,6 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
 import './App.css'
-
 import HomePage from './pages/Home'
 import Contact from './pages/Contact';
 import Product from './pages/Product';
@@ -9,6 +8,8 @@ import Team from './pages/Team';
 import About from './pages/About';
 import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
+import SignUp from './pages/SignUp';
+
 function App() {
 
   return (
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route path="/team">
           <Team />
+        </Route>
+        <Route path="/signup">
+          <SignUp />
         </Route>
         <Route path="/">
           <HomePage />
