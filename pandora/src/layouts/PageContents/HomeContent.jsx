@@ -11,7 +11,7 @@ import ShopCard from "../ShopCard";
 const HomeContent = () => {
 
     return (
-        <div className="flex flex-col gap-20">
+        <div className="content flex flex-col gap-20">
             <HeaderSlider />
             <ShopCard />
             <section className="flex flex-col gap-20">

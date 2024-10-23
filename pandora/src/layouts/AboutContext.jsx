@@ -5,7 +5,6 @@ const AboutContext = () => {
 
     return (
         <div>
-
             <div className="flex flex-col items-center text-center">
                 <p className="text-danger">Problems trying</p>
                 <p className="font-bold">Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.</p>

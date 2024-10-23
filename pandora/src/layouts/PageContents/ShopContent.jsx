@@ -6,7 +6,7 @@ import Categories from "../Categories";
 const ShopContent = () => {
 
     return (
-        <div className="flex flex-col gap-20">
+        <div className="content flex flex-col gap-20">
             <Categories />
             <section className="flex flex-col gap-20">
                 <SearchResults />

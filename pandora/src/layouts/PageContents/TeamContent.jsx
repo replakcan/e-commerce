@@ -7,7 +7,7 @@ import TeamGridHead from "@/components/TeamGridHead";
 const TeamContent = () => {
 
     return (
-        <section className="flex flex-col gap-20">
+        <section className="content flex flex-col gap-20">
             <TeamGridHead />
             <TeamGrid />
             <TeamMemberHead />
