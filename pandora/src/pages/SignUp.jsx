@@ -39,7 +39,7 @@ const SignUp = () => {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg"
+            className="my-12 max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg"
         >
             <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
 
