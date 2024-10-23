@@ -9,7 +9,7 @@ const SupportCard = () => {
             <p>email@mail.com</p>
             <p>email@mail.com</p>
             <p className="font-bold">Get Support</p>
-            <Button variant="outline">Submit Request</Button>
+            <Button variant="outlineBrRnd">Submit Request</Button>
         </div>
     )
 }

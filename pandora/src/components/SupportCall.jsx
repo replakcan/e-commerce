@@ -10,7 +10,7 @@ const SupportCall = () => {
             <div className="text-center flex flex-col gap-3">
                 <Heading variant="h5">WE Can't WAIT TI MEET YOU</Heading>
                 <Heading variant="h1">Let's Talk</Heading>
-                <Button variant="primary">Try it free now</Button>
+                <Button>Try it free now</Button>
             </div>
         </div>
     )
