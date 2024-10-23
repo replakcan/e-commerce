@@ -32,12 +32,22 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg"
+    >
+      <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
+
       {/* Name Input */}
-      <div>
-        <label htmlFor="name">Name</label>
+      <div className="mb-4">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          Name
+        </label>
         <input
           id="name"
+          className={`mt-1 block w-full p-2 border ${
+            errors.name ? "border-red-500" : "border-gray-300"
+          } rounded-md`}
           {...register("name", {
             required: "Name is required",
             minLength: {
@@ -46,26 +56,36 @@ const SignUp = () => {
             },
           })}
         />
-        {errors.name && <p>{errors.name.message}</p>}
+        {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
       </div>
 
       {/* Email Input */}
-      <div>
-        <label htmlFor="email">Email</label>
+      <div className="mb-4">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Email
+        </label>
         <input
           id="email"
           type="email"
+          className={`mt-1 block w-full p-2 border ${
+            errors.email ? "border-red-500" : "border-gray-300"
+          } rounded-md`}
           {...register("email", { required: "Email is required" })}
         />
-        {errors.email && <p>{errors.email.message}</p>}
+        {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
       </div>
 
       {/* Password Input */}
-      <div>
-        <label htmlFor="password">Password</label>
+      <div className="mb-4">
+        <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+          Password
+        </label>
         <input
           id="password"
           type="password"
+          className={`mt-1 block w-full p-2 border ${
+            errors.password ? "border-red-500" : "border-gray-300"
+          } rounded-md`}
           {...register("password", {
             required: "Password is required",
             minLength: {
@@ -80,29 +100,42 @@ const SignUp = () => {
               "Password must include uppercase, lowercase, number, and special character",
           })}
         />
-        {errors.password && <p>{errors.password.message}</p>}
+        {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
       </div>
 
       {/* Role Selection */}
-      <div>
-        <label htmlFor="role">Role</label>
-        <select id="role" {...register("role", { required: "Role is required" })}>
+      <div className="mb-4">
+        <label htmlFor="role" className="block text-sm font-medium text-gray-700">
+          Role
+        </label>
+        <select
+          id="role"
+          className={`mt-1 block w-full p-2 border ${
+            errors.role ? "border-red-500" : "border-gray-300"
+          } rounded-md`}
+          {...register("role", { required: "Role is required" })}
+        >
           <option value="">Select Role</option>
           <option value="admin">Admin</option>
           <option value="store">Store</option>
           <option value="customer">Customer</option>
         </select>
-        {errors.role && <p>{errors.role.message}</p>}
+        {errors.role && <p className="text-red-500 text-sm">{errors.role.message}</p>}
       </div>
 
       {/* Conditional Store Fields */}
       {role === "store" && (
         <>
           {/* Store Name Input */}
-          <div>
-            <label htmlFor="storeName">Store Name</label>
+          <div className="mb-4">
+            <label htmlFor="storeName" className="block text-sm font-medium text-gray-700">
+              Store Name
+            </label>
             <input
               id="storeName"
+              className={`mt-1 block w-full p-2 border ${
+                errors.storeName ? "border-red-500" : "border-gray-300"
+              } rounded-md`}
               {...register("storeName", {
                 required: "Store Name is required",
                 minLength: {
@@ -111,15 +144,22 @@ const SignUp = () => {
                 },
               })}
             />
-            {errors.storeName && <p>{errors.storeName.message}</p>}
+            {errors.storeName && (
+              <p className="text-red-500 text-sm">{errors.storeName.message}</p>
+            )}
           </div>
 
           {/* Store Phone Input */}
-          <div>
-            <label htmlFor="storePhone">Store Phone</label>
+          <div className="mb-4">
+            <label htmlFor="storePhone" className="block text-sm font-medium text-gray-700">
+              Store Phone
+            </label>
             <input
               id="storePhone"
               type="tel"
+              className={`mt-1 block w-full p-2 border ${
+                errors.storePhone ? "border-red-500" : "border-gray-300"
+              } rounded-md`}
               {...register("storePhone", {
                 required: "Store Phone is required",
                 pattern: {
@@ -128,14 +168,21 @@ const SignUp = () => {
                 },
               })}
             />
-            {errors.storePhone && <p>{errors.storePhone.message}</p>}
+            {errors.storePhone && (
+              <p className="text-red-500 text-sm">{errors.storePhone.message}</p>
+            )}
           </div>
 
           {/* Store Tax ID Input */}
-          <div>
-            <label htmlFor="storeTaxId">Store Tax ID</label>
+          <div className="mb-4">
+            <label htmlFor="storeTaxId" className="block text-sm font-medium text-gray-700">
+              Store Tax ID
+            </label>
             <input
               id="storeTaxId"
+              className={`mt-1 block w-full p-2 border ${
+                errors.storeTaxId ? "border-red-500" : "border-gray-300"
+              } rounded-md`}
               {...register("storeTaxId", {
                 required: "Store Tax ID is required",
                 pattern: {
@@ -145,14 +192,21 @@ const SignUp = () => {
                 },
               })}
             />
-            {errors.storeTaxId && <p>{errors.storeTaxId.message}</p>}
+            {errors.storeTaxId && (
+              <p className="text-red-500 text-sm">{errors.storeTaxId.message}</p>
+            )}
           </div>
 
           {/* Store Bank Account Input */}
-          <div>
-            <label htmlFor="storeBankAccount">Store Bank Account</label>
+          <div className="mb-4">
+            <label htmlFor="storeBankAccount" className="block text-sm font-medium text-gray-700">
+              Store Bank Account
+            </label>
             <input
               id="storeBankAccount"
+              className={`mt-1 block w-full p-2 border ${
+                errors.storeBankAccount ? "border-red-500" : "border-gray-300"
+              } rounded-md`}
               {...register("storeBankAccount", {
                 required: "Store Bank Account is required",
                 pattern: {
@@ -161,12 +215,19 @@ const SignUp = () => {
                 },
               })}
             />
-            {errors.storeBankAccount && <p>{errors.storeBankAccount.message}</p>}
+            {errors.storeBankAccount && (
+              <p className="text-red-500 text-sm">{errors.storeBankAccount.message}</p>
+            )}
           </div>
         </>
       )}
 
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-300"
+      >
+        Submit
+      </button>
     </form>
   );
 };

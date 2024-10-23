@@ -9,6 +9,7 @@ import About from './pages/About';
 import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
 import SignUp from './pages/SignUp';
+
 function App() {
 
   return (
