@@ -1,3 +1,4 @@
+import { AlignJustify, ChevronDown, LayoutGrid } from "lucide-react";
 import { Button } from "./ui/button";
 
 const SearchResults = () => {
@@ -8,11 +9,11 @@ const SearchResults = () => {
             <div className="search-icon-btns flex flex-row items-center gap-3">
                 <p>Views:</p>
                 {/* //TODO BUTONLARA DOGRU ICON KOY */}
-                <Button><i className="fa-solid fa-arrow-left"></i></Button>
-                <Button><i className="fa-solid fa-arrow-left"></i></Button>
+                <Button variant="outline" size="iconsqr" ><LayoutGrid /></Button>
+                <Button variant="outline" size="iconsqr" ><AlignJustify /></Button>
             </div>
             <div className="search-btns flex gap-3">
-                <Button>Popularity</Button>
+                <Button variant="outline" >Popularity <ChevronDown/> </Button>
                 <Button>Filter</Button>
             </div>
         </div>
