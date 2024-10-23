@@ -9,7 +9,7 @@ const AboutOffer = () => {
                 <p>WORK WITH US</p>
                 <Heading variant="h4">Now Let's grow Yours</Heading>
                 <p className="md:w-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius qui aperiam totam, non laudantium harum, voluptate temporibus blanditiis necessitatibus suscipit tempore libero illum corrupti exercitationem voluptas ut facilis, iure neque.</p>
-                <Button variant="outline">Button</Button>
+                <Button variant="outlineBrWh">Button</Button>
             </div>
             <div className="hidden md:block h-full">
                 <img src="./images/about/workworkwork.png" alt="" />
