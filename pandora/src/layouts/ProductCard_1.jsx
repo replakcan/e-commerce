@@ -1,6 +1,7 @@
 import ShopItemVer from "@/components/ShopItemVer";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const ProductCard_1 = () => {
 
@@ -17,8 +18,8 @@ const ProductCard_1 = () => {
                     <a href="">Accessories</a>
                 </div>
                 <div>
-                    <Button variant="icon"><i className="fa-solid fa-arrow-left"></i></Button>
-                    <Button variant="icon"><i className="fa-solid fa-arrow-right"></i></Button>
+                    <Button variant="outline" size="icon"><ArrowLeft /></Button>
+                    <Button variant="outline" size="icon"><ArrowRight /></Button>
                 </div>
             </nav>
             <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row justify-between">
