@@ -9,10 +9,10 @@ const FooterInfoCard = () => {
             <div className="footer-info w-fit">
                 <Heading variant="h6">Company Info</Heading>
                 <ul>
-                    <li>About Us</li>
-                    <li>Carrier</li>
-                    <li>We are hiring</li>
-                    <li>Blog</li>
+                    <p>About Us</p>
+                    <p>Carrier</p>
+                    <p>We are hiring</p>
+                    <p>Blog</p>
                 </ul>
             </div>
 
