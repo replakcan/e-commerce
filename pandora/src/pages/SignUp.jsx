@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -249,12 +250,12 @@ const SignUp = () => {
                 </>
             )}
 
-            <button
+            <Button
                 type="submit"
                 className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-300"
             >
                 Submit
-            </button>
+            </Button>
         </form>
     );
 };
