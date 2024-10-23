@@ -1,4 +1,4 @@
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 
 const ProductDescription = () => {
@@ -9,9 +9,9 @@ const ProductDescription = () => {
 
             <div className="flex flex-col gap-4 md:grid grid-cols-3 grid-rows[mincontent_1fr] py-12">
                 <div className="flex justify-center gap-8 row-start-1 row-end-2 col-start-1 col-end-4 py-3 ">
-                    <Button variant="ghost" size="md">Description</Button>
-                    <Button variant="ghost" size="md">Additional information</Button>
-                    <Button variant="ghost" size="md">Reviews <span className="text-ikincil">{(0)}</span></Button>
+                    <Button variant="ghost">Description</Button>
+                    <Button variant="ghost">Additional information</Button>
+                    <Button variant="ghost">Reviews <span className="text-ikincil">{(0)}</span></Button>
                 </div>
                 <img className="col-start-1 col-end-2" src="https://placehold.co/600x400" />
                 <div className="col-start-2 col-end-3">

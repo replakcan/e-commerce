@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 
 
@@ -20,13 +20,13 @@ const HeaderNav = () => {
                 </ul>
             </div>
             <div className="flex flex-col gap-2 md:flex-row py-12 md:py-3">
-                <Button onClick={() => history.push("/signup")} variant="ghost" className="md:text-birincil">SignUp</Button>
-                <Button onClick={() => history.push("/")} variant="ghost" className="md:text-birincil">Home</Button>
-                <Button onClick={() => history.push("/shop")} variant="ghost" className="md:text-birincil">Shop</Button>
-                <Button onClick={() => history.push("/product")} variant="ghost" className="md:text-birincil">Product</Button>
-                <Button onClick={() => history.push("/about")} variant="ghost" className="md:text-birincil">About</Button>
-                <Button onClick={() => history.push("/contact")} variant="ghost" className="md:text-birincil">Contact</Button>
-                <Button onClick={() => history.push("/team")} variant="ghost" className="md:text-birincil">Team</Button>
+                <Button onClick={() => history.push("/signup")} variant="link" className="md:text-birincil">SignUp</Button>
+                <Button onClick={() => history.push("/")} variant="link" className="md:text-birincil">Home</Button>
+                <Button onClick={() => history.push("/shop")} variant="link" className="md:text-birincil">Shop</Button>
+                <Button onClick={() => history.push("/product")} variant="link" className="md:text-birincil">Product</Button>
+                <Button onClick={() => history.push("/about")} variant="link" className="md:text-birincil">About</Button>
+                <Button onClick={() => history.push("/contact")} variant="link" className="md:text-birincil">Contact</Button>
+                <Button onClick={() => history.push("/team")} variant="link" className="md:text-birincil">Team</Button>
             </div>
         </div>
 

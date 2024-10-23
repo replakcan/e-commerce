@@ -1,4 +1,3 @@
-import Button from "./ui/button";
 import Heading from "./ui/heading";
 
 const FeatureCard = () => {

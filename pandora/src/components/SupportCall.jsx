@@ -1,4 +1,4 @@
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 
 const SupportCall = () => {
@@ -12,7 +12,6 @@ const SupportCall = () => {
                 <Heading variant="h1">Let's Talk</Heading>
                 <Button variant="primary">Try it free now</Button>
             </div>
-
         </div>
     )
 }

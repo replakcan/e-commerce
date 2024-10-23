@@ -1,5 +1,5 @@
 import ShopItemVer from "@/components/ShopItemVer";
-import Button from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 
 const ProductCard_1 = () => {

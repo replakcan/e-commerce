@@ -1,4 +1,4 @@
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 
 const FooterBottom = () => {
@@ -11,7 +11,7 @@ const FooterBottom = () => {
                 <p>the quick fox jumps over the lazy dog</p>
             </div>
             <div>
-                <Button variant="primary">Contact Us</Button>
+                <Button>Contact Us</Button>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import Button from "./ui/button";
+import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 
 
@@ -35,7 +35,7 @@ const ProductDetail = () => {
                 </div>
                 <p className="pt-3 border-b-4 pb-2 md:w-3/4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate aspernatur rerum quos minima, corrupti enim excepturi aliquid tenetur sunt quis adipisci officia nisi maiores consectetur quisquam fugit dolore fuga non?</p>
                 <div className="flex items-center pt-4 justify-between md:justify-start md:gap-4">
-                    <Button variant="primary">Select Options</Button>
+                    <Button>Select Options</Button>
                     <div className="flex gap-8">
                         <i className="fa-solid fa-star"></i>
                         <i className="fa-solid fa-star"></i>
