@@ -10,7 +10,7 @@ const SupportInfo = () => {
                 <Heading variant="h6">VISIT OUR OFFICE</Heading>
                 <Heading variant="h2">We help small businesses with big ideas</Heading>
             </div>
-            <div className="flex flex-col gap-1 bg-red-50 md:flex-row py-12">
+            <div className="support-container flex flex-col gap-1 md:flex-row py-12">
                 <SupportCard />
                 <SupportCard />
                 <SupportCard />
