@@ -6,6 +6,7 @@ export const SET_LIMIT = 'SET_LIMIT';
 export const SET_OFFSET = 'SET_OFFSET';
 export const SET_FILTER = 'SET_FILTER';
 
+
 export const setCategories = (categories) => ({
     type: SET_CATEGORIES,
     payload: categories,
