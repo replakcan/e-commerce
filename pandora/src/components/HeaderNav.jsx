@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
 import store from "@/redux/store";
+import { useEffect } from "react";
 
 
 //TODO CSS'I DUZELT
@@ -10,6 +11,10 @@ const HeaderNav = () => {
     const user = useSelector((store) => store.client.user)
 
     let history = useHistory();
+
+    useEffect(() => {
+        console.log(user)
+    }, [user])
 
     return (
         <div className="flex flex-col items-center md:flex-row bg-white md:px-[10%] shadow-md p-9 md:p-0">
@@ -22,8 +27,8 @@ const HeaderNav = () => {
                     <i className="fa-solid fa-bars"></i>
                 </ul>
             </div>
-            <div className="flex flex-col  md:flex-row py-12 md:py-3">
-                {user && <p>USER GİRDİ</p>}
+            <div className="flex flex-col  md:flex-row py-12 md:py-3 items-center">
+                {Object.keys(user).length > 0 && <p>USER</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
                 <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop</Button>
