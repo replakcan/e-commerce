@@ -1,12 +1,14 @@
 import { loginUser } from '@/redux/actions/clientActions';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
 
     let history = useHistory();
+
+    const location = useLocation();
     const dispatch = useDispatch();
     const user = useSelector((store) => store.client.user);
 
@@ -18,8 +20,14 @@ const Login = () => {
 
     const onSubmit = (data) => {
         dispatch(loginUser(data));
-        
     };
+
+    useEffect(() => {
+        if (Object.keys(user).length > 0) {
+            const previousPage = location.state?.from || '/';
+            history.push(previousPage);
+        }
+    }, [user, history, location.state]);
 
     return (
         <div className="flex justify-center items-center h-screen">
