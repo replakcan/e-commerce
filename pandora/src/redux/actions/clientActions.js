@@ -6,21 +6,21 @@ export const SET_LANGUAGE = 'SET_LANGUAGE';
 
 // Action Creators
 export const setUser = (user) => ({
-  type: SET_USER,
-  payload: user,
+    type: SET_USER,
+    payload: user,
 });
 
 export const setRoles = (roles) => ({
-  type: SET_ROLES,
-  payload: roles,
+    type: SET_ROLES,
+    payload: roles,
 });
 
 export const setTheme = (theme) => ({
-  type: SET_THEME,
-  payload: theme,
+    type: SET_THEME,
+    payload: theme,
 });
 
 export const setLanguage = (language) => ({
-  type: SET_LANGUAGE,
-  payload: language,
+    type: SET_LANGUAGE,
+    payload: language,
 });
