@@ -17,7 +17,6 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log("userInfo: ", data);
         dispatch(loginUser(data));
         
     };
