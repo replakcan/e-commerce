@@ -9,8 +9,17 @@ import About from './pages/About';
 import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
 import SignUp from './pages/SignUp';
+import { useEffect } from 'react';
+import { fetchRoles } from './redux/actions/clientActions';
+import { useDispatch } from 'react-redux';
 
 function App() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRoles())
+  }, [])
 
   return (
     <main className='flex flex-col'>
