@@ -17,10 +17,10 @@ const Login = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        dispatch(() => loginUser(data));
-        history.push("/")
+        console.log("userInfo: ", data);
+        dispatch(loginUser(data));
+        
     };
-    console.log("user: ", user)
 
     return (
         <div className="flex justify-center items-center h-screen">
