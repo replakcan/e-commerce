@@ -40,3 +40,17 @@ export const fetchRoles = () => {
 
     }
 }
+
+export const loginUser = () => {
+    return async (dispatch, getState) => {
+        axiosInstance.post("/login", user).then((response) => {
+            console.log(response)
+            dispatch({
+                type: SET_USER,
+                payload: response.data,
+            })
+        }).catch((error) => {
+            console.error("User could not be logged in:", error);
+        })
+    }
+}
