@@ -142,6 +142,7 @@ const SignUp = () => {
                     Role
                 </label>
                 <select
+                    defaultValue="customer"
                     id="role"
                     className={`mt-1 block w-full p-2 border ${errors.role ? "border-red-500" : "border-gray-300"
                         } rounded-md`}
@@ -150,7 +151,7 @@ const SignUp = () => {
                     <option value="">Select Role</option>
                     <option value="admin">Admin</option>
                     <option value="store">Store</option>
-                    <option selected="selected" value="customer">Customer</option>
+                    <option value="customer">Customer</option>
                 </select>
                 {errors.role && <p className="text-red-500 text-sm">{errors.role.message}</p>}
             </div>
