@@ -1,10 +1,13 @@
 import { useHistory } from "react-router-dom";
 import { Button } from "./ui/button";
 import Heading from "./ui/heading";
+import { useSelector } from "react-redux";
+import store from "@/redux/store";
 
 
 //TODO CSS'I DUZELT
 const HeaderNav = () => {
+    const user = useSelector((store) => store.client.user)
 
     let history = useHistory();
 
@@ -20,6 +23,7 @@ const HeaderNav = () => {
                 </ul>
             </div>
             <div className="flex flex-col  md:flex-row py-12 md:py-3">
+                {user && <p>USER GİRDİ</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
                 <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop</Button>
@@ -27,6 +31,7 @@ const HeaderNav = () => {
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>
+                <Button onClick={() => history.push("/login")} variant="ghost" size="sm" className="md:text-ikincil">Login</Button>
             </div>
         </div>
 
