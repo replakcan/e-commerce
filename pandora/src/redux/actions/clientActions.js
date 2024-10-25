@@ -41,7 +41,7 @@ export const fetchRoles = () => {
     }
 }
 
-export const loginUser = () => {
+export const loginUser = (user) => {
     return async (dispatch, getState) => {
         axiosInstance.post("/login", user).then((response) => {
             console.log(response)
