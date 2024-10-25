@@ -9,7 +9,7 @@ const HeaderNav = () => {
     let history = useHistory();
 
     return (
-        <div className="flex flex-col items-center md:flex-row bg-white md:px-[10%] shadow-md">
+        <div className="flex flex-col items-center md:flex-row bg-white md:px-[10%] shadow-md p-9 md:p-0">
             <div className="header-nav flex justify-between items-center gap-4 w-full">
                 <Heading variant="h3">Pandora</Heading>
                 <ul className="flex gap-4 md:pr-4">
