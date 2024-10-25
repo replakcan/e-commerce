@@ -8,7 +8,7 @@ const ProductCard_2 = () => {
 
     return (
 
-        <div className="productCard_2 text-center flex flex-col items-center">
+        <div className="productCard_2 text-center flex flex-col items-center gap-12 md:gap-0">
             <img className="prc1 h-full w-full" src="./images/productCard/col-md-8.png" />
             <div className="prc2 h-full flex flex-col justify-center gap-4 bg-light_gray px-8 py-2">
                 <Heading variant="h3">MOST POPULAR</Heading>
