@@ -11,10 +11,12 @@ import ShopCard from "../ShopCard";
 const HomeContent = () => {
 
     return (
-        <div className="content flex flex-col gap-20">
-            <HeaderSlider />
-            <ShopCard />
-            <section className="flex flex-col gap-20">
+        <div className="content flex flex-col gap-12">
+            <div>
+                <HeaderSlider />
+                <ShopCard />
+            </div>
+            <section className="flex flex-col gap-12">
                 <ProductCard_1 />
                 <ProductCard_2 />
                 <ProductCard_3 />
