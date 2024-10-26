@@ -1,3 +1,4 @@
+/* import useLocalStorage from '@/hooks/useLocalStorage'; */
 import { loginUser } from '@/redux/actions/clientActions';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -6,11 +7,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 const Login = () => {
 
+    const user = useSelector((store) => store.client.user);
+    /* const [token, setToken] = useLocalStorage("token", user.token) */
     let history = useHistory();
-
     const location = useLocation();
     const dispatch = useDispatch();
-    const user = useSelector((store) => store.client.user);
+
 
     const {
         register,
@@ -20,6 +22,7 @@ const Login = () => {
 
     const onSubmit = (data) => {
         dispatch(loginUser(data));
+
     };
 
     useEffect(() => {
@@ -27,7 +30,11 @@ const Login = () => {
             const previousPage = location.state?.from || '/';
             history.push(previousPage);
         }
-    }, [user, history, location.state]);
+
+        /* if (data.rememberMe) {
+            setToken(user.token)
+        } */
+    }, [user]);
 
     return (
         <div className="flex justify-center items-center h-screen">
@@ -64,7 +71,16 @@ const Login = () => {
                     />
                     {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
                 </div>
-
+                {/* Remember Me Checkbox */}
+                <div className="mb-6 flex items-center">
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                        className="mr-2"
+                        {...register('rememberMe')}
+                    />
+                    <label htmlFor="rememberMe" className="text-gray-700 font-semibold">Remember Me</label>
+                </div>
                 {/* Submit Button */}
                 <button
                     type="submit"
