@@ -1,4 +1,5 @@
 /* import useLocalStorage from '@/hooks/useLocalStorage'; */
+import useLocalStorage from '@/hooks/useLocalStorage';
 import { loginUser } from '@/redux/actions/clientActions';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
@@ -8,12 +9,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 const Login = () => {
 
     const user = useSelector((store) => store.client.user);
-    /* const [token, setToken] = useLocalStorage("token", user.token) */
+    const [token, setToken] = useLocalStorage("authToken", null);
     let history = useHistory();
     const location = useLocation();
     const dispatch = useDispatch();
-
-
     const {
         register,
         handleSubmit,
@@ -28,12 +27,9 @@ const Login = () => {
     useEffect(() => {
         if (Object.keys(user).length > 0) {
             const previousPage = location.state?.from || '/';
+            setToken(user.token);
             history.push(previousPage);
         }
-
-        /* if (data.rememberMe) {
-            setToken(user.token)
-        } */
     }, [user]);
 
     return (

@@ -42,7 +42,7 @@ export const fetchRoles = () => {
 
 export const loginUser = (data) => {
     return async (dispatch, getState) => {
-        axiosInstance.post("/login", data).then((response) => {
+        await axiosInstance.post("/login", data).then((response) => {
             console.log(response);
             dispatch({
                 type: SET_USER,
@@ -51,6 +51,5 @@ export const loginUser = (data) => {
         }).catch((error) => {
             console.error("Invalid user:", error);
         })
-
     }
 }
