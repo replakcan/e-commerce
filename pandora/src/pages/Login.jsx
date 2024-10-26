@@ -15,18 +15,19 @@ const Login = () => {
     const {
         register,
         handleSubmit,
+        watch,
         formState: { errors },
     } = useForm();
 
+    const rememberMe = watch("rememberMe", false);
+
     const onSubmit = (data) => {
         dispatch(loginUser(data));
-
     };
 
     useEffect(() => {
         if (Object.keys(user).length > 0) {
             const previousPage = location.state?.from || '/';
-            setToken(user.token);
             history.push(previousPage);
             Toastify({
                 text: `${user.name} hosgeldiniz`,
@@ -43,7 +44,11 @@ const Login = () => {
                 onClick: function () { } // Callback after click
             }).showToast();
         }
-    }, [user]);
+
+        if (rememberMe && user.token) {
+            setToken(user.token);
+        }
+    }, [user, rememberMe]);
 
     return (
         <div className="flex justify-center items-center h-screen">
