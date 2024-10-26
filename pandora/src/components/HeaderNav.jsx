@@ -2,8 +2,6 @@ import { useHistory } from "react-router-dom";
 import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
-import store from "@/redux/store";
-import { useEffect } from "react";
 
 
 //TODO CSS'I DUZELT

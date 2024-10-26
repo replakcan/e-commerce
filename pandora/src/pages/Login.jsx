@@ -7,7 +7,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 import Toastify from 'toastify-js'
 
 const Login = () => {
-
     const user = useSelector((store) => store.client.user);
     const [token, setToken] = useLocalStorage("authToken", null);
     let history = useHistory();
@@ -30,7 +29,7 @@ const Login = () => {
             setToken(user.token);
             history.push(previousPage);
             Toastify({
-                text: "Giris Basarili!1!!1",
+                text: `${user.name} hosgeldiniz`,
                 duration: 3000,
                 destination: "https://github.com/apvarun/toastify-js",
                 newWindow: true,
