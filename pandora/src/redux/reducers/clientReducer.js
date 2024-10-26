@@ -1,7 +1,7 @@
 import { SET_LANGUAGE, SET_ROLES, SET_THEME, SET_USER } from "../actions/clientActions";
 
 const initialState = {
-    user: null,
+    user: {},
     addressList: [],
     creditCards: [],
     roles: [],

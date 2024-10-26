@@ -1,5 +1,4 @@
 import axiosInstance from "@/services/axiosInstance";
-
 export const SET_USER = 'SET_USER';
 export const SET_ROLES = 'SET_ROLES';
 export const SET_THEME = 'SET_THEME';
@@ -38,5 +37,19 @@ export const fetchRoles = () => {
             console.error("Roles could not be fetched:", error);
         })
 
+    }
+}
+
+export const loginUser = (data) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.post("/login", data).then((response) => {
+            console.log(response);
+            dispatch({
+                type: SET_USER,
+                payload: response.data,
+            })
+        }).catch((error) => {
+            console.error("Invalid user:", error);
+        })
     }
 }

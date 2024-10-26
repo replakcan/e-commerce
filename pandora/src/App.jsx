@@ -12,6 +12,7 @@ import SignUp from './pages/SignUp';
 import { useEffect } from 'react';
 import { fetchRoles } from './redux/actions/clientActions';
 import { useDispatch } from 'react-redux';
+import Login from './pages/Login';
 
 function App() {
 
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path="/signup">
           <SignUp />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/">
           <HomePage />
