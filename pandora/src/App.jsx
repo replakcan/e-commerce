@@ -10,16 +10,23 @@ import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
 import SignUp from './pages/SignUp';
 import { useEffect } from 'react';
-import { fetchRoles } from './redux/actions/clientActions';
+import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { useDispatch } from 'react-redux';
 import Login from './pages/Login';
+
 
 function App() {
 
   const dispatch = useDispatch();
+  const token = JSON.parse(localStorage.getItem("token"));
 
   useEffect(() => {
     dispatch(fetchRoles())
+    
+    if (token) {
+     dispatch(autoLogin(token))
+    }
+    
   }, [])
 
   return (

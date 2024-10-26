@@ -53,3 +53,17 @@ export const loginUser = (data) => {
         })
     }
 }
+
+export const autoLogin = (token) => {
+    return async (dispatch, getState) => {
+        axiosInstance("/verify", {
+            headers: {
+                Authorization: token,
+            }
+        }).then((response) => {
+            console.log("basarili otoLogin:", response.data)
+        }).catch((error) => {
+            console.log(error.message);
+        })
+    }
+}
