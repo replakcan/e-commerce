@@ -12,10 +12,6 @@ const HeaderNav = () => {
 
     let history = useHistory();
 
-    useEffect(() => {
-        console.log(user)
-    }, [user])
-
     return (
         <div className="flex flex-col items-center md:flex-row bg-white md:px-[10%] shadow-md p-9 md:p-0">
             <div className="header-nav flex justify-between items-center gap-4 w-full">
@@ -36,7 +32,7 @@ const HeaderNav = () => {
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>
-                <Button onClick={() => history.push("/login")} variant="ghost" size="sm" className="md:text-ikincil">Login</Button>
+                {Object.keys(user).length === 0 && <Button onClick={() => history.push("/login")} variant="ghost" size="sm" className="md:text-ikincil">Login</Button>}
             </div>
         </div>
 
