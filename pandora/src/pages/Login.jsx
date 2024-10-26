@@ -1,10 +1,10 @@
-/* import useLocalStorage from '@/hooks/useLocalStorage'; */
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { loginUser } from '@/redux/actions/clientActions';
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
+import Toastify from 'toastify-js'
 
 const Login = () => {
 
@@ -29,6 +29,20 @@ const Login = () => {
             const previousPage = location.state?.from || '/';
             setToken(user.token);
             history.push(previousPage);
+            Toastify({
+                text: "Giris Basarili!1!!1",
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #00b09b, #96c93d)",
+                },
+                onClick: function () { } // Callback after click
+            }).showToast();
         }
     }, [user]);
 
