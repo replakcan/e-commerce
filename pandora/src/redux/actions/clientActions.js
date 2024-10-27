@@ -62,6 +62,10 @@ export const autoLogin = (token) => {
             }
         }).then((response) => {
             console.log("basarili otoLogin:", response.data)
+            dispatch({
+                type: SET_USER,
+                payload: response.data,
+            })
         }).catch((error) => {
             console.log(error.message);
         })
