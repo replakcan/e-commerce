@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { useDispatch } from 'react-redux';
 import Login from './pages/Login';
-import { fetchCategories } from './redux/actions/productActions';
+import { fetchCategories, fetchProducts } from './redux/actions/productActions';
 
 
 function App() {
@@ -24,11 +24,11 @@ function App() {
   useEffect(() => {
     dispatch(fetchRoles())
     dispatch(fetchCategories())
-    
+    dispatch(fetchProducts())
     if (token) {
-     dispatch(autoLogin(token))
+      dispatch(autoLogin(token))
     }
-    
+
   }, [])
 
   return (
