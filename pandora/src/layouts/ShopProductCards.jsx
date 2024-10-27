@@ -19,7 +19,7 @@ const ShopProductCards = () => {
     return (
         <div className="flex flex-wrap justify-center md:justify-between gap-3">
 
-            {products.products?.map((product) => {
+            {products?.map((product) => {
                 return <ShopPageCard
                     key={product.id}
                     name={product.name}
