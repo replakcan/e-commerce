@@ -66,9 +66,10 @@ export const fetchProducts = () => {
         await axiosInstance("/products").then((res) => {
             dispatch({
                 type: SET_PRODUCT_LIST,
-                payload: res.data,
+                payload: res.data.products,
             })
             dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
+            dispatch({ type: SET_TOTAL, payload: res.data.total })
         }).catch((err) => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })

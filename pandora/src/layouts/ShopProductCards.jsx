@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 const ShopProductCards = () => {
 
     const products = useSelector((store) => store.product.productList);
-
     const fetchState = useSelector((store) => store.product.fetchState);
 
     if (fetchState === 'FETCHING') {
-        return <p>Loading...</p>;
+        return <span class="loader"></span>;
     }
 
     if (fetchState === 'FAILED') {
@@ -19,7 +18,7 @@ const ShopProductCards = () => {
     return (
         <div className="flex flex-wrap justify-center md:justify-between gap-3">
 
-            {products.products?.map((product) => {
+            {products?.map((product) => {
                 return <ShopPageCard
                     key={product.id}
                     name={product.name}
