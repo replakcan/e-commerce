@@ -60,7 +60,6 @@ export const autoLogin = (token) => {
                 Authorization: token,
             }
         }).then((response) => {
-            console.log("Verified user:", response.data)
             dispatch({
                 type: SET_USER,
                 payload: response.data,
