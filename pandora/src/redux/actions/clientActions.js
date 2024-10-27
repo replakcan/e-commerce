@@ -53,3 +53,23 @@ export const loginUser = (data) => {
         })
     }
 }
+
+export const autoLogin = (token) => {
+    return async (dispatch, getState) => {
+        axiosInstance("/verify", {
+            headers: {
+                Authorization: token,
+            }
+        }).then((response) => {
+            console.log("Verified user:", response.data)
+            dispatch({
+                type: SET_USER,
+                payload: response.data,
+            })
+        }).catch((error) => {
+            console.log(error.message);
+            localStorage.removeItem("token");
+            delete axiosInstance.defaults.headers.common["Authorization"];
+        })
+    }
+}
