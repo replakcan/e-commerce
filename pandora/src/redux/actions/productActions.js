@@ -47,26 +47,30 @@ export const setFilter = (filter) => ({
 
 export const fetchCategories = () => {
     return async (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
         await axiosInstance("/categories").then((res) => {
             dispatch({
                 type: SET_CATEGORIES,
                 payload: res.data,
             })
+            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
         }).catch((err) => {
-            console.log(err)
+            dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
 }
 
 export const fetchProducts = () => {
     return async (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
         await axiosInstance("/products").then((res) => {
             dispatch({
                 type: SET_PRODUCT_LIST,
                 payload: res.data,
             })
+            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
         }).catch((err) => {
-            console.log(err)
+            dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
 }
