@@ -48,7 +48,6 @@ export const setFilter = (filter) => ({
 export const fetchCategories = () => {
     return async (dispatch, getState) => {
         await axiosInstance("/categories").then((res) => {
-            console.log("categories: ", res)
             dispatch({
                 type: SET_CATEGORIES,
                 payload: res.data,
