@@ -57,3 +57,16 @@ export const fetchCategories = () => {
         })
     }
 }
+
+export const fetchProducts = () => {
+    return async (dispatch, getState) => {
+        await axiosInstance("/products").then((res) => {
+            dispatch({
+                type: SET_PRODUCT_LIST,
+                payload: res.data,
+            })
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+}
