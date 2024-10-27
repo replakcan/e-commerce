@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
+import { ChevronDown } from "lucide-react";
 
 
 //TODO CSS'I DUZELT
@@ -25,7 +26,7 @@ const HeaderNav = () => {
                 {Object.keys(user).length > 0 && <p>{user.name}</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
-                <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop</Button>
+                <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop <ChevronDown /> </Button>
                 <Button onClick={() => history.push("/product")} variant="ghost" size="sm" className="md:text-ikincil">Product</Button>
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
