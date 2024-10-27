@@ -8,6 +8,16 @@ const Categories = () => {
     const topCategories = [...categories].sort((a, b) => b.rating - a.rating).slice(0, 5);
     console.log("topCategories: ", topCategories);
 
+    const fetchState = useSelector((store) => store.product.fetchState);
+
+    if (fetchState === 'FETCHING') {
+        return <p>Loading...</p>;
+    }
+
+    if (fetchState === 'FAILED') {
+        return <p>Failed to load products.</p>;
+    }
+
     return (
         <>
             <div className="bg-light_gray md:px-[10%] py-6">
