@@ -15,7 +15,7 @@ const Categories = () => {
             </div>
             <div className="flex flex-col items-center gap-0 md:flex-row flex-wrap justify-between bg-light_gray md:px-[10%] md:pb-12 row-gap-4 ">
 
-                {topCategories.map((topcat) => {
+                {topCategories?.map((topcat) => {
                     return <CategoryCard
                         gender={topcat.gender}
                         category={topcat.code}
