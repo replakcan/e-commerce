@@ -1,3 +1,5 @@
+import axiosInstance from "@/services/axiosInstance";
+
 export const SET_CATEGORIES = 'SET_CATEGORIES';
 export const SET_PRODUCT_LIST = 'SET_PRODUCT_LIST';
 export const SET_TOTAL = 'SET_TOTAL';
@@ -41,3 +43,34 @@ export const setFilter = (filter) => ({
     type: SET_FILTER,
     payload: filter,
 });
+
+
+export const fetchCategories = () => {
+    return async (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
+        await axiosInstance("/categories").then((res) => {
+            dispatch({
+                type: SET_CATEGORIES,
+                payload: res.data,
+            })
+            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
+        }).catch((err) => {
+            dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
+        })
+    }
+}
+
+export const fetchProducts = () => {
+    return async (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
+        await axiosInstance("/products").then((res) => {
+            dispatch({
+                type: SET_PRODUCT_LIST,
+                payload: res.data,
+            })
+            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
+        }).catch((err) => {
+            dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
+        })
+    }
+}

@@ -1,6 +1,7 @@
 import ShopContent from "@/layouts/PageContents/ShopContent";
 
 const Shop = () => {
+
     return (
         <>
             <ShopContent />
