@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 const ShopProductCards = () => {
 
     const products = useSelector((store) => store.product.productList);
-
     const fetchState = useSelector((store) => store.product.fetchState);
 
     if (fetchState === 'FETCHING') {
-        return <p>Loading...</p>;
+        return <span class="loader"></span>;
     }
 
     if (fetchState === 'FAILED') {
