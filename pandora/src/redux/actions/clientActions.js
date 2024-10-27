@@ -28,7 +28,6 @@ export const setLanguage = (language) => ({
 export const fetchRoles = () => {
     return async (dispatch, getState) => {
         axiosInstance("/roles").then((response) => {
-            console.log(response);
             dispatch({
                 type: SET_ROLES,
                 payload: response.data,
