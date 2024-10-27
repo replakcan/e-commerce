@@ -61,13 +61,15 @@ export const autoLogin = (token) => {
                 Authorization: token,
             }
         }).then((response) => {
-            console.log("basarili otoLogin:", response.data)
+            console.log("Verified user:", response.data)
             dispatch({
                 type: SET_USER,
                 payload: response.data,
             })
         }).catch((error) => {
             console.log(error.message);
+            localStorage.removeItem("token");
+            delete axiosInstance.defaults.headers.common["Authorization"];
         })
     }
 }
