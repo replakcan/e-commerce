@@ -22,7 +22,7 @@ const HeaderNav = () => {
                 </ul>
             </div>
             <div className="flex flex-col  md:flex-row py-12 md:py-3 items-center">
-                {Object.keys(user).length > 0 && <p>USER</p>}
+                {Object.keys(user).length > 0 && <p>{user.name}</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
                 <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop</Button>
