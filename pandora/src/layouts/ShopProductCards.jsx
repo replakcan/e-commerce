@@ -1,5 +1,6 @@
 import ShopPageCard from "@/components/ShopPageCard";
-import { fetchProductsByCategory } from "@/redux/actions/productActions";
+import { fetchProductsByCategory, fetchProductsBySortParam } from "@/redux/actions/productActions";
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -11,13 +12,16 @@ const ShopProductCards = () => {
     const total = useSelector((store) => store.product.total);
 
     const dispatch = useDispatch();
-    const { gender, categoryName, categoryId } = useParams();
+    const { categoryId, sort } = useParams();
 
     useEffect(() => {
         if (categoryId) {
             dispatch(fetchProductsByCategory(categoryId));
         }
-    }, [categoryId, dispatch]);
+        if (sort) {
+            dispatch(fetchProductsBySortParam(sort))
+        }
+    }, [categoryId, sort]);
 
     console.log("TOTAL:", total)
     if (fetchState === 'FETCHING') {
