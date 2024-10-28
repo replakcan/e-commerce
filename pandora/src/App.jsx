@@ -35,11 +35,17 @@ function App() {
     <main className='flex flex-col'>
       <HeaderNav />
       <Switch>
-        <Route path="/product">
-          <Product />
+      <Route path="/shop/:gender/:categoryName/:categoryId">
+          <Shop />
+        </Route>
+        <Route path="/shop/:gender/:category">
+          <Shop />
         </Route>
         <Route path="/shop">
           <Shop />
+        </Route>
+        <Route path="/product">
+          <Product />
         </Route>
         <Route path="/about">
           <About />
