@@ -68,10 +68,29 @@ export const fetchProducts = () => {
                 type: SET_PRODUCT_LIST,
                 payload: res.data.products,
             })
-            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
             dispatch({ type: SET_TOTAL, payload: res.data.total })
+            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
         }).catch((err) => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
 }
+
+export const fetchProductsByCategory = (categoryId) => {
+    return async (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
+        
+        await axiosInstance(`/products?category=${categoryId}`)
+            .then((response) => {
+                dispatch({
+                    type: SET_PRODUCT_LIST,
+                    payload: response.data.products,
+                });
+                dispatch({ type: SET_TOTAL, payload: response.data.total });
+                dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
+            })
+            .catch((error) => {
+                dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
+            });
+    };
+};
