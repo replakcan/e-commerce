@@ -1,5 +1,6 @@
-import { AlignJustify, ChevronDown, LayoutGrid } from "lucide-react";
+import { AlignJustify, LayoutGrid } from "lucide-react";
 import { Button } from "./ui/button";
+import SortButton from "./SortButton";
 
 const SearchResults = () => {
     return (
@@ -8,12 +9,11 @@ const SearchResults = () => {
             <p> Showing all 12 results</p>
             <div className="search-icon-btns flex flex-row items-center gap-3">
                 <p>Views:</p>
-                {/* //TODO BUTONLARA DOGRU ICON KOY */}
                 <Button variant="outline" size="iconsqr" ><LayoutGrid /></Button>
                 <Button variant="outline" size="iconsqr" ><AlignJustify /></Button>
             </div>
             <div className="search-btns flex gap-3">
-                <Button variant="outline" >Popularity <ChevronDown/> </Button>
+                <SortButton/>
                 <Button>Filter</Button>
             </div>
         </div>
