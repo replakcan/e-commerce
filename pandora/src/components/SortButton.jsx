@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom'; // Link bileşenini import ediyoruz
-import { Button } from './ui/button'; // Eğer custom button kullanıyorsanız
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Button } from './ui/button';
 import { ChevronDown } from 'lucide-react';
 
 const SortButton = () => {
   const [isOpen, setIsOpen] = useState(false);  // Dropdown'un açık/kapalı durumu
-  const [selectedOption, setSelectedOption] = useState('Sort');  // Seçilen seçenek
+  const [selectedOption, setSelectedOption] = useState('Sort By');  // Seçilen seçenek
   const { gender, categoryName, categoryId } = useParams(); // Mevcut URL parametrelerini alıyoruz
+  const dropdownRef = useRef(null); // Dropdown menüsü için ref oluşturuyoruz
 
   // Dropdown seçenekleri
   const options = [
@@ -27,8 +28,21 @@ const SortButton = () => {
     setIsOpen(false);  // Dropdown'u kapat
   };
 
+  // Dropdown dışında bir yere tıklanınca menüyü kapatma
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" ref={dropdownRef}>
       {/* Dropdown butonu */}
       <Button variant="outline" onClick={toggleDropdown}>
         {selectedOption} <ChevronDown />
