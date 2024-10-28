@@ -15,8 +15,8 @@ const ShopButtonWithDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
-    const navigateTo = (gender, category) => {
-        history.push(`/shop/${gender}/${category}`);
+    const navigateTo = (gender, category, id) => {
+        history.push(`/shop/${gender}/${category}/${id}`);
         setIsDropdownOpen(false);
     };
 
@@ -58,7 +58,7 @@ const ShopButtonWithDropdown = () => {
                         <ul className="space-y-2 pt-2">
                             {categories.map((cat, index) => {
                                 if (cat.gender === "k") {
-                                    return <li key={index} onClick={() => navigateTo('kadin', `${cat.code}`)} className="cursor-pointer">{cat.title}</li>
+                                    return <li key={index} onClick={() => navigateTo('kadin', cat.code, cat.id)} className="cursor-pointer">{cat.title}</li>
                                 }
                             })}
                         </ul>
@@ -69,7 +69,7 @@ const ShopButtonWithDropdown = () => {
                         <ul className="space-y-2 pt-2">
                             {categories.map((cat, index) => {
                                 if (cat.gender === "e") {
-                                    return <li key={index} onClick={() => navigateTo('erkek', `${cat.code}`)} className="cursor-pointer">{cat.title}</li>
+                                    return <li key={index} onClick={() => navigateTo('erkek', cat.code, cat.id)} className="cursor-pointer">{cat.title}</li>
                                 }
                             })}
                         </ul>
