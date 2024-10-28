@@ -35,7 +35,6 @@ const ShopButtonWithDropdown = () => {
 
     return (
         <div className="relative z-index-high" ref={dropdownRef}>
-            {/* Buton üzerine onClick ekliyoruz */}
             <Button
                 onClick={toggleDropdown}
                 variant="ghost"
@@ -45,13 +44,11 @@ const ShopButtonWithDropdown = () => {
                 Shop <ChevronDown />
             </Button>
 
-            {/* Dropdown menü butona tıklanınca açılacak */}
             {isDropdownOpen && (
                 <div
                     className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-4 grid grid-cols-2 gap-8"
                     style={{ minWidth: '300px' }}
                 >
-                    {/* Kadın Bölümü */}
                     <div>
                         <Heading variant='h4' className="font-bold mb-2">Kadın</Heading>
                         <ul className="flex flex-col">
@@ -62,7 +59,6 @@ const ShopButtonWithDropdown = () => {
                             })}
                         </ul>
                     </div>
-                    {/* Erkek Bölümü */}
                     <div>
                         <Heading variant='h4' className="font-bold mb-2">Erkek</Heading>
                         <ul className="flex flex-col">
