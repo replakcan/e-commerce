@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 const SearchResults = () => {
 
-    const {categoryId, sort, filter} = useParams();
+    const { categoryId, sort } = useParams();
     const dispatch = useDispatch();
     const total = useSelector((store) => store.product.total)
     const filtre = useSelector((store) => store.product.filter)
@@ -18,6 +18,7 @@ const SearchResults = () => {
     const handleFilter = () => {
         dispatch(fetchProductsByCategoryAndSort(categoryId, sort, filtre));
     };
+
 
     return (
 
