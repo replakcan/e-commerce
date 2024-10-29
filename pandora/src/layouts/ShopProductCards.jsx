@@ -31,6 +31,8 @@ const ShopProductCards = () => {
     }
 
 
+    if (total === 0) return <h1 className="font-bold text-5xl">Aradığınız kriterlerde ürün bulunamadı :{"("} </h1>
+
     return (
         <div className="flex flex-wrap justify-center md:justify-between gap-3">
 
