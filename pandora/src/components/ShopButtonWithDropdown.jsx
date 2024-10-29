@@ -14,11 +14,6 @@ const ShopButtonWithDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
 
-    /* const navigateTo = (gender, category, categoryId) => {
-        history.push(`/shop/${gender}/${category}/${categoryId}`);
-        setIsDropdownOpen(false);
-    }; */
-
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {

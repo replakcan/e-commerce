@@ -35,7 +35,7 @@ function App() {
     <main className='flex flex-col'>
       <HeaderNav />
       <Switch>
-      <Route path="/shop/:gender/:categoryName/:categoryId/:sort?/:filter">
+      <Route path="/shop/:gender/:categoryName/:categoryId?/:sort?/:filter?">
           <Shop />
         </Route>
         <Route path="/shop/:gender/:category">
