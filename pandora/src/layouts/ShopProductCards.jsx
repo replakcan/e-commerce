@@ -1,5 +1,5 @@
 import ShopPageCard from "@/components/ShopPageCard";
-import { fetchProductsByCategory, fetchProductsBySortParam } from "@/redux/actions/productActions";
+import { fetchProductsByCategoryAndSort } from "@/redux/actions/productActions";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,10 +16,7 @@ const ShopProductCards = () => {
 
     useEffect(() => {
         if (categoryId) {
-            dispatch(fetchProductsByCategory(categoryId));
-        }
-        if (sort) {
-            dispatch(fetchProductsBySortParam(sort))
+            dispatch(fetchProductsByCategoryAndSort(categoryId, sort));
         }
     }, [categoryId, sort]);
 
