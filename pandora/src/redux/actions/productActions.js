@@ -76,69 +76,8 @@ export const fetchProducts = () => {
     }
 }
 
-/* export const fetchProductsByCategory = (categoryId) => {
-    return async (dispatch, getState) => {
-        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
 
-        await axiosInstance(`/products?category=${categoryId}`)
-            .then((response) => {
-                dispatch({
-                    type: SET_PRODUCT_LIST,
-                    payload: response.data.products,
-                });
-                dispatch({ type: SET_TOTAL, payload: response.data.total });
-                dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-            })
-            .catch((error) => {
-                dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
-            });
-    };
-};
-
-export const fetchProductsBySortParam = (sort) => {
-    return async (dispatch, getState) => {
-        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
-
-        await axiosInstance(`/products?sort=${sort}`)
-            .then((response) => {
-                dispatch({
-                    type: SET_PRODUCT_LIST,
-                    payload: response.data.products,
-                });
-                dispatch({ type: SET_TOTAL, payload: response.data.total });
-                dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-            })
-            .catch((error) => {
-                dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
-            });
-    };
-}; */
-
-/* export const fetchProductsByCategory = (categoryId, sort) => {
-    return async (dispatch, getState) => {
-        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
-        
-        let url = `/products?category=${categoryId}`;
-        if (sort) {
-            url += `&sort=${sort}`;
-        }
-
-        await axiosInstance(url)
-            .then((response) => {
-                dispatch({
-                    type: SET_PRODUCT_LIST,
-                    payload: response.data.products,
-                });
-                dispatch({ type: SET_TOTAL, payload: response.data.total });
-                dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-            })
-            .catch((error) => {
-                dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
-            });
-    };
-}; */
-
-export const fetchProductsByCategoryAndSort = (categoryId, sort = "", filter = "") => {
+export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "") => {
     return (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
 

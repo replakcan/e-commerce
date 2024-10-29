@@ -2,7 +2,7 @@ import { AlignJustify, LayoutGrid } from "lucide-react";
 import { Button } from "./ui/button";
 import SortButton from "./SortButton";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductsByCategoryAndSort, setFilter } from "@/redux/actions/productActions";
+import { fetchProductsByUserChoices, setFilter } from "@/redux/actions/productActions";
 import { useParams } from "react-router-dom";
 
 const SearchResults = () => {
@@ -16,7 +16,7 @@ const SearchResults = () => {
     };
 
     const handleFilter = () => {
-        dispatch(fetchProductsByCategoryAndSort(categoryId, sort, filtre));
+        dispatch(fetchProductsByUserChoices(categoryId, sort, filtre));
     };
 
 
