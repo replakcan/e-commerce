@@ -138,11 +138,11 @@ export const fetchProductsBySortParam = (sort) => {
     };
 }; */
 
-export const fetchProductsByCategoryAndSort = (categoryId, sort = "") => {
+export const fetchProductsByCategoryAndSort = (categoryId, sort = "", filter = "") => {
     return (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
 
-        axiosInstance(`/products?category=${categoryId}&sort=${sort}`)
+        axiosInstance(`/products?category=${categoryId}&sort=${sort}&filter=${filter}`)
             .then((response) => {
                 dispatch({
                     type: SET_PRODUCT_LIST,
