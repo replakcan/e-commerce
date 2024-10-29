@@ -76,7 +76,7 @@ export const fetchProducts = () => {
     }
 }
 
-export const fetchProductsByCategory = (categoryId) => {
+/* export const fetchProductsByCategory = (categoryId) => {
     return async (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
 
@@ -112,7 +112,7 @@ export const fetchProductsBySortParam = (sort) => {
                 dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
             });
     };
-};
+}; */
 
 /* export const fetchProductsByCategory = (categoryId, sort) => {
     return async (dispatch, getState) => {
@@ -137,3 +137,22 @@ export const fetchProductsBySortParam = (sort) => {
             });
     };
 }; */
+
+export const fetchProductsByCategoryAndSort = (categoryId, sort = "") => {
+    return (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
+
+        axiosInstance(`/products?category=${categoryId}&sort=${sort}`)
+            .then((response) => {
+                dispatch({
+                    type: SET_PRODUCT_LIST,
+                    payload: response.data.products,
+                });
+                dispatch({ type: SET_TOTAL, payload: response.data.total });
+                dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
+            })
+            .catch((error) => {
+                dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
+            });
+    };
+};
