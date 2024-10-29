@@ -17,7 +17,7 @@ import { fetchCategories, fetchProducts } from './redux/actions/productActions';
 
 
 function App() {
-
+  
   const dispatch = useDispatch();
   const token = JSON.parse(localStorage.getItem("token"));
 
@@ -35,7 +35,7 @@ function App() {
     <main className='flex flex-col'>
       <HeaderNav />
       <Switch>
-      <Route path="/shop/:gender/:categoryName/:categoryId/:sort?">
+      <Route path="/shop/:gender/:categoryName/:categoryId/:sort?/:filter">
           <Shop />
         </Route>
         <Route path="/shop/:gender/:category">

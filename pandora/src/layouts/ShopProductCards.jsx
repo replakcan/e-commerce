@@ -10,15 +10,16 @@ const ShopProductCards = () => {
     const products = useSelector((store) => store.product.productList);
     const fetchState = useSelector((store) => store.product.fetchState);
     const total = useSelector((store) => store.product.total);
+    const filter_input = useSelector((store) => store.product.filter)
 
     const dispatch = useDispatch();
-    const { categoryId, sort } = useParams();
+    const { categoryId, sort, filter } = useParams();
 
     useEffect(() => {
         if (categoryId) {
-            dispatch(fetchProductsByCategoryAndSort(categoryId, sort));
+            dispatch(fetchProductsByCategoryAndSort(categoryId, sort, filter_input));
         }
-    }, [categoryId, sort]);
+    }, [dispatch, categoryId, sort, filter]);
 
     console.log("TOTAL:", total)
     if (fetchState === 'FETCHING') {
