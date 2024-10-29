@@ -77,11 +77,11 @@ export const fetchProducts = () => {
 }
 
 
-export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "") => {
+export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", limit = 25, offset = 0) => {
     return (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
 
-        axiosInstance(`/products?category=${categoryId}&sort=${sort}&filter=${filter}`)
+        axiosInstance(`/products?category=${categoryId}&sort=${sort}&filter=${filter}&limit=${limit}&offset=${offset}`)
             .then((response) => {
                 dispatch({
                     type: SET_PRODUCT_LIST,
