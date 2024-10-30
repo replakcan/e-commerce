@@ -3,9 +3,9 @@ export const SET_PAYMENT = 'SET_PAYMENT';
 export const SET_ADDRESS = 'SET_ADDRESS';
 
 
-export const setCart = (cart) => ({
+export const setCart = (product) => ({
     type: SET_CART,
-    payload: cart,
+    payload: product,
 });
 
 export const setPayment = (payment) => ({
