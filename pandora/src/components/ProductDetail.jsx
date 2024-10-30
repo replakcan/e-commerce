@@ -1,11 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "./ui/button";
 import Heading from "./ui/heading";
+import { setCart } from "@/redux/actions/shoppingCartActions";
 
 
 const ProductDetail = ({ src, name, sell_count, description, price, stock }) => {
-
+    const dispatch = useDispatch();
     const fetchState = useSelector((store) => store.product.fetchState)
+    const productToAdd = useSelector((store) => store.product.product);
+
+    const handleAddToCart = () => {
+        dispatch(setCart(productToAdd));
+    };
 
     if (fetchState === 'FETCHING') {
         return <span className="loader"></span>;
@@ -46,7 +52,7 @@ const ProductDetail = ({ src, name, sell_count, description, price, stock }) => 
                 </div>
                 <p className="pt-3 border-b-4 pb-2 md:w-3/4">{description}</p>
                 <div className="flex items-center pt-4 justify-between md:justify-start md:gap-4">
-                    <Button>Select Options</Button>
+                    <Button onClick={handleAddToCart} >Add to Cart</Button>
                     <div className="flex gap-8">
                         <i className="fa-solid fa-star"></i>
                         <i className="fa-solid fa-star"></i>

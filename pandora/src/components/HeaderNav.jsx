@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
 import ShopButtonWithDropdown from "./ShopButtonWithDropdown";
+import CartButton from "./ui/shopCartbtn";
 
 
 //TODO CSS'I DUZELT
@@ -31,6 +32,7 @@ const HeaderNav = () => {
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>
                 {Object.keys(user).length === 0 && <Button onClick={() => history.push("/login")} variant="ghost" size="sm" className="md:text-ikincil">Login</Button>}
+                <CartButton />
             </div>
         </div>
 
