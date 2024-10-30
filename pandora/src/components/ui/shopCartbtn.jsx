@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
+import { Button } from "./button";
 
 const CartButton = () => {
     const cart = useSelector((store) => store.shoppingCart.cart);
@@ -32,7 +33,7 @@ const CartButton = () => {
                                     <h4 className="font-semibold">{item.product.name}</h4>
                                     <p className="text-sm text-gray-500">{item.product.description}</p>
                                     <p className="text-sm">Adet: {item.count}</p>
-                                    <p className="text-orange-500 font-semibold">{item.product.price} $</p>
+                                    <p className="text-ikincil-500 font-semibold">{item.product.price} $</p>
                                 </div>
                             </div>
                         ))
@@ -41,7 +42,7 @@ const CartButton = () => {
                     )}
                     <div className="flex justify-between mt-4">
                         <button className="p-2 bg-gray-200 rounded">Sepete Git</button>
-                        <button className="p-2 bg-orange-500 text-white rounded">Siparişi Tamamla</button>
+                        <Button>Siparişi Tamamla</Button>
                     </div>
                 </div>
             )}
