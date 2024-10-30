@@ -1,6 +1,6 @@
 import Pagination from "@/components/Pagination";
 import ShopPageCard from "@/components/ShopPageCard";
-import { fetchProductsByUserChoices } from "@/redux/actions/productActions";
+import { fetchProductDetails, fetchProductsByUserChoices } from "@/redux/actions/productActions";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +24,9 @@ const ShopProductCards = () => {
 
     const handleProductClick = (product) => {
         const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase();
+
+        dispatch(fetchProductDetails(product.id))
+
         history.push(`/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${product.id}`);
     };
 
