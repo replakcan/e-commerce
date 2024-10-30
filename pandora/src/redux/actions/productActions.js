@@ -54,7 +54,7 @@ export const fetchCategories = () => {
                 payload: res.data,
             })
             dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-        }).catch((err) => {
+        }).catch(() => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
@@ -70,7 +70,7 @@ export const fetchProducts = () => {
             })
             dispatch({ type: SET_TOTAL, payload: res.data.total })
             dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-        }).catch((err) => {
+        }).catch(() => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
@@ -90,7 +90,7 @@ export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", l
                 dispatch({ type: SET_TOTAL, payload: response.data.total });
                 dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
             })
-            .catch((error) => {
+            .catch(() => {
                 dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
             });
     };

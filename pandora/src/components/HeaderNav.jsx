@@ -1,15 +1,14 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
-import { ChevronDown } from "lucide-react";
 import ShopButtonWithDropdown from "./ShopButtonWithDropdown";
 
 
 //TODO CSS'I DUZELT
 const HeaderNav = () => {
     const user = useSelector((store) => store.client.user)
-
+    const {categoryId} = useParams();
     let history = useHistory();
 
     return (
@@ -28,7 +27,6 @@ const HeaderNav = () => {
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
                 <ShopButtonWithDropdown/>
-                <Button onClick={() => history.push("/product")} variant="ghost" size="sm" className="md:text-ikincil">Product</Button>
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>

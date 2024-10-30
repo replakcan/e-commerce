@@ -1,10 +1,10 @@
 import Heading from "./ui/heading";
 
-const ShopPageCard = ({ name, description, price, src }) => {
+const ShopPageCard = ({ name, description, price, src, onClick }) => {
 
     return (
 
-        <div className="ShopPageCard flex flex-col text-center flex-wrap w-fit bg-gray-50">
+        <div onClick={onClick} className="ShopPageCard flex flex-col text-center flex-wrap w-fit bg-gray-50">
             <div className="max-h-[300px] max-w-[300px] overflow-hidden">
                 <img src={src} />
             </div>
