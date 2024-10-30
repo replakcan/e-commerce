@@ -7,6 +7,7 @@ export const SET_FETCH_STATE = 'SET_FETCH_STATE';
 export const SET_LIMIT = 'SET_LIMIT';
 export const SET_OFFSET = 'SET_OFFSET';
 export const SET_FILTER = 'SET_FILTER';
+export const SET_PRODUCT = "SET_PRODUCT";
 
 
 export const setCategories = (categories) => ({
@@ -44,6 +45,11 @@ export const setFilter = (filter) => ({
     payload: filter,
 });
 
+export const setProduct = (product) => ({
+    type: SET_PRODUCT,
+    payload: product,
+})
+
 
 export const fetchCategories = () => {
     return async (dispatch, getState) => {
@@ -54,7 +60,7 @@ export const fetchCategories = () => {
                 payload: res.data,
             })
             dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-        }).catch((err) => {
+        }).catch(() => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
@@ -70,7 +76,7 @@ export const fetchProducts = () => {
             })
             dispatch({ type: SET_TOTAL, payload: res.data.total })
             dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
-        }).catch((err) => {
+        }).catch(() => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
@@ -90,8 +96,26 @@ export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", l
                 dispatch({ type: SET_TOTAL, payload: response.data.total });
                 dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
             })
-            .catch((error) => {
+            .catch(() => {
                 dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
             });
     };
 };
+
+export const fetchProductDetails = (productId) => {
+    return (dispatch, getState) => {
+        dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
+
+        axiosInstance(`/products/${productId}`).then((response) => {
+            dispatch({
+                type: SET_PRODUCT,
+                payload: response.data,
+            })
+            dispatch({ type: SET_FETCH_STATE, payload: "FETCHED" });
+
+        }).catch(() => {
+            dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
+
+        })
+    }
+}
