@@ -20,14 +20,14 @@ const ProductContent = () => {
             <Button
                 onClick={handleBackClick}
             >Back</Button>
-            <ProductDetail
+            {productInfo && <ProductDetail
                 src={productInfo.images[0].url}
                 name={productInfo.name}
                 description={productInfo.description}
                 stock={productInfo.stock}
                 price={productInfo.price}
                 sell_count={productInfo.sell_count}
-            />
+            />}
             <section>
                 <ProductDescription />
             </section>
