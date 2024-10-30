@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "./button";
+import { useHistory } from "react-router-dom";
 
 const CartButton = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const history = useHistory();
     const cart = useSelector((store) => store.shoppingCart.cart);
     const itemCount = cart.reduce((total, item) => total + item.count, 0); // Sepetteki toplam ürün sayısını hesaplar
-    const [isOpen, setIsOpen] = useState(false);
+    const goToCart = () => history.push("/siparis-ozeti");
 
     const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -41,7 +44,7 @@ const CartButton = () => {
                         <p className="text-gray-500">Sepetinizde ürün yok.</p>
                     )}
                     <div className="flex justify-between mt-4">
-                        <button className="p-2 bg-gray-200 rounded">Sepete Git</button>
+                        <button onClick={goToCart} className="p-2 bg-gray-200 rounded">Sepete Git</button>
                         <Button>Siparişi Tamamla</Button>
                     </div>
                 </div>
