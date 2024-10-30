@@ -35,7 +35,7 @@ const ShopProductCards = () => {
 
     return (
         <div>
-            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+            <div className="flex flex-wrap justify-center md:justify-between gap-3">
 
                 {products?.map((product) => {
                     return <ShopPageCard
