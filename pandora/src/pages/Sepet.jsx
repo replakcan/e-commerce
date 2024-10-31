@@ -57,7 +57,7 @@ const SepetPage = () => {
                                 <img src={item.product.images[0]?.url} alt="" />
                             </div>
                         </div>
-                        <div className="p-2 border border-black flex-grow">
+                        <div className="p-2 border flex-grow">
                             <h1>{item.product.name}</h1>
                             <p>{item.product.description}</p>
                         </div>
@@ -79,7 +79,7 @@ const SepetPage = () => {
                     </div>
                 ))}
             </div>
-            <div className="order-box h-fit border border-black p-2 flex flex-col gap-1 md:min-w-[240px]">
+            <div className="order-box h-fit border p-2 flex flex-col gap-1 md:min-w-[240px] shadow-md">
 
                 <h1 className="font-bold pb-2 border-b border-red-300">SİPARİŞ ÖZETİ</h1>
                 <div className="flex justify-between items-center">
