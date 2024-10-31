@@ -14,6 +14,7 @@ import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { useDispatch } from 'react-redux';
 import Login from './pages/Login';
 import { fetchCategories, fetchProducts } from './redux/actions/productActions';
+import SepetPage from './pages/Sepet';
 
 
 function App() {
@@ -43,10 +44,13 @@ function App() {
         </Route>
         <Route path="/shop/:gender/:category">
           <Shop />
-          <Route path="/shop">
-            <Shop />
         </Route>
-          </Route>
+        <Route path="/shop">
+          <Shop />
+        </Route>
+        <Route path="/siparis-ozeti">
+          <SepetPage />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
