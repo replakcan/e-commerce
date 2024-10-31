@@ -3,7 +3,7 @@ import { ChevronRight, Minus, Plus, Trash } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrementCount, incrementCount, removeFromCart, toggleChecked } from "@/redux/actions/shoppingCartActions";
 
-const shippingTotal = 7.99;
+let shippingTotal = 7.99;
 let kargoBedeli = 7.99;
 
 const SepetPage = () => {
@@ -34,8 +34,12 @@ const SepetPage = () => {
         .reduce((total, item) => total + item.product.price * item.count, 0)
         .toFixed(2);
 
-    if (orderTotal >= 200) {
+    if (orderTotal >= 200 || orderTotal == 0) {
         kargoBedeli = 0;
+    }
+
+    if (orderTotal == 0) {
+        shippingTotal = 0;
     }
 
     return (
