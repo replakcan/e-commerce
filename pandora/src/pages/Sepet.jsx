@@ -3,8 +3,9 @@ import { ChevronRight, Minus, Plus, Trash } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrementCount, incrementCount, removeFromCart, toggleChecked } from "@/redux/actions/shoppingCartActions";
 
+const kargoBedeli = 7.99;
 let shippingTotal = 7.99;
-let kargoBedeli = 7.99;
+
 
 const SepetPage = () => {
     const cartItems = useSelector((store) => store.shoppingCart.cart);
@@ -35,11 +36,9 @@ const SepetPage = () => {
         .toFixed(2);
 
     if (orderTotal >= 200 || orderTotal == 0) {
-        kargoBedeli = 0;
-    }
-
-    if (orderTotal == 0) {
         shippingTotal = 0;
+    } else {
+        shippingTotal = kargoBedeli;
     }
 
     return (
@@ -87,20 +86,20 @@ const SepetPage = () => {
                     <h2>Product TOTAL:</h2> <span>{orderTotal}$</span>
                 </div>
                 <div className="flex justify-between items-center">
-                    <h2>Shipping total:</h2> <span>{shippingTotal}$</span>
+                    <h2>Shipping total:</h2> <span>{kargoBedeli}$</span>
                 </div>
                 {
                     orderTotal >= 200 &&
                     <div className="flex justify-between items-center">
                         <h2 className="italic text-ikincil max-w-[50%]">200 dolar ve üzeri siparislerde kargo bedava</h2>
                         <span className="italic">
-                            {shippingTotal * (-1)}$
+                            {kargoBedeli * (-1)}$
                         </span>
                     </div>
                 }
                 <div className="flex justify-between items-center">
                     <h1 className="text-2xl">ORDER TOTAL:</h1>
-                    <span>{orderTotal + kargoBedeli}$</span>
+                    <span>{(orderTotal + shippingTotal)}$</span>
                 </div>
                 <Button variant="destructive">Sepeti Onayla <ChevronRight /></Button>
             </div>
