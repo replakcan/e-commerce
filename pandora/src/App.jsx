@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { useDispatch } from 'react-redux';
 import Login from './pages/Login';
-import { fetchCategories, fetchProducts } from './redux/actions/productActions';
+import { fetchCategories, /* fetchProducts */ } from './redux/actions/productActions';
 import SepetPage from './pages/Sepet';
 
 
@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchRoles())
     dispatch(fetchCategories())
-    dispatch(fetchProducts())
+    /* dispatch(fetchProducts()) */
     if (token) {
       dispatch(autoLogin(token))
     }
