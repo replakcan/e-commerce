@@ -15,6 +15,8 @@ import { useDispatch } from 'react-redux';
 import Login from './pages/Login';
 import { fetchCategories, fetchProducts } from './redux/actions/productActions';
 import SepetPage from './pages/Sepet';
+import PrivateRoute from './components/PrivateRoute';
+import ConfirmOrder from './pages/ConfirmOrder';
 
 
 function App() {
@@ -66,6 +68,12 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/siparis-ozeti">
+          <SepetPage />
+        </Route>
+        <PrivateRoute path="/confirm-order">
+          <ConfirmOrder />
+        </PrivateRoute>
         <Route path="/">
           <HomePage />
         </Route>

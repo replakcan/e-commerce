@@ -7,7 +7,7 @@ const CartButton = () => {
     const [isOpen, setIsOpen] = useState(false);
     const history = useHistory();
     const cart = useSelector((store) => store.shoppingCart.cart);
-    const itemCount = cart.reduce((total, item) => total + item.count, 0); // Sepetteki toplam ürün sayısını hesaplar
+    const itemCount = cart.reduce((total, item) => total + item.count, 0);
     const goToCart = () => history.push("/siparis-ozeti");
 
     const toggleDropdown = () => setIsOpen(!isOpen);

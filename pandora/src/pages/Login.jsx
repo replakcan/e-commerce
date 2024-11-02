@@ -1,15 +1,16 @@
 import useLocalStorage from '@/hooks/useLocalStorage';
 import { loginUser } from '@/redux/actions/clientActions';
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
-import Toastify from 'toastify-js'
+import Toastify from 'toastify-js';
 
 const Login = () => {
     const user = useSelector((store) => store.client.user);
     const [token, setToken] = useLocalStorage("token", null);
-    let history = useHistory();
+    const [redirectReady, setRedirectReady] = useState(false);
+    const history = useHistory();
     const location = useLocation();
     const dispatch = useDispatch();
     const {
@@ -23,17 +24,19 @@ const Login = () => {
 
     const onSubmit = (data) => {
         dispatch(loginUser(data));
+        setRedirectReady(true); // Yönlendirme durumunu aktif hale getir
     };
 
     useEffect(() => {
-        if (Object.keys(user).length > 0) {
-            const previousPage = location.state?.from || '/';
-            history.push(previousPage);
+        if (redirectReady && Object.keys(user).length > 0) { // user bilgisi güncellenmiş mi kontrol et
+            // Önceki sayfaya veya ana sayfaya yönlendir
+            const previousPage = location.state?.from?.pathname || '/';
+            history.replace(previousPage); // replace kullanımı
+
+            // Hoşgeldiniz bildirimi göster
             Toastify({
-                text: `${user.name} hosgeldiniz`,
+                text: `${user.name} hoşgeldiniz`,
                 duration: 3000,
-                destination: "https://github.com/apvarun/toastify-js",
-                newWindow: true,
                 close: true,
                 gravity: "top",
                 position: "left",
@@ -41,14 +44,15 @@ const Login = () => {
                 style: {
                     background: "linear-gradient(to right, #00b09b, #96c93d)",
                 },
-                onClick: function () { }
             }).showToast();
-        }
 
-        if (rememberMe && user.token) {
-            setToken(user.token);
+            // Token'ı sakla
+            if (rememberMe && user.token) {
+                setToken(user.token);
+            }
+            setRedirectReady(false); // Yönlendirme tamamlandı, durumu sıfırla
         }
-    }, [user, rememberMe]);
+    }, [user, redirectReady, rememberMe, setToken, location.state, history]);
 
     return (
         <div className="flex justify-center items-center h-screen">
@@ -85,6 +89,7 @@ const Login = () => {
                     />
                     {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
                 </div>
+
                 {/* Remember Me Checkbox */}
                 <div className="mb-6 flex items-center">
                     <input
@@ -95,6 +100,7 @@ const Login = () => {
                     />
                     <label htmlFor="rememberMe" className="text-gray-700 font-semibold">Remember Me</label>
                 </div>
+
                 {/* Submit Button */}
                 <button
                     type="submit"

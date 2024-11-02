@@ -2,37 +2,33 @@ import { Button } from "@/components/ui/button";
 import { ChevronRight, Minus, Plus, Trash } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrementCount, incrementCount, removeFromCart, toggleChecked } from "@/redux/actions/shoppingCartActions";
+import { useHistory } from "react-router-dom";
 
 const shippingTotal = 7.99;
 let kargoBedeli = 7.99;
 
 const SepetPage = () => {
     const cartItems = useSelector((store) => store.shoppingCart.cart);
+    const user = useSelector((store) => store.client.user);
     const dispatch = useDispatch();
+    let history = useHistory();
 
-    const handleIncrement = (item) => {
-        dispatch(incrementCount(item.product.id));
-    };
-
-    const handleDecrement = (item) => {
-        if (item.count > 1) {
-            dispatch(decrementCount(item.product.id));
-        }
-    };
-
-    const handleRemove = (item) => {
-        dispatch(removeFromCart(item.product.id)); // Ürünü tamamen kaldırmak için
-    };
-
-    const handleCheckboxChange = (item) => {
-        dispatch(toggleChecked(item.product.id)); // Checkbox durumunu toggle eden aksiyon
-    };
 
     // Sadece checked olan ürünlerin toplamını hesaplayın
     const orderTotal = cartItems
         .filter(item => item.checked)
         .reduce((total, item) => total + item.product.price * item.count, 0)
         .toFixed(2);
+
+    const handleConfirmOrder = () => {
+        if (Object.keys(user).length === 0) {
+            // Eğer kullanıcı giriş yapmamışsa login sayfasına yönlendir
+            history.push("/login");
+        } else {
+            // Kullanıcı giriş yaptıysa confirm-order sayfasına git
+            history.push("/confirm-order");
+        }
+    };
 
     if (orderTotal >= 200) {
         kargoBedeli = 0;
@@ -48,7 +44,7 @@ const SepetPage = () => {
                             <input
                                 type="checkbox"
                                 checked={item.checked}
-                                onChange={() => handleCheckboxChange(item)}
+                                onChange={() => dispatch(toggleChecked(item.product.id))}
                             />
                             <div className="max-w-[150px] max-h-[150px] overflow-hidden ml-2">
                                 <img src={item.product.images[0]?.url} alt="" />
@@ -60,16 +56,20 @@ const SepetPage = () => {
                         </div>
                         <div className="flex gap-10 items-center w-full justify-between">
                             <div className="flex items-center">
-                                <Button variant="default" size="iconsqr" onClick={() => handleDecrement(item)}>
+                                <Button variant="default" size="iconsqr" onClick={() => {
+                                    if (item.count > 1) {
+                                        dispatch(decrementCount(item.product.id));
+                                    }
+                                }}>
                                     <Minus />
                                 </Button>
                                 <div className="w-[36px] h-[36px] flex items-center justify-center">{item.count}</div>
-                                <Button variant="default" size="iconsqr" onClick={() => handleIncrement(item)}>
+                                <Button variant="default" size="iconsqr" onClick={() => dispatch(incrementCount(item.product.id))}>
                                     <Plus />
                                 </Button>
                             </div>
                             <p className="text-danger font-bold">Ürün toplam fiyat: {(item.product.price * item.count).toFixed(2)}$</p>
-                            <Button variant="icon" onClick={() => handleRemove(item)}>
+                            <Button variant="icon" onClick={() => dispatch(removeFromCart(item.product.id))}>
                                 <Trash />
                             </Button>
                         </div>
@@ -98,7 +98,7 @@ const SepetPage = () => {
                     <h1 className="text-2xl">ORDER TOTAL:</h1>
                     <span>{orderTotal + kargoBedeli}$</span>
                 </div>
-                <Button variant="destructive">Sepeti Onayla <ChevronRight /></Button>
+                <Button onClick={handleConfirmOrder} variant="destructive">Sepeti Onayla <ChevronRight /></Button>
             </div>
         </div>
     );
