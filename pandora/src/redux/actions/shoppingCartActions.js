@@ -1,3 +1,5 @@
+import axiosInstance from "@/services/axiosInstance";
+
 export const SET_CART = 'SET_CART';
 export const SET_PAYMENT = 'SET_PAYMENT';
 export const SET_ADDRESS = 'SET_ADDRESS';
@@ -41,3 +43,24 @@ export const toggleChecked = (productId) => ({
     type: TOGGLE_CHECKED,
     payload: productId,
 });
+
+export const fetchAddressList = () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log("token:", token);
+    return async (dispatch, getState) => {
+        await axiosInstance("/user/address", {
+            headers: {
+                Authorization: token,
+            }
+        }).then((res) => {
+            console.log("resbircime:", res);
+            dispatch({
+                type: SET_ADDRESS,
+                payload: res.data,
+            });
+
+        }).catch((error) => {
+            console.log("Error:", error);
+        });
+    };
+};
