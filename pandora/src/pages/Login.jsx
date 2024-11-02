@@ -1,5 +1,5 @@
 import useLocalStorage from '@/hooks/useLocalStorage';
-import { loginUser } from '@/redux/actions/clientActions';
+import { fetchAddressList, loginUser } from '@/redux/actions/clientActions';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
@@ -51,6 +51,10 @@ const Login = () => {
                 setToken(user.token);
             }
             setRedirectReady(false); // Yönlendirme tamamlandı, durumu sıfırla
+        }
+
+        if (user.token) {
+            dispatch(fetchAddressList(user.token));
         }
     }, [user, redirectReady, rememberMe, setToken, location.state, history]);
 

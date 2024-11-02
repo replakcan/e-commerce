@@ -17,7 +17,7 @@ import { fetchCategories, fetchProducts } from './redux/actions/productActions';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PrivateRoute from './components/PrivateRoute';
-import { fetchAddressList } from './redux/actions/shoppingCartActions';
+
 
 
 function App() {
@@ -29,7 +29,6 @@ function App() {
     dispatch(fetchRoles())
     dispatch(fetchCategories())
     dispatch(fetchProducts())
-    dispatch(fetchAddressList())
     if (token) {
       dispatch(autoLogin(token))
     }

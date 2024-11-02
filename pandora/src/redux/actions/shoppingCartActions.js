@@ -44,7 +44,7 @@ export const toggleChecked = (productId) => ({
     payload: productId,
 });
 
-export const fetchAddressList = () => {
+/* export const fetchAddressList = () => {
     const token = JSON.parse(localStorage.getItem("token"));
     console.log("token:", token);
     return async (dispatch, getState) => {
@@ -63,4 +63,4 @@ export const fetchAddressList = () => {
             console.log("Error:", error);
         });
     };
-};
+}; */
