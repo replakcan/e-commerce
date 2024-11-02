@@ -3,7 +3,7 @@ import { DECREMENT_COUNT, INCREMENT_COUNT, REMOVE_FROM_CART, SET_ADDRESS, SET_CA
 const initialState = {
     cart: [],
     payment: {},
-    address: {},
+    address: [],
 };
 
 
