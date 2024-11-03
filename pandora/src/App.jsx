@@ -12,7 +12,7 @@ import Login from './pages/Login';
 import CreateOrderPage from './pages/ConfirmOrder';
 import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
-import { autoLogin, fetchAddressList, fetchRoles } from './redux/actions/clientActions';
+import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { fetchCategories, fetchProducts } from './redux/actions/productActions';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -29,7 +29,6 @@ function App() {
     dispatch(fetchRoles());
     dispatch(fetchCategories());
     dispatch(fetchProducts());
-    dispatch(fetchAddressList(token));
     if (token) {
       dispatch(autoLogin(token))
     }
