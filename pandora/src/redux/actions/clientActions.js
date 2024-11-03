@@ -91,3 +91,17 @@ export const fetchAddressList = (token) => {
         })
     };
 };
+
+export const addAddress = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.post("/user/address", data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
