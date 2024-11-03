@@ -1,8 +1,11 @@
 import AddressInfo from "@/components/AddressInfo";
 import { Button } from "@/components/ui/button";
+import Heading from "@/components/ui/heading";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
+
+//TODO butona tiklayinca adresleri guncelleyecek sekilde kodu duzenle
 const AddresList = () => {
     const [showInfo, setShowInfo] = useState(false);
     const addressList = useSelector((store) => store.client.addressList)
@@ -12,6 +15,8 @@ const AddresList = () => {
 
         <>
             <Button onClick={() => setShowInfo(!showInfo)} >Show kayitli liste</Button>
+
+            {showInfo && addressList.length === 0 && <Heading variant="h1">Kayitli adres kaydi bulunamadi.</Heading>}
 
             <div className="flex flex-wrap gap-1">
                 {showInfo && addressList?.map((adres) => {
@@ -25,9 +30,9 @@ const AddresList = () => {
                         district={adres.district}
                         neighborhood={adres.neighborhood}
                         address={adres.address}
+                        id={adres.id}
                     />
                 })}
-
             </div>
         </>
     )

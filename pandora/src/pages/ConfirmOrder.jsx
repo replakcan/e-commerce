@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 const CreateOrderPage = () => {
     const dispatch = useDispatch();
     const userToken = useSelector((store) => store.client.user.token);
+    /* const addressList = useSelector((store) => store.client.addressList) */
 
     useEffect(() => {
         dispatch(fetchAddressList(userToken));
