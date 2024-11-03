@@ -105,3 +105,31 @@ export const addAddress = (data, token) => {
         });
     };
 };
+
+export const deleteAddress = (id, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.delete(`/user/address/${id}`, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
+
+export const updateAddress = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.put(`/user/address/`, data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
