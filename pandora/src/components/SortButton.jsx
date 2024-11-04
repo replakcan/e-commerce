@@ -42,7 +42,7 @@ const SortButton = () => {
   }, []);
 
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div className="relative inline-block text-left z-index-high" ref={dropdownRef}>
       {/* Dropdown butonu */}
       <Button variant="outline" onClick={toggleDropdown}>
         {selectedOption} <ChevronDown />

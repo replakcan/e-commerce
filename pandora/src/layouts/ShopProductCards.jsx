@@ -11,14 +11,14 @@ const ShopProductCards = () => {
     const products = useSelector((store) => store.product.productList);
     const fetchState = useSelector((store) => store.product.fetchState);
     const total = useSelector((store) => store.product.total);
-    const filter_input = useSelector((store) => store.product.filter)
+    /* const filter_input = useSelector((store) => store.product.filter) */
     const dispatch = useDispatch();
     let history = useHistory();
     const { categoryId, sort, filter, gender, categoryName } = useParams();
 
     useEffect(() => {
         if (categoryId) {
-            dispatch(fetchProductsByUserChoices(categoryId, sort, filter_input));
+            dispatch(fetchProductsByUserChoices(categoryId, sort, filter));
         }
     }, [dispatch, categoryId, sort, filter]);
 
