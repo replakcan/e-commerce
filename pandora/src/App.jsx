@@ -1,4 +1,6 @@
 import './App.css'
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './pages/Home'
 import Contact from './pages/Contact';
@@ -9,16 +11,13 @@ import About from './pages/About';
 import SepetPage from './pages/Sepet';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
+import PreviousOrders from './pages/PreviousOrders';
 import CreateOrderPage from './pages/ConfirmOrder';
-import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
+import HeaderNav from './components/HeaderNav';
+import PrivateRoute from './components/PrivateRoute';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { fetchCategories, fetchProducts } from './redux/actions/productActions';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import PrivateRoute from './components/PrivateRoute';
-import PreviousOrders from './pages/PreviousOrders';
-
 
 
 function App() {

@@ -7,7 +7,6 @@ const initialState = {
     prevOrders: [],
 };
 
-
 export default function ShoppingCartReducer(state = initialState, action) {
     switch (action.type) {
         case SET_CART:
@@ -85,7 +84,7 @@ export default function ShoppingCartReducer(state = initialState, action) {
             );
             return { ...state, cart: updatedCart };
         }
-        
+
         case SET_PAYMENT:
             return {
                 ...state,
@@ -96,7 +95,7 @@ export default function ShoppingCartReducer(state = initialState, action) {
                 ...state,
                 address: action.payload,
             };
-            case SET_PREV_ORDERS:
+        case SET_PREV_ORDERS:
             return {
                 ...state,
                 prevOrders: action.payload,
