@@ -10,8 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 const AddresList = () => {
     const [showInfo, setShowInfo] = useState(false);
     const addressList = useSelector((store) => store.client.addressList)
-    const cartAddress = useSelector((store) => store.shoppingCart.address)
-
     const dispatch = useDispatch();
 
     const chooseAddress = (address) => {
