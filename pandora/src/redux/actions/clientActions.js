@@ -147,10 +147,52 @@ export const fetchCreditCards = (token) => {
                 Authorization: token,
             }
         }).then((res) => {
-            console.log("RESRES:", res)
-            dispatch(fetchCreditCards(res.data));
+            console.log("CARDLISTEM NEYMIS:", res)
+            dispatch(setCardList(res.data));
         }).catch((error) => {
             console.log(error)
         })
+    };
+};
+
+export const addCreditCard = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.post("/user/card", data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
+
+export const deleteCreditCard = (id, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.delete(`/user/card/${id}`, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
+
+export const updateCreditCard = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.put(`/user/card/`, data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
     };
 };
