@@ -14,6 +14,7 @@ const OrderSumm = () => {
     const user = useSelector((store) => store.client.user);
     let history = useHistory();
     const cartAddress = useSelector((store) => store.shoppingCart.address)
+    const cartPayment = useSelector((store) => store.shoppingCart.payment)
 
     const orderTotal = cartItems
         .filter(item => item.checked)
@@ -58,8 +59,11 @@ const OrderSumm = () => {
                 <span>{orderTotal + kargoBedeli}$</span>
             </div>
             <Button onClick={handleConfirmOrder} variant="destructive">Sepeti Onayla <ChevronRight /></Button>
-            {cartAddress && <div>
+            {cartAddress.title && <div>
                 <p>Teslimat Adresi: <span className="font-bold text-ikincil">{cartAddress.title}</span></p>
+            </div>}
+            {cartPayment && <div>
+                <p>Ödeme Yöntemi: <span className="font-bold text-ikincil">{cartPayment.name_on_card}</span></p>
             </div>}
         </div>
     )

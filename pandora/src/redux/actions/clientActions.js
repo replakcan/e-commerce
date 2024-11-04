@@ -4,6 +4,7 @@ export const SET_ROLES = 'SET_ROLES';
 export const SET_THEME = 'SET_THEME';
 export const SET_LANGUAGE = 'SET_LANGUAGE';
 export const SET_ADDRESS_LIST = 'SET_ADDRESS_LIST';
+export const SET_CARD_LIST = 'SET_CARD_LIST';
 
 
 export const setUser = (user) => ({
@@ -29,6 +30,11 @@ export const setLanguage = (language) => ({
 export const setAddressList = (addressList) => ({
     type: SET_ADDRESS_LIST,
     payload: addressList,
+})
+
+export const setCardList = (cardList) => ({
+    type: SET_CARD_LIST,
+    payload: cardList,
 })
 
 export const fetchRoles = () => {
@@ -123,6 +129,63 @@ export const deleteAddress = (id, token) => {
 export const updateAddress = (data, token) => {
     return async (dispatch, getState) => {
         await axiosInstance.put(`/user/address/`, data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
+
+export const fetchCreditCards = (token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance("/user/card", {
+            headers: {
+                Authorization: token,
+            }
+        }).then((res) => {
+            console.log("CARDLISTEM NEYMIS:", res)
+            dispatch(setCardList(res.data));
+        }).catch((error) => {
+            console.log(error)
+        })
+    };
+};
+
+export const addCreditCard = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.post("/user/card", data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
+
+export const deleteCreditCard = (id, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.delete(`/user/card/${id}`, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("RESRES:", res);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};
+
+export const updateCreditCard = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.put(`/user/card/`, data, {
             headers: {
                 Authorization: token,
             },
