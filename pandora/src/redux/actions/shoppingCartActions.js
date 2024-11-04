@@ -7,7 +7,7 @@ export const INCREMENT_COUNT = "INCREMENT_COUNT";
 export const DECREMENT_COUNT = "DECREMENT_COUNT";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 export const TOGGLE_CHECKED = "TOGGLE_CHECKED";
-
+export const SET_PREV_ORDERS = "SET_PREV_ORDERS";
 
 export const setCart = (product) => ({
     type: SET_CART,
@@ -44,6 +44,11 @@ export const toggleChecked = (productId) => ({
     payload: productId,
 });
 
+export const setPrevOrders = (prevORders) => ({
+    type: SET_PREV_ORDERS,
+    payload: prevORders,
+})
+
 export const createOrder = (data, token) => {
     return async (dispatch, getState) => {
         await axiosInstance.post("/order", data, {
@@ -57,3 +62,18 @@ export const createOrder = (data, token) => {
         });
     };
 };
+
+export const fetchPreviousOrders = (token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance("/order", {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            dispatch(setPrevOrders(res.data))
+        }).catch((error) => {
+            console.log(error)
+        })
+
+    }
+}

@@ -1,11 +1,11 @@
-import { DECREMENT_COUNT, INCREMENT_COUNT, REMOVE_FROM_CART, SET_ADDRESS, SET_CART, SET_PAYMENT, TOGGLE_CHECKED } from "../actions/shoppingCartActions";
+import { DECREMENT_COUNT, INCREMENT_COUNT, REMOVE_FROM_CART, SET_ADDRESS, SET_CART, SET_PAYMENT, SET_PREV_ORDERS, TOGGLE_CHECKED } from "../actions/shoppingCartActions";
 
 const initialState = {
     cart: [],
     payment: {},
     address: {},
+    prevOrders: [],
 };
-
 
 export default function ShoppingCartReducer(state = initialState, action) {
     switch (action.type) {
@@ -84,7 +84,7 @@ export default function ShoppingCartReducer(state = initialState, action) {
             );
             return { ...state, cart: updatedCart };
         }
-        
+
         case SET_PAYMENT:
             return {
                 ...state,
@@ -94,6 +94,11 @@ export default function ShoppingCartReducer(state = initialState, action) {
             return {
                 ...state,
                 address: action.payload,
+            };
+        case SET_PREV_ORDERS:
+            return {
+                ...state,
+                prevOrders: action.payload,
             };
         default:
             return state;

@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 const CreateOrderPage = () => {
     const dispatch = useDispatch();
     const userToken = useSelector((store) => store.client.user.token);
-    /* const addressList = useSelector((store) => store.client.addressList) */
 
     useEffect(() => {
         dispatch(fetchAddressList(userToken));
@@ -30,7 +29,6 @@ const CreateOrderPage = () => {
         <section className="flex flex-col md:flex-row gap-2 justify-between py-4">
             <div>
                 <div>
-
                     <AddresList />
                     <AddAddressForm onAddressAdded={refreshAddressList} />
                 </div>

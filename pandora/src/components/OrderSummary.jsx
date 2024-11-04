@@ -4,10 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { ChevronRight } from "lucide-react";
 import { createOrder } from "@/redux/actions/shoppingCartActions";
 
-//TODO CORS policy ~~~
 const shippingTotal = 7.99;
 let kargoBedeli = 7.99;
-
 
 const OrderSumm = () => {
 
@@ -50,10 +48,8 @@ const OrderSumm = () => {
 
     const handleConfirmOrder = () => {
         if (Object.keys(user).length === 0) {
-            // Eğer kullanıcı giriş yapmamışsa login sayfasına yönlendir
             history.push("/login");
         } else {
-            // Kullanıcı giriş yaptıysa confirm-order sayfasına git
             history.push("/confirm-order");
         }
     };

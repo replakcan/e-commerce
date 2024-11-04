@@ -16,7 +16,7 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
             city: addressData.city,
             district: addressData.district,
             neighborhood: addressData.neighborhood,
-            address: addressData.address, // Adding default value for address
+            address: addressData.address,
         }
     });
 
@@ -24,7 +24,7 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         const updatedData = { id, ...data };
         dispatch(updateAddress(updatedData, userToken));
         dispatch(fetchAddressList(userToken));
-        onClose(); // Close form after submission
+        onClose();
     };
 
     return (
