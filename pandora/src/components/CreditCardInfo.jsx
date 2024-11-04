@@ -6,7 +6,7 @@ import { useState } from "react";
 import CreditCardUpdateForm from "@/layouts/CreditCardUpdateForm";
 import { Button } from "./ui/button";
 
-const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card }) => {
+const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card, onClick }) => {
     const dispatch = useDispatch();
     const userToken = useSelector((store) => store.client.user.token);
     const [isEditing, setIsEditing] = useState(false);
@@ -33,7 +33,7 @@ const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card }
                     onClose={handleCloseEditForm}
                 />
             ) : (
-                <div className="flex flex-col flex-wrap">
+                <div onClick={onClick} className="flex flex-col flex-wrap">
                     <Heading variant="h2">Kart Bilgileri</Heading>
                     <p><span className="text-danger font-bold">Kart Numarası:</span> **** **** **** {card_no.slice(-4)}</p>
                     <p><span className="text-danger font-bold">Kart Üzerindeki İsim:</span> {name_on_card}</p>
