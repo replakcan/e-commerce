@@ -89,6 +89,20 @@ function AddCreditCardForm({ onCardAdded }) {
                         )}
                     </div>
 
+                    {/* CVV Field */}
+                    <div className="mb-4">
+                        <label className="block text-gray-700 font-semibold mb-2">CVV</label>
+                        <input
+                            type="text"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            {...register('cvv', { 
+                                required: 'CVV is required', 
+                                pattern: { value: /^\d{3}$/, message: 'CVV must be 3 digits' } 
+                            })}
+                        />
+                        {errors.cvv && <p className="text-red-500 text-sm">{errors.cvv.message}</p>}
+                    </div>
+
                     {/* Submit Button */}
                     <Button type="submit">Submit</Button>
                 </form>

@@ -1,3 +1,5 @@
+import axiosInstance from "@/services/axiosInstance";
+
 export const SET_CART = 'SET_CART';
 export const SET_PAYMENT = 'SET_PAYMENT';
 export const SET_ADDRESS = 'SET_ADDRESS';
@@ -41,3 +43,17 @@ export const toggleChecked = (productId) => ({
     type: TOGGLE_CHECKED,
     payload: productId,
 });
+
+export const createOrder = (data, token) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.post("/order", data, {
+            headers: {
+                Authorization: token,
+            },
+        }).then((res) => {
+            console.log("ORDER:", res)
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+};

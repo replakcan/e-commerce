@@ -21,6 +21,10 @@ const CreateOrderPage = () => {
     const refreshAddressList = () => {
         dispatch(fetchAddressList(userToken));
     };
+
+    const refreshCardList = () => {
+        dispatch(fetchCreditCards(userToken));
+    };
     //TODO adreslere hover ekle
     return (
         <section className="flex flex-col md:flex-row gap-2 justify-between py-4">
@@ -32,7 +36,7 @@ const CreateOrderPage = () => {
                 </div>
                 <div>
                     <CreditCardList />
-                    <AddCreditCardForm/>
+                    <AddCreditCardForm onCardAdded={refreshCardList}/>
                 </div>
             </div>
             <OrderSumm />

@@ -14,10 +14,7 @@ const CreditCardList = () => {
 
     const chooseCreditCard = (card) => {
         dispatch(setPayment(card));
-        console.log("cartPayment:", cartPayment)
     };
-
-    console.log("cartPayment:",cartPayment)
 
     return (
         <div className="">
