@@ -6,7 +6,7 @@ export const SET_LANGUAGE = 'SET_LANGUAGE';
 export const SET_ADDRESS_LIST = 'SET_ADDRESS_LIST';
 export const SET_CARD_LIST = 'SET_CARD_LIST';
 
-
+//TODO thunk-action console.log'ları silmeyi unutma, zaten logger middleware'ın var.
 export const setUser = (user) => ({
     type: SET_USER,
     payload: user,
