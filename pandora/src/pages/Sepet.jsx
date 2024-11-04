@@ -1,41 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Minus, Plus, Trash } from "lucide-react";
+import { Minus, Plus, Trash } from "lucide-react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrementCount, incrementCount, removeFromCart, toggleChecked } from "@/redux/actions/shoppingCartActions";
-import { useHistory } from "react-router-dom";
 
-const shippingTotal = 7.99;
-let kargoBedeli = 7.99;
+import OrderSumm from "@/components/OrderSummary";
 
 const SepetPage = () => {
     const cartItems = useSelector((store) => store.shoppingCart.cart);
-    const user = useSelector((store) => store.client.user);
     const dispatch = useDispatch();
-    let history = useHistory();
 
-
-    // Sadece checked olan ürünlerin toplamını hesaplayın
-    const orderTotal = cartItems
-        .filter(item => item.checked)
-        .reduce((total, item) => total + item.product.price * item.count, 0)
-        .toFixed(2);
-
-    const handleConfirmOrder = () => {
-        if (Object.keys(user).length === 0) {
-            // Eğer kullanıcı giriş yapmamışsa login sayfasına yönlendir
-            history.push("/login");
-        } else {
-            // Kullanıcı giriş yaptıysa confirm-order sayfasına git
-            history.push("/confirm-order");
-        }
-    };
-
-    if (orderTotal >= 200) {
-        kargoBedeli = 0;
-    }
 
     return (
-        <div className="flex flex-col gap-8 px-[10%] py-4 md:flex-row">
+        <div className="flex flex-col gap-8 px-[10%] py-4 md:flex-row md:justify-between">
             <div>
                 {cartItems?.map((item, index) => (
                     <div key={index} className="flex items-center flex-wrap justify-between row-gap-2 border shadow-md p-2">
@@ -76,30 +52,7 @@ const SepetPage = () => {
                     </div>
                 ))}
             </div>
-            <div className="order-box h-fit border border-black p-2 flex flex-col gap-1 md:min-w-[240px]">
-
-                <h1 className="font-bold pb-2 border-b border-red-300">SİPARİŞ ÖZETİ</h1>
-                <div className="flex justify-between items-center">
-                    <h2>Product TOTAL:</h2> <span>{orderTotal}$</span>
-                </div>
-                <div className="flex justify-between items-center">
-                    <h2>Shipping total:</h2> <span>{shippingTotal}$</span>
-                </div>
-                {
-                    orderTotal >= 200 &&
-                    <div className="flex justify-between items-center">
-                        <h2 className="italic text-ikincil max-w-[50%]">200 dolar ve üzeri siparislerde kargo bedava</h2>
-                        <span className="italic">
-                            {shippingTotal * (-1)}$
-                        </span>
-                    </div>
-                }
-                <div className="flex justify-between items-center">
-                    <h1 className="text-2xl">ORDER TOTAL:</h1>
-                    <span>{orderTotal + kargoBedeli}$</span>
-                </div>
-                <Button onClick={handleConfirmOrder} variant="destructive">Sepeti Onayla <ChevronRight /></Button>
-            </div>
+            <OrderSumm />
         </div>
     );
 };

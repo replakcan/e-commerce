@@ -1,3 +1,4 @@
+import OrderSumm from "@/components/OrderSummary";
 import AddAddressForm from "@/layouts/AddressForm";
 import AddresList from "@/layouts/AddressList";
 import { fetchAddressList } from "@/redux/actions/clientActions";
@@ -17,12 +18,13 @@ const CreateOrderPage = () => {
     const refreshAddressList = () => {
         dispatch(fetchAddressList(userToken));
     };
-
+    //TODO adreslere hover ekle
     return (
-        <div>
-            <AddresList />
-            <AddAddressForm onAddressAdded={refreshAddressList} />
-        </div>
+        <section className="flex flex-col md:flex-row gap-2 justify-between py-4">
+                <AddresList />
+                <AddAddressForm onAddressAdded={refreshAddressList} />
+            <OrderSumm />
+        </section>
     );
 };
 export default CreateOrderPage;
