@@ -1,20 +1,23 @@
-import { Switch, Route } from 'react-router-dom';
 import './App.css'
+import { Switch, Route } from 'react-router-dom';
 import HomePage from './pages/Home'
 import Contact from './pages/Contact';
 import Product from './pages/Product';
 import Shop from './pages/Shop';
 import Team from './pages/Team';
 import About from './pages/About';
+import SepetPage from './pages/Sepet';
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
+import CreateOrderPage from './pages/ConfirmOrder';
 import HeaderNav from './components/HeaderNav';
 import Footer from './layouts/Footer';
-import SignUp from './pages/SignUp';
-import { useEffect } from 'react';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
+import { fetchCategories, fetchProducts } from './redux/actions/productActions';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import Login from './pages/Login';
-import { fetchCategories, /* fetchProducts */ } from './redux/actions/productActions';
-import SepetPage from './pages/Sepet';
+import PrivateRoute from './components/PrivateRoute';
+
 
 
 function App() {
@@ -23,9 +26,9 @@ function App() {
   const token = JSON.parse(localStorage.getItem("token"));
 
   useEffect(() => {
-    dispatch(fetchRoles())
-    dispatch(fetchCategories())
-    /* dispatch(fetchProducts()) */
+    dispatch(fetchRoles());
+    dispatch(fetchCategories());
+    dispatch(fetchProducts());
     if (token) {
       dispatch(autoLogin(token))
     }
@@ -66,6 +69,12 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/siparis-ozeti">
+          <SepetPage />
+        </Route>
+        <PrivateRoute path="/confirm-order">
+          <CreateOrderPage />
+        </PrivateRoute>
         <Route path="/">
           <HomePage />
         </Route>

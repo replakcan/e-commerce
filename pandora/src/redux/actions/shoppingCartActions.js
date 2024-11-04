@@ -41,3 +41,24 @@ export const toggleChecked = (productId) => ({
     type: TOGGLE_CHECKED,
     payload: productId,
 });
+
+/* export const fetchAddressList = () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    console.log("token:", token);
+    return async (dispatch, getState) => {
+        await axiosInstance("/user/address", {
+            headers: {
+                Authorization: token,
+            }
+        }).then((res) => {
+            console.log("resbircime:", res);
+            dispatch({
+                type: SET_ADDRESS,
+                payload: res.data,
+            });
+
+        }).catch((error) => {
+            console.log("Error:", error);
+        });
+    };
+}; */
