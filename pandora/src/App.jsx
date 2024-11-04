@@ -17,6 +17,7 @@ import { fetchCategories, fetchProducts } from './redux/actions/productActions';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import PrivateRoute from './components/PrivateRoute';
+import PreviousOrders from './pages/PreviousOrders';
 
 
 
@@ -74,6 +75,9 @@ function App() {
         </Route>
         <PrivateRoute path="/confirm-order">
           <CreateOrderPage />
+        </PrivateRoute>
+        <PrivateRoute path="/previous-orders">
+          <PreviousOrders />
         </PrivateRoute>
         <Route path="/">
           <HomePage />
