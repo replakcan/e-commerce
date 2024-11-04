@@ -1,7 +1,9 @@
 import OrderSumm from "@/components/OrderSummary";
 import AddAddressForm from "@/layouts/AddressForm";
 import AddresList from "@/layouts/AddressList";
-import { fetchAddressList } from "@/redux/actions/clientActions";
+import AddCreditCardForm from "@/layouts/CreditCardForm";
+import CreditCardList from "@/layouts/CreditCardList";
+import { fetchAddressList, fetchCreditCards } from "@/redux/actions/clientActions";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -12,6 +14,7 @@ const CreateOrderPage = () => {
 
     useEffect(() => {
         dispatch(fetchAddressList(userToken));
+        dispatch(fetchCreditCards(userToken))
     }, [dispatch, userToken]);
 
     // Callback to fetch the address list after adding an address
@@ -21,8 +24,17 @@ const CreateOrderPage = () => {
     //TODO adreslere hover ekle
     return (
         <section className="flex flex-col md:flex-row gap-2 justify-between py-4">
-                <AddresList />
-                <AddAddressForm onAddressAdded={refreshAddressList} />
+            <div>
+                <div>
+
+                    <AddresList />
+                    <AddAddressForm onAddressAdded={refreshAddressList} />
+                </div>
+                <div>
+                    <CreditCardList />
+                    <AddCreditCardForm/>
+                </div>
+            </div>
             <OrderSumm />
         </section>
     );
