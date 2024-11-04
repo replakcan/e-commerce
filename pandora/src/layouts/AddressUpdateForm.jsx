@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAddressList, updateAddress } from '@/redux/actions/clientActions';
 import { Button } from '@/components/ui/button';
 
-
 const AddressUpdateForm = ({ id, addressData, onClose }) => {
     const dispatch = useDispatch();
     const userToken = useSelector((store) => store.client.user.token);
@@ -18,6 +17,7 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
             city: addressData.city,
             district: addressData.district,
             neighborhood: addressData.neighborhood,
+            address: addressData.address, // Adding default value for address
         }
     });
 
@@ -107,6 +107,17 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
                     {...register('neighborhood', { required: 'Neighborhood is required' })}
                 />
                 {errors.neighborhood && <p className="text-red-500 text-sm">{errors.neighborhood.message}</p>}
+            </div>
+
+            {/* Address Field */}
+            <div className="mb-4">
+                <label className="block text-gray-700 font-semibold mb-2">Address</label>
+                <textarea
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    rows="3"
+                    {...register('address', { required: 'Address is required' })}
+                ></textarea>
+                {errors.address && <p className="text-red-500 text-sm">{errors.address.message}</p>}
             </div>
 
             {/* Submit Button */}
