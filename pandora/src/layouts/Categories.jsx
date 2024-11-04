@@ -24,11 +24,11 @@ const Categories = () => {
 
                 {topCategories?.map((topcat) => {
                     return <CategoryCard
-                        gender={topcat.gender}
                         category={topcat.code}
                         key={topcat.id}
                         title={topcat.title}
-                        src={topcat.img} />
+                        src={topcat.img}
+                        gender={topcat.gender === "e" ? "erkek" : "kadın"} />
                 })}
 
             </div>
