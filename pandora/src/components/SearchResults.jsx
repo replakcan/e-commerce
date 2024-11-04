@@ -29,16 +29,18 @@ const SearchResults = () => {
                 <Button variant="outline" size="iconsqr" ><LayoutGrid /></Button>
                 <Button variant="outline" size="iconsqr" ><AlignJustify /></Button>
             </div>
-            <div className="search-btns flex gap-3">
+            <div className="search-btns flex gap-3 flex-wrap justify-center">
                 <SortButton />
-                <input
-                    className="px-4"
-                    type="text"
-                    placeholder="Filter products"
-                    value={filtre}
-                    onChange={handleFilterChange}
-                />
-                <Button onClick={handleFilter} >Filter</Button>
+                <div>
+                    <input
+                        className="px-4"
+                        type="text"
+                        placeholder="Filter products"
+                        value={filtre}
+                        onChange={handleFilterChange}
+                    />
+                    <Button onClick={handleFilter} >Filter</Button>
+                </div>
             </div>
         </div>
     )

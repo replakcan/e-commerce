@@ -10,7 +10,7 @@ const FooterBottom = () => {
                 <Heading variant="h3">Consulting Agency For Your Business</Heading>
                 <p>the quick fox jumps over the lazy dog</p>
             </div>
-            <div>
+            <div className="">
                 <Button>Contact Us</Button>
             </div>
         </div>
