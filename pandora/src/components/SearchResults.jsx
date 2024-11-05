@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsByUserChoices, setFilter } from "@/redux/actions/productActions";
 import { useParams } from "react-router-dom";
 
+//TODO views butonlarını aktifleştir
+//TODO kategori değiştirince sayfa 1'e dönmüyor (offseti resetle)
 const SearchResults = () => {
 
     const { categoryId, sort } = useParams();
