@@ -8,25 +8,25 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 w-fit",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 w-fit lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 w-fit",
+          "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 w-fit",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit",
+          "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit",
         outlineBorder:
-          "border border-input border-primary text-primary hover:bg-accent hover:text-accent-foreground w-fit",
+          "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border border-input border-primary text-primary hover:bg-accent hover:text-accent-foreground w-fit",
         outlineBrRnd:
-          "border rounded-full border-input border-primary text-primary hover:bg-accent hover:text-accent-foreground w-fit",
+          "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border rounded-full border-input border-primary text-primary hover:bg-accent hover:text-accent-foreground w-fit",
         outlineBrWh:
-          "border border-input border-white text-white w-fit",
+          "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border border-input border-white text-white w-fit",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 w-fit",
-        ghost: "hover:bg-accent hover:text-accent-foreground w-fit",
-        link: "text-primary underline-offset-4 hover:underline w-fit",
-        paginationFirst: "border-2 shadow-sm text-primary border-l border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-l-lg rounded-r-none hover:text-primary",
-        paginationNext: "border-2 shadow-sm text-primary border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-r-lg rounded-l-none",
-        paginationCurrent: "border-2 shadow-sm text-primary border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-none",
-        paginationOther: "border-2 shadow-sm text-primary bg-primary text-primary-foreground hover:bg-primary/90 w-fit rounded-none",
+          "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 w-fit",
+        ghost: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 hover:bg-accent hover:text-accent-foreground w-fit",
+        link: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 text-primary underline-offset-4 hover:underline w-fit",
+        paginationFirst: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border-2 shadow-sm text-primary border-l border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-l-lg rounded-r-none hover:text-primary",
+        paginationNext: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border-2 shadow-sm text-primary border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-r-lg rounded-l-none",
+        paginationCurrent: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border-2 shadow-sm text-primary border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-none",
+        paginationOther: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 border-2 shadow-sm text-primary bg-primary text-primary-foreground hover:bg-primary/90 w-fit rounded-none",
       },
       size: {
         default: "h-10 px-4 py-2",
