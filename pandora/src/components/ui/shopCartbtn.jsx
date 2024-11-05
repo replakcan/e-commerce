@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Button } from "./button";
-import { useHistory } from "react-router-dom";
 
 const CartButton = () => {
     const [isOpen, setIsOpen] = useState(false);

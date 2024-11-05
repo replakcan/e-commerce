@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Heading from "./ui/heading";
 import { Trash } from "lucide-react";
 import { deleteAddress, fetchAddressList } from "@/redux/actions/clientActions";
-import { useState } from "react";
-import { Button } from "./ui/button";
 import AddressUpdateForm from "@/layouts/AddressUpdateForm";
+import { Button } from "./ui/button";
+import Heading from "./ui/heading";
 
 const AddressInfo = ({ title, name, surname, phone, city, district, neighborhood, address, id, onClick }) => {
     const dispatch = useDispatch();

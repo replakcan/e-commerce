@@ -1,8 +1,8 @@
+import TeamMemberHead from "@/components/TeamMemberHead";
+import TeamGridHead from "@/components/TeamGridHead";
 import TrialCard from "@/components/TrialCard";
 import TeamMembers from "../TeamMembers";
-import TeamMemberHead from "@/components/TeamMemberHead";
 import TeamGrid from "../TeamGrid";
-import TeamGridHead from "@/components/TeamGridHead";
 
 const TeamContent = () => {
 
