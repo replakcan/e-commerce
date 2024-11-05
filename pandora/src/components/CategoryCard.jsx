@@ -10,7 +10,7 @@ const CategoryCard = ({ title, src, gender, category }) => {
                 <img className="col-start-1 col-end-4 row-start-1 row-end-4 object-cover aspect-square" src={src}>
                 </img>
                 <div className="col-start-2 row-start-2 col-end-3 row-end-3 flex flex-col justify-around items-center">
-                    <Heading variant="h1" color="text-white" >{title}</Heading>
+                    <Heading variant="h2" color="text-white" >{title}</Heading>
                     <p className="text-white font-bold">{gender}</p>
                 </div>
             </div>
