@@ -39,7 +39,8 @@ const Pagination = () => {
     return (
         <div className="flex items-center justify-center pt-5">
             <Button 
-                variant="outline"
+                size="pagination"
+                variant="paginationFirst"
                 onClick={handleFirstClick}
                 disabled={currentPage === 1}
                 className="disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
@@ -48,15 +49,17 @@ const Pagination = () => {
             </Button>
             {getDisplayedPages().map(page => (
                 <Button
+                    size="pagination"
                     key={page}
-                    variant={page === currentPage ? "default" : "outline"}
+                    variant={page === currentPage ? "paginationOther" : "paginationCurrent"}
                     onClick={() => handlePageClick(page)}
                 >
                     {page}
                 </Button>
             ))}
             <Button 
-                variant="outline"
+                size="pagination"
+                variant="paginationNext"
                 onClick={handleNextClick}
                 disabled={currentPage === totalPages}
                 className="disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
