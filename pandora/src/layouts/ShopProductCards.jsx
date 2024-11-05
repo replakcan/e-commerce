@@ -1,17 +1,14 @@
 import Pagination from "@/components/Pagination";
 import ShopPageCard from "@/components/ShopPageCard";
 import { fetchProductDetails, fetchProductsByUserChoices } from "@/redux/actions/productActions";
-
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
 const ShopProductCards = () => {
-
     const products = useSelector((store) => store.product.productList);
     const fetchState = useSelector((store) => store.product.fetchState);
     const total = useSelector((store) => store.product.total);
-    /* const filter_input = useSelector((store) => store.product.filter) */
     const dispatch = useDispatch();
     let history = useHistory();
     const { categoryId, sort, filter, gender, categoryName } = useParams();
@@ -44,7 +41,7 @@ const ShopProductCards = () => {
 
     return (
         <div>
-            <div className="flex flex-wrap justify-center md:justify-between gap-3">
+            <div className="flex flex-wrap justify-center md:justify-between gap-4">
 
                 {products?.map((product) => {
                     return <ShopPageCard

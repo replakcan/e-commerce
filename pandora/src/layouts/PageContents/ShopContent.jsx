@@ -1,7 +1,7 @@
 import SearchResults from "@/components/SearchResults";
-import Clients from "../Clients";
 import ShopProductCards from "../ShopProductCards";
 import Categories from "../Categories";
+import Clients from "../Clients";
 
 const ShopContent = () => {
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchProductsByUserChoices, setOffset } from '@/redux/actions/productActions';
+import { Button } from './ui/button';
 
 const Pagination = () => {
     const { categoryId, sort, filter } = useParams();
@@ -34,36 +35,37 @@ const Pagination = () => {
             return [currentPage - 1, currentPage, currentPage + 1];
         }
     };
-
+    //TODO border'ları ayarla
     return (
-        <div className="flex items-center justify-center gap-2 mt-5">
-            <button
+        <div className="flex items-center justify-center pt-5">
+            <Button 
+                size="pagination"
+                variant="paginationFirst"
                 onClick={handleFirstClick}
                 disabled={currentPage === 1}
-                className="px-3 py-1 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
             >
                 First
-            </button>
+            </Button>
             {getDisplayedPages().map(page => (
-                <button
+                <Button
+                    size="pagination"
                     key={page}
+                    variant={page === currentPage ? "paginationOther" : "paginationCurrent"}
                     onClick={() => handlePageClick(page)}
-                    className={`px-3 py-1 border rounded ${
-                        page === currentPage
-                            ? "bg-blue-500 text-white border-blue-500"
-                            : "bg-gray-100 border-gray-300 hover:bg-gray-200"
-                    }`}
                 >
                     {page}
-                </button>
+                </Button>
             ))}
-            <button
+            <Button 
+                size="pagination"
+                variant="paginationNext"
                 onClick={handleNextClick}
                 disabled={currentPage === totalPages}
-                className="px-3 py-1 bg-gray-100 border border-gray-300 rounded hover:bg-gray-200 disabled:bg-gray-50 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
             >
                 Next
-            </button>
+            </Button>
         </div>
     );
 };

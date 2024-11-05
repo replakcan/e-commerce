@@ -5,13 +5,13 @@ const CategoryCard = ({ title, src, gender, category }) => {
 
 
     return (
-        <Link to={`/shop/${gender}/${category}`}>
-            <div className="grid grid-cols-3 grid-rows-3 max-h-[250px] max-w-[250px] overflow-hidden">
-                <img className="col-start-1 col-end-4 row-start-1 row-end-4 object-cover" src={src}>
+        <Link className="flex justify-center" to={`/shop/${gender}/${category}`}>
+            <div className="grid w-[80%] grid-cols-3 grid-rows-3 md:max-h-[250px] md:max-w-[250px] overflow-hidden items-center">
+                <img className="col-start-1 col-end-4 row-start-1 row-end-4 object-cover aspect-square" src={src}>
                 </img>
                 <div className="col-start-2 row-start-2 col-end-3 row-end-3 flex flex-col justify-around items-center">
-                    <Heading variant="h6">{title}</Heading>
-                    <p>5 Items</p>
+                    <Heading variant="h2" color="text-white" >{title}</Heading>
+                    <p className="text-white font-bold">{gender}</p>
                 </div>
             </div>
         </Link>

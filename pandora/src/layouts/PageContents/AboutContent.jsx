@@ -15,8 +15,10 @@ const AboutContent = () => {
                 <TeamMemberHead />
                 <TeamMembers />
             </section>
-            <Clients />
-            <AboutOffer />
+            <div>
+                <Clients />
+                <AboutOffer />
+            </div>
         </div>
     )
 

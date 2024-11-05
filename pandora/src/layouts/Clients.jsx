@@ -16,10 +16,10 @@ const Clients = () => {
             <div className="client-card flex flex-col text-center gap-2 items-center">
                 <Heading variant="h3">Subscribe For Latest Newsletter</Heading>
                 <p>The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th</p>
-                <div className="flex flex-wrap justify-center gap-4 md:flex-row">
-                    <img className="w-24 md:w-16" src="./images/clients/reddit.svg" alt="" />
-                    <img className="w-24 md:w-16" src="./images/clients/stribe.svg" alt="" />
-                    <img className="w-24 md:w-16" src="./images/clients/lfyt.svg" alt="" />
+                <div className="flex flex-wrap justify-center gap-8 md:flex-row">
+                    <img height="32" width="48" src="https://cdn.simpleicons.org/reddit/gray" />
+                    <img height="32" width="48" src="https://cdn.simpleicons.org/amazonwebservices/gray" />
+                    <img height="32" width="48" src="https://cdn.simpleicons.org/w3schools/gray" />
                 </div>
 
             </div>
