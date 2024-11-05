@@ -1,8 +1,8 @@
-const Heading = ({ variant = "h1", color = "text-gray-800", children }) => {
+const Heading = ({ variant = "h1", color = "text-gray-800", className = "", children }) => {
     const Tag = variant;
 
     const headingStyles = {
-        h1: `text-4xl font-bold ${color}`,
+        h1: `text-8xl font-bold ${color}`,
         h2: `text-3xl font-bold ${color}`,
         h3: `text-2xl font-bold ${color}`,
         h4: `text-xl font-bold ${color}`,
@@ -11,7 +11,7 @@ const Heading = ({ variant = "h1", color = "text-gray-800", children }) => {
         p: `text-base ${color === "text-gray-800" ? "text-gray-500" : color}`, // default gray for <p>
     };
 
-    return <Tag className={headingStyles[variant]}>{children}</Tag>;
+    return <Tag className={`${headingStyles[variant]} ${className}`}>{children}</Tag>;
 };
 
 export default Heading;
