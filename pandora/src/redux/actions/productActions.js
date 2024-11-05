@@ -83,7 +83,7 @@ export const fetchProducts = () => {
 }
 
 
-export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", limit = 25, offset = 0) => {
+export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", limit = 24, offset = 0) => {
     return (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
 
