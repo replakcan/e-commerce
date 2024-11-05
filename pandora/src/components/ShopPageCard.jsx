@@ -5,7 +5,7 @@ const ShopPageCard = ({ name, description, price, src, onClick }) => {
     return (
         <div
             onClick={onClick}
-            className="ShopPageCard flex flex-col text-center flex-wrap bg-gray-50 hover:bg-gray-100 hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+            className="ShopPageCard flex flex-col text-center flex-wrap bg-gray-50 hover:bg-gray-100 hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer items-center"
         >
             <div className="max-h-[400px] max-w-[350px] overflow-hidden">
                 <img src={src} alt={name} className="transition-transform duration-200 transform hover:scale-110" />
