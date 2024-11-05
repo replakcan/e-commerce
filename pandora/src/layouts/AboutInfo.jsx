@@ -5,13 +5,13 @@ const AboutInfo = () => {
 
     return (
         <div className="flex flex-col gap-3 md:flex-row md:justify-between py-12">
-            <div className="flex flex-col items-center md:w-1/2 md:items-start md:justify-center gap-4">
+            <div className="flex flex-col items-center md:w-1/2 md:items-start md:justify-center gap-4 mb-24">
                 <p className="font-bold hidden md:block">ABOUT COMPANY</p>
                 <Heading variant="h2">ABOUT US</Heading>
-                <p className="md:w-2/3">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                <p className="md:w-2/3">We know how large objects will act, but things on a small scale just do not act that way.</p>
                 <Button>Get Quote Now</Button>
             </div>
-            <div className=""> 
+            <div className="flex justify-center"> 
                 <img src="https://placehold.co/600x400" />
             </div>
         </div>
