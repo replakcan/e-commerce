@@ -10,16 +10,18 @@ const ProductContent = () => {
 
     const productInfo = useSelector((store) => store.product.product)
     const history = useHistory();
-    
+
     const handleBackClick = () => {
         history.goBack();
     };
 
     return (
-        <div className="content py-12">
-            <Button
-                onClick={handleBackClick}
-            >Back</Button>
+        <div className="content py-12 flex flex-col gap-4">
+            <div className="text-center pb-12">
+                <Button
+                    onClick={handleBackClick}
+                >Back to Products</Button>
+            </div>
             {productInfo && <ProductDetail
                 src={productInfo.images[0].url}
                 name={productInfo.name}
@@ -28,7 +30,7 @@ const ProductContent = () => {
                 price={productInfo.price}
                 sell_count={productInfo.sell_count}
             />}
-            <section>
+            <section className="flex flex-col items-center">
                 <ProductDescription />
             </section>
             <div>
