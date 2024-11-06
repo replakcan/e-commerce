@@ -11,6 +11,6 @@ const rootReducer = combineReducers({
   shoppingCart: ShoppingCartReducer,
 });
 
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(thunk, /* logger */));
 
 export default store;

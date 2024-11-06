@@ -20,7 +20,6 @@ const ShopProductCards = () => {
         history.push(`/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${product.id}`);
     };
 
-    console.log("TOTAL:", total)
     if (fetchState === 'FETCHING') {
         return <span className="loader"></span>;
     }

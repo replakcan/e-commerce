@@ -10,12 +10,12 @@ import { fetchProductsByUserChoices } from "@/redux/actions/productActions";
 const ShopContent = () => {
     const dispatch = useDispatch();
 
-    const {categoryId, sort, filter, limit, offset} = useParams();
+    const {categoryId, sort, filter, limit, /* offset */} = useParams();
     
-    /* const sort = useSelector((store) => store.product.sort)
-    const filter = useSelector((store) => store.product.filter)
-    const limit = useSelector((store) => store.product.limit)
-    const offset = useSelector((store) => store.product.offset) */
+    /* const sort = useSelector((store) => store.product.sort) */
+    /* const filter = useSelector((store) => store.product.filter) */
+    /* const limit = useSelector((store) => store.product.limit) */
+    const offset = useSelector((store) => store.product.offset)
 
 
     useEffect(() => {
