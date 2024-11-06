@@ -29,7 +29,7 @@ const MoreProducts = () => {
 
     return (
         <div className="flex flex-col items-center">
-            <div className="m-auto bg-light_gray border-b pb-4">
+            <div className="m-auto bg-light_gray border-b pb-4 text-center">
                 <Heading variant="h2">BESTSELLER PRODUCTS</Heading>
             </div>
             <div className="flex flex-col md:flex-row items-center md:w-full md:justify-between  md:px-[10%] flex-wrap md:content-start">
