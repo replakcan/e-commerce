@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { fetchProductsByUserChoices, setOffset } from '@/redux/actions/productActions';
+import { setOffset } from '@/redux/actions/productActions';
 import { Button } from './ui/button';
 
 const Pagination = () => {
@@ -18,7 +18,7 @@ const Pagination = () => {
     const handlePageClick = (pageNumber) => {
         const newOffset = limit * (pageNumber - 1);
         dispatch(setOffset(newOffset));
-        /* dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, newOffset)); */
+        
         history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filter || ""}/${limit}/${newOffset}`)
     };
 
