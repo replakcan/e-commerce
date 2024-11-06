@@ -60,7 +60,10 @@ const CreditCardUpdateForm = ({ id, cardData, onClose }) => {
                     >
                         <option value="">Month</option>
                         {[...Array(12).keys()].map((month) => (
-                            <option key={month + 1} value={month + 1}>{month + 1}</option>
+                            <option
+                                key={month + 1}
+                                value={month + 1}>{month + 1}
+                            </option>
                         ))}
                     </select>
                     <select
@@ -69,7 +72,10 @@ const CreditCardUpdateForm = ({ id, cardData, onClose }) => {
                     >
                         <option value="">Year</option>
                         {[...Array(20).keys()].map((year) => (
-                            <option key={year} value={2023 + year}>{2023 + year}</option>
+                            <option
+                                key={year}
+                                value={2023 + year}>{2023 + year}
+                            </option>
                         ))}
                     </select>
                 </div>
