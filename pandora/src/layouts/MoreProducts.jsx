@@ -10,22 +10,14 @@ const MoreProducts = () => {
     let history = useHistory();
     const products = useSelector((store) => store.product.productList)
     const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
-    console.log("bestSeller:", bestSeller)
     const { categoryId, sort, filter, gender, categoryName } = useParams();
 
     const handleProductClick = (product) => {
         const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase();
 
         dispatch(fetchProductDetails(product.id))
-
         history.push(`/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${product.id}`);
     };
-
-    useEffect(() => {
-        if (categoryId) {
-            dispatch(fetchProductsByUserChoices(categoryId, sort, filter));
-        }
-    }, [dispatch, categoryId, sort, filter]);
 
     return (
         <div className="flex flex-col items-center">
@@ -33,8 +25,9 @@ const MoreProducts = () => {
                 <Heading variant="h2">BESTSELLER PRODUCTS</Heading>
             </div>
             <div className="flex flex-col md:flex-row items-center md:w-full md:justify-between  md:px-[10%] flex-wrap md:content-start">
-                {bestSeller.map((bestItem) => {
+                {bestSeller.map((bestItem, index) => {
                     return <ShopPageCard
+                        key={index}
                         name={bestItem.name}
                         description={bestItem.description}
                         src={bestItem.images[0].url}

@@ -66,7 +66,7 @@ export const fetchCategories = () => {
     }
 }
 
-export const fetchProducts = () => {
+/* export const fetchProducts = () => {
     return async (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
         await axiosInstance("/products").then((res) => {
@@ -80,7 +80,7 @@ export const fetchProducts = () => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
-}
+} */
 
 
 export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", limit = 24, offset = 0) => {

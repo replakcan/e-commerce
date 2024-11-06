@@ -17,18 +17,16 @@ import Footer from './layouts/Footer';
 import HeaderNav from './components/HeaderNav';
 import PrivateRoute from './components/PrivateRoute';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
-import { fetchCategories, fetchProducts } from './redux/actions/productActions';
+import { fetchCategories } from './redux/actions/productActions';
 
 
 function App() {
 
   const dispatch = useDispatch();
   const token = JSON.parse(localStorage.getItem("token"));
-
   useEffect(() => {
     dispatch(fetchRoles());
     dispatch(fetchCategories());
-    dispatch(fetchProducts());
     if (token) {
       dispatch(autoLogin(token))
     }
@@ -43,9 +41,6 @@ function App() {
           <Product />
         </Route>
         <Route path="/shop/:gender/:categoryName/:categoryId?/:sort?/:filter?/:limit?/:offset?">
-          <Shop />
-        </Route>
-        <Route path="/shop/:gender/:category">
           <Shop />
         </Route>
         <Route path="/shop">

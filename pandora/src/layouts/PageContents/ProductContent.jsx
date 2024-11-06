@@ -2,18 +2,28 @@ import ProductDescription from "@/components/ProductDescription";
 import Clients from "../Clients";
 import MoreProducts from "../MoreProducts";
 import ProductDetail from "@/components/ProductDetail";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { fetchProductDetails, fetchProductsByUserChoices } from "@/redux/actions/productActions";
+
 
 const ProductContent = () => {
-
-    const productInfo = useSelector((store) => store.product.product)
+    const productInfo = useSelector((store) => store.product.currentProduct)
     const history = useHistory();
+    const { categoryId, productId } = useParams();
+    const dispatch = useDispatch();
 
     const handleBackClick = () => {
         history.goBack();
     };
+
+    useEffect(() => {
+        dispatch(fetchProductsByUserChoices(categoryId))
+        dispatch(fetchProductDetails(productId))
+
+    }, [])
 
     return (
         <>
@@ -23,7 +33,7 @@ const ProductContent = () => {
                         onClick={handleBackClick}
                     >Back to Products</Button>
                 </div>
-                {productInfo && <ProductDetail
+                {productInfo && productInfo.images && <ProductDetail
                     src={productInfo.images[0].url}
                     name={productInfo.name}
                     description={productInfo.description}
