@@ -16,7 +16,7 @@ const Pagination = () => {
     const handlePageClick = (pageNumber) => {
         const newOffset = limit * (pageNumber - 1);
         dispatch(setOffset(newOffset));
-        dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, newOffset));
+        /* dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, newOffset)); */
     };
 
     const handleFirstClick = () => handlePageClick(1);

@@ -8,6 +8,7 @@ export const SET_LIMIT = 'SET_LIMIT';
 export const SET_OFFSET = 'SET_OFFSET';
 export const SET_FILTER = 'SET_FILTER';
 export const SET_PRODUCT = "SET_PRODUCT";
+export const SET_SORT = "SET_SORT";
 
 
 export const setCategories = (categories) => ({
@@ -43,6 +44,11 @@ export const setOffset = (offset) => ({
 export const setFilter = (filter) => ({
     type: SET_FILTER,
     payload: filter,
+});
+
+export const setSort = (sort) => ({
+    type: SET_SORT,
+    payload: sort,
 });
 
 export const setProduct = (product) => ({

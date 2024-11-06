@@ -18,7 +18,7 @@ const SearchResults = () => {
     };
 
     const handleFilter = () => {
-        dispatch(fetchProductsByUserChoices(categoryId, sort, filtre));
+        /* dispatch(fetchProductsByUserChoices(categoryId, sort, filtre)); */
     };
 
 
