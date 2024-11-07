@@ -3,34 +3,35 @@ import { Button } from "./ui/button";
 import SortButton from "./SortButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "@/redux/actions/productActions";
-import { useHistory, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-//TODO views butonlarını aktifleştir
-//TODO kategori değiştirince sayfa 1'e dönmüyor (offseti resetle)
 const SearchResults = () => {
-
-    const { categoryId, sort, gender, categoryName, limit, offset } = useParams();
-    const history = useHistory();
     const dispatch = useDispatch();
-    const total = useSelector((store) => store.product.total)
-    const filtre = useSelector((store) => store.product.filter)
-    const handleFilterChange = (e) => {
-        dispatch(setFilter(e.target.value));
+    const total = useSelector((store) => store.product.total);
+    const filtre = useSelector((store) => store.product.filter);
+
+    // Local state to temporarily store input value
+    const [inputValue, setInputValue] = useState(filtre);
+
+    useEffect(() => {
+        setInputValue(filtre); // Initialize input value with filter value from Redux
+    }, [filtre]);
+
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value); // Update only local state
     };
 
     const handleFilter = () => {
-        /* history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filtre}/${limit || ""}/${offset || ""}`) */
+        dispatch(setFilter(inputValue)); // Update Redux state on button click
     };
 
-
     return (
-
         <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:py-6">
             <p> Showing all {total} results</p>
             <div className="search-icon-btns flex flex-row items-center gap-3">
                 <p>Views:</p>
-                <Button variant="outline" size="iconsqr" ><LayoutGrid /></Button>
-                <Button variant="outline" size="iconsqr" ><AlignJustify /></Button>
+                <Button variant="outline" size="iconsqr"><LayoutGrid /></Button>
+                <Button variant="outline" size="iconsqr"><AlignJustify /></Button>
             </div>
             <div className="search-btns flex gap-3 flex-wrap justify-center">
                 <SortButton />
@@ -39,13 +40,14 @@ const SearchResults = () => {
                         className="px-4"
                         type="text"
                         placeholder="Filter products"
-                        value={filtre}
-                        onChange={handleFilterChange}
+                        value={inputValue}
+                        onChange={handleInputChange} // Updates only local state
                     />
-                    <Button onClick={handleFilter} >Filter</Button>
+                    <Button onClick={handleFilter}>Filter</Button> {/* Only updates Redux state on button click */}
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default SearchResults;
