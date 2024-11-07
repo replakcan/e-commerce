@@ -3,12 +3,30 @@ import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { fetchProductDetails } from "@/redux/actions/productActions";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 const ProductCard_3 = ({ products }) => {
 
-    const mostSoldProducts = [...products].sort((a, b) => b.sell_count - a.sell_count).slice(6, 12);
+    const [altLimit, setAltLimit] = useState(0);
+    const [ustLimit, setUstLimit] = useState(6);
+
+    const setLimitsUp = () => {
+        if (!(ustLimit === 24)) {
+            setAltLimit((altLimit) => altLimit + 6);
+            setUstLimit((ustLimit) => ustLimit + 6);
+        }
+    }
+
+    const setLimitsDown = () => {
+        if (!(altLimit === 0)) {
+            setAltLimit((altLimit) => altLimit - 6);
+            setUstLimit((ustLimit) => ustLimit - 6);
+        }
+    }
+
+    const mostSoldProducts = [...products].sort((a, b) => b.rating - a.rating).slice(altLimit, ustLimit);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -36,8 +54,14 @@ const ProductCard_3 = ({ products }) => {
                     </div>
                 </div>
                 <div className="flex gap-3">
-                    <Button variant="outline" size="icon"><ChevronLeft /></Button>
-                    <Button variant="outline" size="icon"><ChevronRight /></Button>
+                    <Button
+                        onClick={setLimitsDown}
+                        variant="outline" size="icon"><ChevronLeft />
+                    </Button>
+                    <Button
+                        onClick={setLimitsUp}
+                        variant="outline" size="icon"><ChevronRight />
+                    </Button>
                 </div>
             </nav>
             <div className="productContent flex flex-wrap md:col-start-1 md:col-end-3 md:flex-row md:justify-between row-start-2 row-end-3 justify-center md:pr-7 gap-7 md:gap-0 pt-2">
