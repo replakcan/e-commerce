@@ -4,11 +4,11 @@ import { fetchProductDetails } from "@/redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
-const ProductCard_5 = () => {
+const ProductCard_5 = ({ bestSeller }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const products = useSelector((store) => store.product.productList);
-    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
+    /* const products = useSelector((store) => store.product.productList);
+    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4); */
     const categories = useSelector((store) => store.product.categories);
 
     const handleProductClick = (product) => {
@@ -27,7 +27,7 @@ const ProductCard_5 = () => {
                 <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
             </div>
             <div className="flex flex-wrap items-center justify-center md:flex-row gap-7 md:gap-0 pb-12">
-                {bestSeller.map((bestItem, index) => (
+                {bestSeller?.map((bestItem, index) => (
                     <BestSellerCard
                         key={index}
                         name={bestItem.name}

@@ -8,11 +8,13 @@ import ProductCard_4 from "../ProductCard_4";
 import ProductCard_5 from "../ProductCard_5";
 import ShopCard from "../ShopCard";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "@/redux/actions/productActions";
 
 const HomeContent = () => {
     const dispatch = useDispatch();
+    const products = useSelector((store) => store.product.productList);
+    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
 
     useEffect(() => {
         dispatch(fetchProducts());
@@ -31,7 +33,7 @@ const HomeContent = () => {
                 <ProductCard_4 />
             </section>
             <div>
-                <ProductCard_5 />
+                <ProductCard_5 bestSeller={bestSeller} />
                 <Clients />
             </div>
             <section>
