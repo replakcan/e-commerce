@@ -13,7 +13,7 @@ const ShopPageCard = ({ name, description, price, src, onClick }) => {
             <div className="p-4 flex flex-col gap-3 max-w-[300px]">
                 <Heading variant="h4">{name}</Heading>
                 <p>{description}</p>
-                <p>{price}</p>
+                <p>${price}</p>
             </div>
         </div>
     );

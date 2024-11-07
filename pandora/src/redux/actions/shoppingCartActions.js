@@ -56,7 +56,7 @@ export const createOrder = (data, token) => {
                 Authorization: token,
             },
         }).then((res) => {
-            console.log("ORDER:", res)
+            console.log("sipariş başarılı bir şekilde kaydedildi", res)
         }).catch((error) => {
             console.log(error);
         });
