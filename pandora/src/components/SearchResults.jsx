@@ -2,14 +2,15 @@ import { AlignJustify, LayoutGrid } from "lucide-react";
 import { Button } from "./ui/button";
 import SortButton from "./SortButton";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductsByUserChoices, setFilter } from "@/redux/actions/productActions";
-import { useParams } from "react-router-dom";
+import { setFilter } from "@/redux/actions/productActions";
+import { useHistory, useParams } from "react-router-dom";
 
 //TODO views butonlarını aktifleştir
 //TODO kategori değiştirince sayfa 1'e dönmüyor (offseti resetle)
 const SearchResults = () => {
 
-    const { categoryId, sort } = useParams();
+    const { categoryId, sort, gender, categoryName, limit, offset } = useParams();
+    const history = useHistory();
     const dispatch = useDispatch();
     const total = useSelector((store) => store.product.total)
     const filtre = useSelector((store) => store.product.filter)
@@ -18,7 +19,7 @@ const SearchResults = () => {
     };
 
     const handleFilter = () => {
-        /* dispatch(fetchProductsByUserChoices(categoryId, sort, filtre)); */
+        /* history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filtre}/${limit || ""}/${offset || ""}`) */
     };
 
 

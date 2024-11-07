@@ -3,14 +3,15 @@ import ShopProductCards from "../ShopProductCards";
 import Categories from "../Categories";
 import Clients from "../Clients";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductsByUserChoices } from "@/redux/actions/productActions";
 
 const ShopContent = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
-    const {categoryId, sort, filter, limit, /* offset */} = useParams();
+    const {gender, categoryId, categoryName, sort, filter, limit, /* offset */} = useParams();
     
     /* const sort = useSelector((store) => store.product.sort) */
     /* const filter = useSelector((store) => store.product.filter) */
@@ -19,6 +20,9 @@ const ShopContent = () => {
 
 
     useEffect(() => {
+
+        history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filter || ""}/${limit || ""}/${offset || ""}`)
+
         if (categoryId) {
             dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, offset))
         }

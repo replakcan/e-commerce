@@ -1,7 +1,6 @@
 import ShopPageCard from "@/components/ShopPageCard";
 import Heading from "@/components/ui/heading";
-import { fetchProductDetails, fetchProductsByUserChoices } from "@/redux/actions/productActions";
-import { useEffect } from "react";
+import { fetchProductDetails } from "@/redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
