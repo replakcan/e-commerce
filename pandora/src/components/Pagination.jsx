@@ -13,7 +13,6 @@ const Pagination = () => {
     const total = useSelector(store => store.product.total);
     const totalPages = Math.ceil(total / limit);
     const currentPage = Math.floor(offset / limit) + 1;
-    const ofulaynset = useSelector((store) => store.product.offset)
 
     const handlePageClick = (pageNumber) => {
         const newOffset = limit * (pageNumber - 1);
@@ -21,8 +20,6 @@ const Pagination = () => {
         
         history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filter || ""}/${limit}/${newOffset}`)
     };
-
-    console.log("OFFSET_OFFSET:", ofulaynset)
 
     const handleFirstClick = () => handlePageClick(1);
     const handleNextClick = () => {

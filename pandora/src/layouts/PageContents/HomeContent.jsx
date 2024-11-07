@@ -18,9 +18,6 @@ const HomeContent = () => {
     const mostPopi = bestSeller[0];
     const mostPopi_2 = bestSeller[1];
 
-
-    console.log("mostPopi:", mostPopi)
-
     useEffect(() => {
         dispatch(fetchProducts());
     }, [])
