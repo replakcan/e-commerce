@@ -15,6 +15,11 @@ const HomeContent = () => {
     const dispatch = useDispatch();
     const products = useSelector((store) => store.product.productList);
     const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
+    const mostPopi = bestSeller[0];
+    const mostPopi_2 = bestSeller[1];
+
+
+    console.log("mostPopi:", mostPopi)
 
     useEffect(() => {
         dispatch(fetchProducts());
@@ -28,9 +33,9 @@ const HomeContent = () => {
             </div>
             <section className="flex flex-col gap-12">
                 <ProductCard_1 />
-                <ProductCard_2 />
+                <ProductCard_2 mostPopi_2={mostPopi_2}/>
                 <ProductCard_3 />
-                <ProductCard_4 />
+                <ProductCard_4 mostPopi={mostPopi} />
             </section>
             <div>
                 <ProductCard_5 bestSeller={bestSeller} />

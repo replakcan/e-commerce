@@ -2,7 +2,7 @@ import BestSellerCard from "@/components/BestSellerCard";
 import Heading from "@/components/ui/heading";
 import { fetchProductDetails } from "@/redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const ProductCard_5 = ({ bestSeller }) => {
     const dispatch = useDispatch();
