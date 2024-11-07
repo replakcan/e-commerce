@@ -21,7 +21,7 @@ import { fetchCategories } from './redux/actions/productActions';
 
 
 function App() {
-  
+
   const dispatch = useDispatch();
   const token = JSON.parse(localStorage.getItem("token"));
   useEffect(() => {

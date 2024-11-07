@@ -4,12 +4,12 @@ import { fetchProductDetails } from "@/redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
-const MoreProducts = () => {
+const MoreProducts = ({ bestSeller }) => {
     const dispatch = useDispatch();
     let history = useHistory();
-    const products = useSelector((store) => store.product.productList)
-    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
-    const { categoryId, sort, filter, gender, categoryName } = useParams();
+    /* const products = useSelector((store) => store.product.productList)
+    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4); */
+    const { categoryId, gender, categoryName } = useParams();
 
     const handleProductClick = (product) => {
         const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase();

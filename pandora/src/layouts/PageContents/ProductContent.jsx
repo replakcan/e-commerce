@@ -14,7 +14,8 @@ const ProductContent = () => {
     const history = useHistory();
     const { categoryId, productId } = useParams();
     const dispatch = useDispatch();
-
+    const products = useSelector((store) => store.product.productList)
+    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4);
     const handleBackClick = () => {
         history.goBack();
     };
@@ -45,7 +46,7 @@ const ProductContent = () => {
                     <ProductDescription />
                 </section>
                 <div>
-                    <MoreProducts />
+                    <MoreProducts bestSeller={bestSeller}/>
                 </div>
             </div>
             <Clients />
