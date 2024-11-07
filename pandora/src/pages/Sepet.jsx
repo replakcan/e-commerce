@@ -14,7 +14,9 @@ const SepetPage = () => {
         <div className="flex flex-col gap-8 px-[10%] py-4 md:flex-row md:justify-between">
             <div>
                 {cartItems?.map((item, index) => (
-                    <div key={index} className="flex items-center flex-wrap justify-between row-gap-2 border shadow-md p-2">
+                    <div
+                        key={index}
+                        className="flex items-center flex-wrap justify-between row-gap-2 border shadow-md p-2">
                         <div className="flex items-center">
                             {/* Checkbox */}
                             <input

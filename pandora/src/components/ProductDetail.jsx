@@ -8,7 +8,7 @@ import { Eye, Heart, ShoppingCart, Star, StarHalf } from "lucide-react";
 const ProductDetail = ({ src, name, sell_count, description, price, stock }) => {
     const dispatch = useDispatch();
     const fetchState = useSelector((store) => store.product.fetchState)
-    const productToAdd = useSelector((store) => store.product.product);
+    const productToAdd = useSelector((store) => store.product.currentProduct);
 
     const handleAddToCart = () => {
         dispatch(setCart(productToAdd));

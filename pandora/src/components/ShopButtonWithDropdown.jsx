@@ -49,7 +49,11 @@ const ShopButtonWithDropdown = () => {
                         <ul className="flex flex-col">
                             {categories.map((cat, index) => {
                                 if (cat.gender === "k") {
-                                    return <Link key={index} to={`/shop/kadin/${cat.code}/${cat.id}`} className="cursor-pointer">{cat.title}</Link>
+                                    return <Link
+                                        key={index}
+                                        to={`/shop/kadin/${cat.code.slice(2)}/${cat.id}`}
+                                        className="cursor-pointer">{cat.title}
+                                    </Link>
                                 }
                             })}
                         </ul>
@@ -59,7 +63,11 @@ const ShopButtonWithDropdown = () => {
                         <ul className="flex flex-col">
                             {categories.map((cat, index) => {
                                 if (cat.gender === "e") {
-                                    return <Link key={index} to={`/shop/erkek/${cat.code}/${cat.id}`} className="cursor-pointer">{cat.title}</Link>
+                                    return <Link
+                                        key={index}
+                                        to={`/shop/erkek/${cat.code.slice(2)}/${cat.id}`}
+                                        className="cursor-pointer">{cat.title}
+                                    </Link>
                                 }
                             })}
                         </ul>

@@ -18,8 +18,8 @@ const PreviousOrders = () => {
             {orders.length ? (
                 <div className="orders-table space-y-4">
                     {orders.map(order => (
-                        <CollapsiblePanel 
-                            key={order.id} 
+                        <CollapsiblePanel
+                            key={order.id}
                             title={`Order #${order.id} - ${new Date(order.order_date).toLocaleDateString()}`}
                             className="border border-gray-200 rounded-lg"
                         >
@@ -39,11 +39,13 @@ const PreviousOrders = () => {
                                         </thead>
                                         <tbody>
                                             {order.products.map(product => (
-                                                <tr key={product.id} className="border-b hover:bg-gray-50">
+                                                <tr
+                                                    key={product.id}
+                                                    className="border-b hover:bg-gray-50">
                                                     <td className="py-2 px-4">
-                                                        <img 
-                                                            src={product.images[0]?.url} 
-                                                            alt={product.name} 
+                                                        <img
+                                                            src={product.images[0]?.url}
+                                                            alt={product.name}
                                                             className="w-12 h-12 rounded-md"
                                                         />
                                                     </td>

@@ -8,6 +8,7 @@ export const SET_LIMIT = 'SET_LIMIT';
 export const SET_OFFSET = 'SET_OFFSET';
 export const SET_FILTER = 'SET_FILTER';
 export const SET_PRODUCT = "SET_PRODUCT";
+export const SET_SORT = "SET_SORT";
 
 
 export const setCategories = (categories) => ({
@@ -45,6 +46,11 @@ export const setFilter = (filter) => ({
     payload: filter,
 });
 
+export const setSort = (sort) => ({
+    type: SET_SORT,
+    payload: sort,
+});
+
 export const setProduct = (product) => ({
     type: SET_PRODUCT,
     payload: product,
@@ -66,7 +72,7 @@ export const fetchCategories = () => {
     }
 }
 
-export const fetchProducts = () => {
+/* export const fetchProducts = () => {
     return async (dispatch, getState) => {
         dispatch({ type: SET_FETCH_STATE, payload: "FETCHING" });
         await axiosInstance("/products").then((res) => {
@@ -80,7 +86,7 @@ export const fetchProducts = () => {
             dispatch({ type: SET_FETCH_STATE, payload: "FAILED" });
         })
     }
-}
+} */
 
 
 export const fetchProductsByUserChoices = (categoryId, sort = "", filter = "", limit = 24, offset = 0) => {

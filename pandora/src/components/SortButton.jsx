@@ -2,12 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ChevronDown } from 'lucide-react';
+import { useDispatch } from 'react-redux';
+import { setSort } from '@/redux/actions/productActions';
 
 const SortButton = () => {
   const [isOpen, setIsOpen] = useState(false);  // Dropdown'un açık/kapalı durumu
   const [selectedOption, setSelectedOption] = useState('Sort By');  // Seçilen seçenek
   const { gender, categoryName, categoryId } = useParams(); // Mevcut URL parametrelerini alıyoruz
   const dropdownRef = useRef(null); // Dropdown menüsü için ref oluşturuyoruz
+  const dispatch = useDispatch();
 
   // Dropdown seçenekleri
   const options = [
@@ -23,9 +26,10 @@ const SortButton = () => {
   };
 
   // Bir seçenek seçildiğinde
-  const handleOptionSelect = (label) => {
-    setSelectedOption(label);  // Seçilen label'i göster
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option.label);  // Seçilen label'i göster
     setIsOpen(false);  // Dropdown'u kapat
+    dispatch(setSort(option.value));
   };
 
   // Dropdown dışında bir yere tıklanınca menüyü kapatma
@@ -56,7 +60,7 @@ const SortButton = () => {
               <Link
                 key={index}
                 to={`/shop/${gender}/${categoryName}/${categoryId}/${option.value}`}
-                onClick={() => handleOptionSelect(option.label)} // Label'i güncelleyip dropdown'u kapatıyoruz
+                onClick={() => handleOptionSelect(option)} // Label'i güncelleyip dropdown'u kapatıyoruz
                 className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
                 {option.label}

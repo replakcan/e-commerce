@@ -1,23 +1,28 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { fetchProductsByUserChoices, setOffset } from '@/redux/actions/productActions';
+import { useHistory, useParams } from 'react-router-dom';
+import { setOffset } from '@/redux/actions/productActions';
 import { Button } from './ui/button';
 
 const Pagination = () => {
-    const { categoryId, sort, filter } = useParams();
+    const history = useHistory();
+    const { gender, categoryName, categoryId, sort, filter } = useParams();
     const dispatch = useDispatch();
     const limit = useSelector(store => store.product.limit);
     const offset = useSelector(store => store.product.offset);
     const total = useSelector(store => store.product.total);
     const totalPages = Math.ceil(total / limit);
     const currentPage = Math.floor(offset / limit) + 1;
+    const ofulaynset = useSelector((store) => store.product.offset)
 
     const handlePageClick = (pageNumber) => {
         const newOffset = limit * (pageNumber - 1);
         dispatch(setOffset(newOffset));
-        dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, newOffset));
+        
+        history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filter || ""}/${limit}/${newOffset}`)
     };
+
+    console.log("OFFSET_OFFSET:", ofulaynset)
 
     const handleFirstClick = () => handlePageClick(1);
     const handleNextClick = () => {
@@ -38,7 +43,7 @@ const Pagination = () => {
     //TODO border'ları ayarla
     return (
         <div className="flex items-center justify-center pt-5">
-            <Button 
+            <Button
                 size="pagination"
                 variant="paginationFirst"
                 onClick={handleFirstClick}
@@ -57,7 +62,7 @@ const Pagination = () => {
                     {page}
                 </Button>
             ))}
-            <Button 
+            <Button
                 size="pagination"
                 variant="paginationNext"
                 onClick={handleNextClick}

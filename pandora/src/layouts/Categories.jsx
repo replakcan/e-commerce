@@ -24,7 +24,8 @@ const Categories = () => {
 
                 {topCategories?.map((topcat) => {
                     return <CategoryCard
-                        category={topcat.code}
+                        id={topcat.id}
+                        category={topcat.code.slice(2)}
                         key={topcat.id}
                         title={topcat.title}
                         src={topcat.img}

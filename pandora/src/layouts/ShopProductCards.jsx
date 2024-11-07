@@ -1,7 +1,6 @@
 import Pagination from "@/components/Pagination";
 import ShopPageCard from "@/components/ShopPageCard";
-import { fetchProductDetails, fetchProductsByUserChoices } from "@/redux/actions/productActions";
-import { useEffect } from "react";
+import { fetchProductDetails } from "@/redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 
@@ -11,13 +10,7 @@ const ShopProductCards = () => {
     const total = useSelector((store) => store.product.total);
     const dispatch = useDispatch();
     let history = useHistory();
-    const { categoryId, sort, filter, gender, categoryName } = useParams();
-
-    useEffect(() => {
-        if (categoryId) {
-            dispatch(fetchProductsByUserChoices(categoryId, sort, filter));
-        }
-    }, [dispatch, categoryId, sort, filter]);
+    const { categoryId, gender, categoryName } = useParams();
 
     const handleProductClick = (product) => {
         const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase();
@@ -27,7 +20,6 @@ const ShopProductCards = () => {
         history.push(`/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${product.id}`);
     };
 
-    console.log("TOTAL:", total)
     if (fetchState === 'FETCHING') {
         return <span className="loader"></span>;
     }
@@ -61,3 +53,5 @@ const ShopProductCards = () => {
 }
 
 export default ShopProductCards;
+
+//TODO btn in productDetail doesn't go back to productPage 
