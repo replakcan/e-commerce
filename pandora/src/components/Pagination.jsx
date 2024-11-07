@@ -1,24 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
 import { setOffset } from '@/redux/actions/productActions';
 import { Button } from './ui/button';
 
 const Pagination = () => {
-    const history = useHistory();
-    const { gender, categoryName, categoryId, sort, filter } = useParams();
     const dispatch = useDispatch();
-    const limit = useSelector(store => store.product.limit);
-    const offset = useSelector(store => store.product.offset);
-    const total = useSelector(store => store.product.total);
-    const totalPages = Math.ceil(total / limit);
-    const currentPage = Math.floor(offset / limit) + 1;
+    const limit = useSelector(store => store.product.limit) || 1; // Varsayılan değer 1
+    const offset = useSelector(store => store.product.offset) || 0; // Varsayılan değer 0
+    const total = useSelector(store => store.product.total) || 0; // Varsayılan değer 0
+
+    // `totalPages`'i `NaN` olmaması için kontrol ediyoruz
+    const totalPages = Math.max(1, Math.ceil(total / limit));
+    const currentPage = Math.max(1, Math.floor(offset / limit) + 1);
 
     const handlePageClick = (pageNumber) => {
         const newOffset = limit * (pageNumber - 1);
         dispatch(setOffset(newOffset));
-        
-        history.push(`/shop/${gender}/${categoryName}/${categoryId}/${sort || ""}/${filter || ""}/${limit}/${newOffset}`)
     };
 
     const handleFirstClick = () => handlePageClick(1);
@@ -30,14 +27,14 @@ const Pagination = () => {
 
     const getDisplayedPages = () => {
         if (currentPage === 1) {
-            return [1, 2, 3];
+            return [1, 2, 3].slice(0, totalPages); // Sadece mevcut sayfalar kadar göster
         } else if (currentPage === totalPages) {
-            return [totalPages - 2, totalPages - 1, totalPages];
+            return [totalPages - 2, totalPages - 1, totalPages].filter(page => page > 0);
         } else {
             return [currentPage - 1, currentPage, currentPage + 1];
         }
     };
-    //TODO border'ları ayarla
+
     return (
         <div className="flex items-center justify-center pt-5">
             <Button
