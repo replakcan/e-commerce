@@ -32,9 +32,9 @@ const HomeContent = () => {
                 <ShopCard />
             </div>
             <section className="flex flex-col gap-12">
-                <ProductCard_1 />
-                <ProductCard_2 mostPopi_2={mostPopi_2}/>
-                <ProductCard_3 />
+                <ProductCard_1 products={products} />
+                <ProductCard_2 mostPopi_2={mostPopi_2} />
+                <ProductCard_3 products={products} />
                 <ProductCard_4 mostPopi={mostPopi} />
             </section>
             <div>
