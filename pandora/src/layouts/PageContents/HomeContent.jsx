@@ -7,8 +7,16 @@ import ProductCard_3 from "../ProductCard_3";
 import ProductCard_4 from "../ProductCard_4";
 import ProductCard_5 from "../ProductCard_5";
 import ShopCard from "../ShopCard";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "@/redux/actions/productActions";
 
 const HomeContent = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [])
 
     return (
         <div className="content flex flex-col gap-12">
