@@ -29,7 +29,7 @@ export default function HamburgerMenu() {
         <DropdownMenuItem onClick={() => history.push("/contact")}>
           Contact
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => history.push("/tean")}>
+        <DropdownMenuItem onClick={() => history.push("/team")}>
           Team
         </DropdownMenuItem>
       </DropdownMenuContent>
