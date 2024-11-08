@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Button } from "./button";
+import { ShoppingCart } from "lucide-react";
 
 const CartButton = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,17 +10,16 @@ const CartButton = () => {
     const cart = useSelector((store) => store.shoppingCart.cart);
     const itemCount = cart.reduce((total, item) => total + item.count, 0);
     const goToCart = () => history.push("/siparis-ozeti");
-
     const toggleDropdown = () => setIsOpen(!isOpen);
 
     return (
         <div className="relative">
-            <button onClick={toggleDropdown} className="flex items-center p-2 bg-blue-500 text-white rounded">
-                Cart
-                <span className="ml-2 bg-red-600 text-white rounded-full px-2 py-1 text-sm">
+            <Button variant="outline" onClick={toggleDropdown}>
+                <ShoppingCart />
+                <span className="ml-2 bg-ikincil text-white rounded-full px-2 py-1 text-sm">
                     {itemCount}
                 </span>
-            </button>
+            </Button>
 
             {isOpen && (
                 <div className="absolute right-0 mt-2 w-80 bg-white border border-gray-200 rounded shadow-lg p-4 z-10">
@@ -44,8 +44,8 @@ const CartButton = () => {
                         <p className="text-gray-500">Sepetinizde ürün yok.</p>
                     )}
                     <div className="flex justify-between mt-4">
-                        <button onClick={goToCart} className="p-2 bg-gray-200 rounded">Sepete Git</button>
-                        <Button>Siparişi Tamamla</Button>
+                        <Button onClick={goToCart}>Sepete Git</Button>
+
                     </div>
                 </div>
             )}
