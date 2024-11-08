@@ -15,13 +15,8 @@ const ShopContent = () => {
 
     const { gender, categoryId, categoryName } = useParams();
 
-    // Redux store'dan parametreleri alıyoruz
-    const sort = useSelector((store) => store.product.sort);
-    const filter = useSelector((store) => store.product.filter);
-    const limit = useSelector((store) => store.product.limit);
-    const offset = useSelector((store) => store.product.offset);
+    const {sort, filter, limit, offset} = useSelector((store) => store.product)
 
-    // Sayfa yüklendiğinde URL'den Redux store'a parametreleri yükle
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
         const initialSort = queryParams.get("sort") || "";
@@ -29,19 +24,16 @@ const ShopContent = () => {
         const initialLimit = queryParams.get("limit") || "24";
         const initialOffset = queryParams.get("offset") || "";
 
-        // Redux store'da değerleri güncelle
         dispatch(setSort(initialSort));
         dispatch(setFilter(initialFilter));
         dispatch(setLimit(initialLimit));
         dispatch(setOffset(initialOffset));
 
-        // Parametreler yüklendikten sonra flag'i true yapıyoruz
         setIsParamsLoaded(true);
     }, [location.search, dispatch]);
 
     useEffect(() => {
         if (isParamsLoaded) {
-            // Boş olmayan parametreleri dinamik olarak queryParams nesnesine ekle
             const queryParamsObject = {};
             if (sort) queryParamsObject.sort = sort;
             if (filter) queryParamsObject.filter = filter;
@@ -51,7 +43,6 @@ const ShopContent = () => {
             const queryParams = new URLSearchParams(queryParamsObject);
             const queryString = queryParams.toString() ? `?${queryParams.toString()}` : "";
 
-            // Ürünleri filtreler
             if (categoryId) {
                 dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, offset));
                 history.push(`/shop/${gender}/${categoryName}/${categoryId}${queryString}`);

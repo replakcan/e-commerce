@@ -29,7 +29,7 @@ const ShopProductCards = () => {
     }
 
 
-    if (total === 0) return <h1 className="font-bold text-5xl">Aradığınız kriterde ürün bulunamadı :{"("} </h1>
+    /* if (total === 0) return <h1 className="font-bold text-5xl">Aradığınız kriterde ürün bulunamadı :{"("} </h1> */
 
     return (
         <div>
