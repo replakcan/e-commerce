@@ -19,7 +19,8 @@ export default {
 				"ucuncul": "#17213C",
 				"footerBG": "#252B42",
 				"light_gray": "#FAFAFA",
-				"brilliant": "#26c2a3",
+				"brilliant": "#26C2A3",
+				"kum": "#F0E6D2",
 
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
