@@ -65,6 +65,21 @@ export const loginUser = (data) => {
     }
 }
 
+export const signUpNewUser = (data) => {
+    return async (dispatch, getState) => {
+        await axiosInstance.post("/signup", data).then((response) => {
+            dispatch({
+                type: SET_USER,
+                payload: response.data,
+            })
+            console.log("NEWUSER:", response.data)
+            console.log("new user basarili bir sekilde olusturuldu.")
+        }).catch((error) => {
+            console.error("Invalid user:", error);
+        })
+    }
+}
+
 export const autoLogin = (token) => {
     return async (dispatch, getState) => {
         axiosInstance("/verify", {
