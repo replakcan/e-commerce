@@ -20,11 +20,20 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         }
     });
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         const updatedData = { id, ...data };
-        dispatch(updateAddress(updatedData, userToken));
-        dispatch(fetchAddressList(userToken));
-        onClose();
+        try {
+            // Adresi güncelleme işlemini bekliyoruz
+            await dispatch(updateAddress(updatedData, userToken));
+
+            // Güncelleme başarılı olursa adres listesini yeniden yükle
+            await dispatch(fetchAddressList(userToken));
+
+            // onClose fonksiyonunu çağırarak formu kapatabiliriz
+            if (onClose) onClose();
+        } catch (error) {
+            console.error("Failed to update address:", error);
+        }
     };
 
     return (

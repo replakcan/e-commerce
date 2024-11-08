@@ -25,7 +25,7 @@ const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card, 
     };
 
     return (
-        <div className="border border-black flex justify-between p-2 min-w-[300px]">
+        <div className="border border-black flex justify-between p-2 w-full">
             {isEditing ? (
                 <CreditCardUpdateForm
                     id={id}
@@ -34,7 +34,6 @@ const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card, 
                 />
             ) : (
                 <div onClick={onClick} className="flex flex-col flex-wrap">
-                    <Heading variant="h2">Kart Bilgileri</Heading>
                     <p><span className="text-danger font-bold">Kart Numarası:</span> **** **** **** {card_no.slice(-4)}</p>
                     <p><span className="text-danger font-bold">Kart Üzerindeki İsim:</span> {name_on_card}</p>
                     <p><span className="text-danger font-bold">Son Kullanma Tarihi:</span> {expire_month}/{expire_year}</p>

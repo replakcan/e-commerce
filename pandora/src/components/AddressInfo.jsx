@@ -25,7 +25,7 @@ const AddressInfo = ({ title, name, surname, phone, city, district, neighborhood
     };
 
     return (
-        <div className="border border-black flex justify-between p-2 min-w-[300px]">
+        <div className="border border-black flex justify-between p-2 w-full">
             {isEditing ? (
                 <AddressUpdateForm
                     id={id}

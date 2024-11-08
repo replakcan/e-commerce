@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 //TODO butona tiklayinca adresleri guncelleyecek sekilde kodu duzenle
 const AddresList = () => {
-    const [showInfo, setShowInfo] = useState(false);
     const addressList = useSelector((store) => store.client.addressList)
     const dispatch = useDispatch();
 
@@ -19,12 +18,10 @@ const AddresList = () => {
     return (
 
         <div className="">
-            <Button onClick={() => setShowInfo(!showInfo)} >Show kayitli liste</Button>
-
-            {showInfo && addressList.length === 0 && <Heading variant="h1">Kayitli adres kaydi bulunamadi.</Heading>}
+            {addressList.length === 0 && <Heading variant="h1">Kayitli adres kaydi bulunamadi.</Heading>}
 
             <div className="flex flex-wrap gap-1">
-                {showInfo && addressList?.map((adres) => {
+                {addressList?.map((adres) => {
                     return <AddressInfo
                         onClick={() => chooseAddress(adres)}
                         key={adres.id}
