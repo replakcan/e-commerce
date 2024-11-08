@@ -17,7 +17,7 @@ export default function ShopDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="md:text-ikincil">
+        <Button variant="link" size="sm" className="text-brilliant">
           <ChevronDown className="ml-1 h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>

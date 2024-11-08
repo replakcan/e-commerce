@@ -4,6 +4,7 @@ import SortButton from "./SortButton";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "@/redux/actions/productActions";
 import { useState, useEffect } from "react";
+import { Input } from "./ui/input";
 
 const SearchResults = () => {
     const dispatch = useDispatch();
@@ -35,19 +36,17 @@ const SearchResults = () => {
             </div>
             <div className="search-btns flex gap-3 flex-wrap justify-center">
                 <SortButton />
-                <div>
-                    <input
-                        className="px-4"
-                        type="text"
+                <div className="flex items-center">
+                    <Input
+                        type="email"
                         placeholder="Filter products"
                         value={inputValue}
-                        onChange={handleInputChange} // Updates only local state
-                    />
-                    <Button onClick={handleFilter}>Filter</Button> {/* Only updates Redux state on button click */}
+                        onChange={handleInputChange} />
+                    <Button onClick={handleFilter} type="submit">Filter</Button>
                 </div>
+
             </div>
         </div>
     );
 };
-
 export default SearchResults;
