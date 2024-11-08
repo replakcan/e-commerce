@@ -21,8 +21,6 @@ const ShopContent = () => {
     const limit = useSelector((store) => store.product.limit);
     const offset = useSelector((store) => store.product.offset);
 
-    // Yükleme tamamlandıktan sonra ürünleri çekmek için bir flag kullanıyoruz
-
     // Sayfa yüklendiğinde URL'den Redux store'a parametreleri yükle
     useEffect(() => {
         const queryParams = new URLSearchParams(location.search);
@@ -51,16 +49,15 @@ const ShopContent = () => {
             if (offset) queryParamsObject.offset = offset;
 
             const queryParams = new URLSearchParams(queryParamsObject);
-
-            // Yeni URL'yi güncelle
-            history.push(`/shop/${gender}/${categoryName}/${categoryId}?${queryParams.toString()}`);
+            const queryString = queryParams.toString() ? `?${queryParams.toString()}` : "";
 
             // Ürünleri filtreler
             if (categoryId) {
                 dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, offset));
+                history.push(`/shop/${gender}/${categoryName}/${categoryId}${queryString}`);
             } else {
-                dispatch(fetchProducts())
-                history.push("/shop")
+                dispatch(fetchProducts(sort, filter, limit, offset));
+                history.push(`/shop${queryString}`);
             }
         }
     }, [isParamsLoaded, gender, categoryId, categoryName, sort, filter, limit, offset, dispatch, history]);
