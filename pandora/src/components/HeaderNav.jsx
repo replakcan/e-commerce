@@ -29,7 +29,7 @@ const HeaderNav = () => {
     };
 
     return (
-        <div className="text-brilliant flex flex-col items-center md:flex-row md:px-[10%] p-9 md:py-0 relative">
+        <div className="text-brilliant flex flex-col items-center md:flex-row md:px-[10%] p-9 md:py-0 relative bg-kum">
             <div className="header-nav flex justify-between items-center gap-4 w-full">
                 <Heading variant="h3" className="text-[#26C2A3]">E-commencero</Heading>
             </div>
