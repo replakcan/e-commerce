@@ -33,15 +33,23 @@ const HeaderNav = () => {
                 </ul>
             </div>
             <div className="flex flex-col  md:flex-row py-12 md:py-3 items-center">
-                {Object.keys(user).length > 0 && <p>{user.name}</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
-                <ShopButtonWithDropdown/>
+                <div className="flex gap-0 border border-black">
+                    <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop </Button>
+                    <ShopButtonWithDropdown />
+                </div>
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>
                 {Object.keys(user).length === 0 && <Button onClick={() => history.push("/login")} variant="ghost" size="sm" className="md:text-ikincil">Login</Button>}
                 <CartButton />
+                {Object.keys(user).length > 0 && <div className="">
+                    <img src={gravatarUrl} alt="User Avatar" />
+                    <p>
+                        {user.name}
+                    </p>
+                </div>}
             </div>
         </div>
 
