@@ -25,7 +25,7 @@ const ShopContent = () => {
         const queryParams = new URLSearchParams(location.search);
         const initialSort = queryParams.get("sort") || "";
         const initialFilter = queryParams.get("filter") || "";
-        const initialLimit = queryParams.get("limit") || "";
+        const initialLimit = queryParams.get("limit") || "24";
         const initialOffset = queryParams.get("offset") || "";
 
         // Redux store'da değerleri güncelle
