@@ -1,4 +1,4 @@
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Button } from "./ui/button";
 import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
@@ -9,7 +9,6 @@ import CartButton from "./ui/shopCartbtn";
 //TODO CSS'I DUZELT
 const HeaderNav = () => {
     const user = useSelector((store) => store.client.user)
-    const {categoryId} = useParams();
     let history = useHistory();
 
     return (
@@ -27,7 +26,10 @@ const HeaderNav = () => {
                 {Object.keys(user).length > 0 && <p>{user.name}</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
-                <ShopButtonWithDropdown/>
+                <div className="flex gap-0 border border-black">
+                    <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop </Button>
+                    <ShopButtonWithDropdown />
+                </div>
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>

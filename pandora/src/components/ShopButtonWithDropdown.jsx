@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ChevronDown } from 'lucide-react';
 import { useSelector } from 'react-redux';
@@ -35,8 +35,7 @@ const ShopButtonWithDropdown = () => {
                 variant="ghost"
                 size="sm"
                 className="md:text-ikincil"
-            >
-                Shop <ChevronDown />
+            ><ChevronDown />
             </Button>
 
             {isDropdownOpen && (

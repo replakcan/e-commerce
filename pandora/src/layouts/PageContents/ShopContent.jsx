@@ -5,7 +5,7 @@ import Clients from "../Clients";
 import { useEffect } from "react";
 import { useHistory, useParams, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductsByUserChoices, setSort, setFilter, setLimit, setOffset } from "@/redux/actions/productActions";
+import { fetchProductsByUserChoices, setSort, setFilter, setLimit, setOffset, fetchProducts } from "@/redux/actions/productActions";
 
 const ShopContent = () => {
     const dispatch = useDispatch();
@@ -36,7 +36,13 @@ const ShopContent = () => {
     }, [location.search, dispatch]);
 
     useEffect(() => {
-        // Boş olmayan parametreleri dinamik olarak queryParams nesnesine ekle
+        // Eğer `gender`, `categoryId` ve `categoryName` tanımsızsa, tüm ürünleri getir
+        if (!gender && !categoryId && !categoryName) {
+            dispatch(fetchProducts());
+            return;
+        }
+
+        // URL parametrelerini oluştur
         const queryParamsObject = {};
         if (sort) queryParamsObject.sort = sort;
         if (filter) queryParamsObject.filter = filter;
@@ -45,13 +51,17 @@ const ShopContent = () => {
 
         const queryParams = new URLSearchParams(queryParamsObject);
 
-        history.push(`/shop/${gender}/${categoryName}/${categoryId}?${queryParams.toString()}`);
+        // URL'i güncelle
+        const newPath = `/shop/${gender}/${categoryName}/${categoryId}?${queryParams.toString()}`;
+        if (location.pathname + location.search !== newPath) {
+            history.replace(newPath);
+        }
 
         // Ürünleri filtreler
         if (categoryId) {
             dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, offset));
         }
-    }, [gender, categoryId, categoryName, sort, filter, limit, offset, dispatch, history]);
+    }, [gender, categoryId, categoryName, sort, filter, limit, offset, dispatch, history, location.pathname, location.search]);
 
     return (
         <div className="content flex flex-col gap-20">
