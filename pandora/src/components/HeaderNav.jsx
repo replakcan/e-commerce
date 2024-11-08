@@ -4,12 +4,22 @@ import Heading from "./ui/heading";
 import { useSelector } from "react-redux";
 import ShopButtonWithDropdown from "./ShopButtonWithDropdown";
 import CartButton from "./ui/shopCartbtn";
+import md5 from 'crypto-js/md5';
+
 
 
 //TODO CSS'I DUZELT
 const HeaderNav = () => {
     const user = useSelector((store) => store.client.user)
     let history = useHistory();
+
+    const getGravatarUrl = (email) => {
+        const hash = md5(email.trim().toLowerCase()).toString();
+        return `https://www.gravatar.com/avatar/${hash}`;
+    };
+
+    const gravatarUrl = user && user.email ? getGravatarUrl(user.email) : null;
+
 
     return (
         <div className="flex flex-col items-center md:flex-row bg-white md:px-[10%] shadow-md p-9 md:py-0">
@@ -26,10 +36,7 @@ const HeaderNav = () => {
                 {Object.keys(user).length > 0 && <p>{user.name}</p>}
                 <Button onClick={() => history.push("/signup")} variant="ghost" size="sm" className="md:text-ikincil">SignUp</Button>
                 <Button onClick={() => history.push("/")} variant="ghost" size="sm" className="md:text-ikincil">Home</Button>
-                <div className="flex gap-0 border border-black">
-                    <Button onClick={() => history.push("/shop")} variant="ghost" size="sm" className="md:text-ikincil">Shop </Button>
-                    <ShopButtonWithDropdown />
-                </div>
+                <ShopButtonWithDropdown/>
                 <Button onClick={() => history.push("/about")} variant="ghost" size="sm" className="md:text-ikincil">About</Button>
                 <Button onClick={() => history.push("/contact")} variant="ghost" size="sm" className="md:text-ikincil">Contact</Button>
                 <Button onClick={() => history.push("/team")} variant="ghost" size="sm" className="md:text-ikincil">Team</Button>
