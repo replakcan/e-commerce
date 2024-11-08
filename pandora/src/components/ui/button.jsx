@@ -8,7 +8,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 w-fit lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3",
+        default: "bg-brilliant text-primary-foreground hover:bg-primary/90 w-fit lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3",
         destructive:
           "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 bg-destructive text-destructive-foreground hover:bg-destructive/90 w-fit",
         outline:
@@ -22,11 +22,11 @@ const buttonVariants = cva(
         secondary:
           "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 w-fit",
         ghost: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 hover:bg-accent hover:text-accent-foreground w-fit",
-        link: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 text-primary underline-offset-4 hover:underline w-fit",
-        paginationFirst: " border-2 shadow-sm text-primary border-l border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-l-lg rounded-r-none hover:text-primary",
-        paginationNext: " border-2 shadow-sm text-primary border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-r-lg rounded-l-none",
-        paginationCurrent: " border-2 shadow-sm text-primary border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-none",
-        paginationOther: " border-2 shadow-sm text-primary bg-primary text-primary-foreground hover:bg-primary/90 w-fit rounded-none",
+        link: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 text-brilliant underline-offset-4 hover:underline w-fit",
+        paginationFirst: " border-2 shadow-sm text-brilliant border-l border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-l-lg rounded-r-none hover:text-brilliant",
+        paginationNext: " border-2 shadow-sm text-brilliant border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-r-lg rounded-l-none",
+        paginationCurrent: " border-2 shadow-sm text-brilliant border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-none",
+        paginationOther: " border-2 shadow-sm text-brilliant bg-brilliant text-brilliant-foreground hover:bg-brilliant/90 w-fit rounded-none",
       },
       size: {
         default: "h-10 px-4 py-2",
