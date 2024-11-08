@@ -36,13 +36,9 @@ const ShopContent = () => {
     }, [location.search, dispatch]);
 
     useEffect(() => {
-        // Eğer `gender`, `categoryId` ve `categoryName` tanımsızsa, tüm ürünleri getir
-        if (!gender && !categoryId && !categoryName) {
-            dispatch(fetchProducts());
-            return;
-        }
+        // Boş olmayan parametreleri dinamik olarak queryParams nesnesine ekle
 
-        // URL parametrelerini oluştur
+
         const queryParamsObject = {};
         if (sort) queryParamsObject.sort = sort;
         if (filter) queryParamsObject.filter = filter;
@@ -51,17 +47,18 @@ const ShopContent = () => {
 
         const queryParams = new URLSearchParams(queryParamsObject);
 
-        // URL'i güncelle
-        const newPath = `/shop/${gender}/${categoryName}/${categoryId}?${queryParams.toString()}`;
-        if (location.pathname + location.search !== newPath) {
-            history.replace(newPath);
+        if (!(gender && categoryId && categoryName)) {
+            history.push("/shop")
+            dispatch(fetchProducts())
         }
 
         // Ürünleri filtreler
         if (categoryId) {
             dispatch(fetchProductsByUserChoices(categoryId, sort, filter, limit, offset));
+
+            history.push(`/shop/${gender}/${categoryName}/${categoryId}?${queryParams.toString()}`);
         }
-    }, [gender, categoryId, categoryName, sort, filter, limit, offset, dispatch, history, location.pathname, location.search]);
+    }, [gender, categoryId, categoryName, sort, filter, limit, offset, dispatch, history]);
 
     return (
         <div className="content flex flex-col gap-20">
