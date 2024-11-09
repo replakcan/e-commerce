@@ -14,7 +14,7 @@ const CartButton = () => {
 
     return (
         <div className="relative">
-            <Button variant="link" className="border" onClick={toggleDropdown}>
+            <Button variant="link" className="border hover:text-mars" onClick={toggleDropdown}>
                 <ShoppingCart />
                 <span className="ml-2 bg-brilliant text-white rounded-full px-2 py-1 text-sm">
                     {itemCount}

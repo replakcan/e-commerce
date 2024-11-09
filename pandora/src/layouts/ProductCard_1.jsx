@@ -44,7 +44,6 @@ const ProductCard_1 = ({ products }) => {
     return (
         <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] border rounded-3xl overflow-hidden">
             <div className="md:col-start-1 col-end-2 md:row-span-full bg-brilliant">
-                {/* <img className=" md:col-start-1 col-end-2 md:row-span-full bg-center bg-no-repeat w-full h-full overflow-hidden" src="./images/productCard/card-cover-5.png" /> */}
             </div>
             <nav className="productNav flex flex-col items-center md:col-start-2 col-end-4 md:row-span-1 md:flex-row md:justify-between md:px-7 md:py-6 gap-6 pt-24 flex-wrap pb-12 border-b border-mars mx-7">
                 <div className="flex flex-col md:flex-row items-center justify-between grow ">

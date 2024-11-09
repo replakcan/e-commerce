@@ -38,34 +38,67 @@ const HeaderNav = () => {
             </div>
             <div className="flex flex-col md:flex-row py-12 md:py-3 items-center gap-3">
                 {location.pathname !== "/" && (
-                    <Button onClick={() => history.push("/")} className="" variant="link" size="sm"><Home /></Button>
+                    <Button onClick={() => history.push("/")}
+                        className="text-black font-bold"
+                        variant="link"
+                        size="icon"
+                    >
+                        <Home />
+                    </Button>
                 )}
                 <div className="flex">
                     <div className="flex items-center">
                         {Object.keys(user).length === 0 ?
-                            <div className="flex items-center ">
-                                <Button onClick={() => history.push("/signup")} variant="link" size="sm"><UserPlus />Sign Up</Button>
-                                <p className="text-brilliant">/</p>
-                                <Button onClick={() => history.push("/login")} variant="link" size="sm"><LogIn />Login</Button>
+                            <div className="flex items-center">
+                                <Button
+                                    onClick={() => history.push("/signup")}
+                                    className="text-black font-bold"
+                                    variant="link"
+                                    size="sm"
+                                >
+                                    <UserPlus />Sign Up
+                                </Button>
+                                <p className="text-black font-bold">/</p>
+                                <Button
+                                    onClick={() => history.push("/login")}
+                                    className="text-black font-bold"
+                                    variant="link"
+                                    size="sm"
+                                >
+                                    <LogIn />Login
+                                </Button>
                             </div> :
-                            <Button onClick={logOut} variant="link" size="sm" className="flex items-center">
+                            <Button
+                                onClick={logOut}
+                                variant="link"
+                                size="sm"
+                                className="flex items-center text-black hover:text-brilliant">
                                 <LogOut />
-                                <p className="text-brilliant">Log Out</p>
+                                <p className="text-black font-bold hover:text-brilliant">Log Out</p>
                             </Button>
                         }
                     </div>
                 </div>
-                <div className="flex items-center ">
-                    <Button onClick={() => history.push("/shop")} variant="link" size="sm">Shop</Button>
-                    <ShopButtonWithDropdown />
+                <div className="flex items-center">
+                    <Button
+                        onClick={() => history.push("/shop")}
+                        variant="link"
+                        size="sm"
+                        className="text-black font-bold -mr-5 lg:-mr-12"
+                    >
+                        Shop
+                    </Button>
+                    <ShopButtonWithDropdown className="" />
                 </div>
+
                 <CartButton />
                 <HamburgerMenu />
                 {Object.keys(user).length > 0 && (
-                    <div className="flex items-center">
-                        <img src={gravatarUrl} alt="User Avatar" />
-                        <p>{user.name}</p>
+                    <div className="flex gap-2 items-center border border-mars hover:bg-brilliant rounded transition-colors duration-300">
+                        <img className="max-w-[45px]" src={gravatarUrl} alt="User Avatar" />
+                        <p className="text-black font-bold">{user.name}</p>
                     </div>
+
                 )}
 
             </div>

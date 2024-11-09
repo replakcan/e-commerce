@@ -22,7 +22,7 @@ const buttonVariants = cva(
         secondary:
           "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 w-fit",
         ghost: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 hover:bg-accent hover:text-accent-foreground w-fit",
-        link: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 text-brilliant underline-offset-4 hover:underline w-fit",
+        link: "lg:h-11 lg:rounded-md lg:px-8 lg:text-lg sm:h-9 sm:rounded-md sm:px-3 text-brilliant underline-offset-4 hover:underline hover:text-brilliant w-fit",
         paginationFirst: " border-2 shadow-sm text-brilliant border-l border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-l-lg rounded-r-none hover:text-brilliant",
         paginationNext: " border-2 shadow-sm text-brilliant border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-r-lg rounded-l-none",
         paginationCurrent: " border-2 shadow-sm text-brilliant border-r border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit rounded-none",

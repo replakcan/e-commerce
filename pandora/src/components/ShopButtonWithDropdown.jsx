@@ -17,11 +17,11 @@ export default function ShopDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="link" size="sm" className="text-brilliant">
+        <Button variant="link" size="sm" className="text-black font-bold">
           <ChevronDown className="ml-1 h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-[300px]">
+      <DropdownMenuContent className="w-[300px] bg-dune">
         <div className="grid grid-cols-2 gap-8 p-4">
           <DropdownMenuGroup>
             <DropdownMenuItem asChild>
@@ -33,7 +33,7 @@ export default function ShopDropdown() {
                   <DropdownMenuItem key={index} asChild>
                     <Link
                       to={`/shop/kadin/${cat.code.slice(2)}/${cat.id}`}
-                      className="cursor-pointer"
+                      className="cursor-pointer hover:bg-mars hover:text-white"
                     >
                       {cat.title}
                     </Link>
