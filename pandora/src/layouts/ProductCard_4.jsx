@@ -23,7 +23,11 @@ const ProductCard_4 = ({ mostPopi }) => {
             onClick={() => handleProductClick(mostPopi)}
             className="productCard_4 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 cursor-pointer transition-colors duration-300 hover:bg-gray-300"
         >
-            <div className="popularImg bg-mars" />
+            <div className="popularImg bg-mars" >
+                <img
+                    className="w-full h-full object-cover object-[80%]"
+                    src="./images/productCard/pexels-photo-845434.jpeg" alt="" />
+            </div>
 
             <div className="popular w-full h-full">
                 <div className="h-full flex flex-col justify-center gap-4 bg-light_gray p-8 text-center">
@@ -39,7 +43,7 @@ const ProductCard_4 = ({ mostPopi }) => {
                         />
                         {/* Overlay Text */}
                         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p className="text-brilliant text-lg font-bold">Go to Product Details</p>
+                            <p className="text-brilliant text-lg font-bold">click to see <br />product details</p>
                         </div>
                     </div>
 

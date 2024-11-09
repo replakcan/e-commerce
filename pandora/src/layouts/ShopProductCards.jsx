@@ -10,14 +10,14 @@ const ShopProductCards = () => {
     const total = useSelector((store) => store.product.total);
     const dispatch = useDispatch();
     let history = useHistory();
-    const { categoryId, gender, categoryName } = useParams();
+    const { gender, categoryName } = useParams();
 
     const handleProductClick = (product) => {
         const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase();
 
         dispatch(fetchProductDetails(product.id))
 
-        history.push(`/shop/${gender}/${categoryName}/${categoryId}/${productNameSlug}/${product.id}`);
+        history.push(`/shop/${gender}/${categoryName}/${product.category_id}/${productNameSlug}/${product.id}`);
     };
 
     if (fetchState === 'FETCHING') {

@@ -44,7 +44,9 @@ const ProductCard_3 = ({ products }) => {
     return (
         <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] border rounded-3xl overflow-hidden">
             <div className="md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3 bg-brilliant">
-                {/* <img className=" md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3 md:w-full h-full" src="./images/productCard/col-md-4.png" /> */}
+                <img
+                    className="w-full h-full object-cover object-[55%]"
+                    src="./images/productCard/fashion-men-s-individuality-black-and-white-157675.webp" />
             </div>
             <nav className="productNav flex flex-col items-center md:col-span-2 md:row-span-1 md:flex-row md:justify-between md:px-7 md:py-6 gap-6 flex-wrap pt-24 pb-12 border-b border-mars mx-7">
                 <div className="flex flex-col md:flex-row items-center justify-between grow">
