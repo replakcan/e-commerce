@@ -24,20 +24,21 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
             onClick={() => handleProductClick(mostPopi_2)}
             className="productCard_2 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 cursor-pointer transition-colors duration-300 hover:bg-gray-300"
         >
-            <div className="prc1 h-full w-full bg-mars" />
+            <div className="prc1 h-full w-full bg-mars">
+                <img
+                    className="w-full h-full object-cover"
+                    src="./images/productCard/home-card-pics-1.jpeg" alt="" />
+            </div>
 
             <div className="prc2 h-full flex flex-col justify-center bg-light_gray p-8 text-center">
                 <Heading variant="h3">MOST POPULAR</Heading>
                 <p>{mostPopi_2?.description}</p>
-
-                {/* Image Container with Hover Overlay */}
                 <div className="relative border rounded-xl overflow-hidden group">
                     <img
                         className="py-5 transition-transform duration-300 transform group-hover:scale-105 group-hover:blur-sm"
                         src={mostPopi_2?.images[0].url}
                         alt={`${mostPopi_2?.name}`}
                     />
-                    {/* Overlay Text */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <p className="text-brilliant text-lg font-bold">Go to Product Details</p>
                     </div>
