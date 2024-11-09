@@ -6,7 +6,6 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const CreditCardList = () => {
-    const [showInfo, setShowInfo] = useState(false);
     const creditCardList = useSelector((store) => store.client.creditCards);
     const cartPayment = useSelector((store) => store.shoppingCart.payment)
 
@@ -18,14 +17,13 @@ const CreditCardList = () => {
 
     return (
         <div className="">
-            <Button onClick={() => setShowInfo(!showInfo)}>Show Kayıtlı Kartlar</Button>
 
-            {showInfo && creditCardList.length === 0 && (
+            {creditCardList.length === 0 && (
                 <Heading variant="h1">Kayıtlı kart bulunamadı.</Heading>
             )}
 
             <div className="flex flex-wrap gap-1">
-                {showInfo && creditCardList?.map((card) => {
+                {creditCardList?.map((card) => {
                     return (
                         <CreditCardInfo
                             onClick={() => chooseCreditCard(card)}

@@ -1,18 +1,16 @@
 import Heading from "./ui/heading";
 
-const FooterInfoCard = () => {
-
+const FooterInfoCard = ({title, infosman}) => {
 
     return (
 
         <>
             <div className="footer-info w-fit">
-                <Heading variant="h6">Company Info</Heading>
+                <Heading variant="h6">{title}</Heading>
                 <ul>
-                    <p>About Us</p>
-                    <p>Carrier</p>
-                    <p>We are hiring</p>
-                    <p>Blog</p>
+                    {infosman.map((info, index) => {
+                        return <p key={index}>{info}</p>
+                    })}
                 </ul>
             </div>
 

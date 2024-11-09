@@ -1,80 +1,70 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
-import { ChevronDown } from 'lucide-react';
-import { useSelector } from 'react-redux';
-import Heading from './ui/heading';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 
-const ShopButtonWithDropdown = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const dropdownRef = useRef(null);
-    const categories = useSelector((store) => store.product.categories)
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
-    };
+export default function ShopDropdown() {
+  const categories = useSelector((store) => store.product.categories);
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-                setIsDropdownOpen(false);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [dropdownRef]);
-
-    return (
-        <div className="relative z-index-high" ref={dropdownRef}>
-            <Button
-                onClick={toggleDropdown}
-                variant="ghost"
-                size="sm"
-                className="md:text-ikincil"
-            ><ChevronDown />
-            </Button>
-
-            {isDropdownOpen && (
-                <div
-                    className="absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg p-4 grid grid-cols-2 gap-8"
-                    style={{ minWidth: '300px' }}
-                >
-                    <div>
-                        <Heading variant='h4' className="font-bold mb-2">Kadın</Heading>
-                        <ul className="flex flex-col">
-                            {categories.map((cat, index) => {
-                                if (cat.gender === "k") {
-                                    return <Link
-                                        key={index}
-                                        to={`/shop/kadin/${cat.code.slice(2)}/${cat.id}`}
-                                        className="cursor-pointer">{cat.title}
-                                    </Link>
-                                }
-                            })}
-                        </ul>
-                    </div>
-                    <div>
-                        <Heading variant='h4' className="font-bold mb-2">Erkek</Heading>
-                        <ul className="flex flex-col">
-                            {categories.map((cat, index) => {
-                                if (cat.gender === "e") {
-                                    return <Link
-                                        key={index}
-                                        to={`/shop/erkek/${cat.code.slice(2)}/${cat.id}`}
-                                        className="cursor-pointer">{cat.title}
-                                    </Link>
-                                }
-                            })}
-                        </ul>
-                    </div>
-                </div>
-            )}
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="link" size="sm" className="text-black font-bold">
+          <ChevronDown className="ml-1 h-4 w-4" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-[300px] bg-dune">
+        <div className="grid grid-cols-2 gap-8 p-4">
+          <DropdownMenuGroup>
+            <DropdownMenuItem asChild>
+              <h4 className="font-bold mb-2">Kadın</h4>
+            </DropdownMenuItem>
+            {categories.map((cat, index) => {
+              if (cat.gender === "k") {
+                return (
+                  <DropdownMenuItem key={index} asChild>
+                    <Link
+                      to={`/shop/kadin/${cat.code.slice(2)}/${cat.id}`}
+                      className="cursor-pointer hover:bg-mars hover:text-white"
+                    >
+                      {cat.title}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              }
+              return null;
+            })}
+          </DropdownMenuGroup>
+          <DropdownMenuGroup>
+            <DropdownMenuItem asChild>
+              <h4 className="font-bold mb-2">Erkek</h4>
+            </DropdownMenuItem>
+            {categories.map((cat, index) => {
+              if (cat.gender === "e") {
+                return (
+                  <DropdownMenuItem key={index} asChild>
+                    <Link
+                      to={`/shop/erkek/${cat.code.slice(2)}/${cat.id}`}
+                      className="cursor-pointer"
+                    >
+                      {cat.title}
+                    </Link>
+                  </DropdownMenuItem>
+                );
+              }
+              return null;
+            })}
+          </DropdownMenuGroup>
         </div>
-    );
-};
-
-export default ShopButtonWithDropdown;
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}

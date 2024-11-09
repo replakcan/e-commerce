@@ -25,7 +25,7 @@ const AddressInfo = ({ title, name, surname, phone, city, district, neighborhood
     };
 
     return (
-        <div className="border border-black flex justify-between p-2 min-w-[300px]">
+        <div className="border flex justify-between p-2 w-full cursor-pointer p-4 hover:bg-gray-100 hover:shadow-md transition-all duration-200 rounded-lg">
             {isEditing ? (
                 <AddressUpdateForm
                     id={id}
@@ -33,7 +33,10 @@ const AddressInfo = ({ title, name, surname, phone, city, district, neighborhood
                     onClose={handleCloseEditForm}
                 />
             ) : (
-                <div className="flex flex-col flex-wrap" onClick={onClick}>
+                <div
+                    className="addressInfo flex flex-col flex-wrap "
+                    onClick={onClick}
+                >
                     <Heading variant="h2">{title}</Heading>
                     <Heading variant="h4">{name} {surname}</Heading>
                     <p><span className="text-danger font-bold">phone:</span> {phone}</p>

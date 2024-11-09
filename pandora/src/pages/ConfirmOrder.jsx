@@ -13,7 +13,7 @@ const CreateOrderPage = () => {
 
     useEffect(() => {
         dispatch(fetchAddressList(userToken));
-        dispatch(fetchCreditCards(userToken))
+        dispatch(fetchCreditCards(userToken));
     }, [dispatch, userToken]);
 
     // Callback to fetch the address list after adding an address
@@ -24,21 +24,34 @@ const CreateOrderPage = () => {
     const refreshCardList = () => {
         dispatch(fetchCreditCards(userToken));
     };
-    //TODO adreslere hover ekle
+
     return (
-        <section className="flex flex-col md:flex-row gap-2 justify-between py-4">
-            <div>
-                <div>
+        <section className="flex flex-col lg:flex-row gap-8 lg:gap-12 p-6 lg:px-16 lg:py-12">
+            <div className="w-full lg:w-2/3 space-y-6">
+                <div className="bg-white shadow-lg rounded-lg p-6 space-y-4">
+                    <div className="flex justify-between items-center border-b pb-4">
+                        <h2 className="text-xl font-semibold">Delivery Addresses</h2>
+                        <div>
+                            <AddAddressForm onAddressAdded={refreshAddressList} />
+                        </div>
+                    </div>
                     <AddresList />
-                    <AddAddressForm onAddressAdded={refreshAddressList} />
                 </div>
-                <div>
+                <div className="bg-white shadow-lg rounded-lg p-6 space-y-4">
+                    <div className="flex justify-between items-center border-b pb-4">
+                        <h2 className="text-xl font-semibold">Payment Methods</h2>
+                        <div>
+                            <AddCreditCardForm onCardAdded={refreshCardList} />
+                        </div>
+                    </div>
                     <CreditCardList />
-                    <AddCreditCardForm onCardAdded={refreshCardList}/>
                 </div>
             </div>
-            <OrderSumm />
+            <div className="w-full lg:w-1/3 h-fit bg-white shadow-lg rounded-lg p-6">
+                <OrderSumm />
+            </div>
         </section>
     );
 };
+
 export default CreateOrderPage;

@@ -17,8 +17,6 @@ const OrderSumm = () => {
     const cartPayment = useSelector((store) => store.shoppingCart.payment)
     const cart = useSelector((store) => store.shoppingCart)
 
-
-
     const orderTotal = cartItems
         .filter(item => item.checked)
         .reduce((total, item) => total + item.product.price * item.count, 0)

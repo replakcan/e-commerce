@@ -4,12 +4,12 @@ import { fetchProductDetails } from "@/redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const ProductCard_5 = ({ bestSeller }) => {
+const ProductCard_5 = ({ products }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    /* const products = useSelector((store) => store.product.productList);
-    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4); */
     const categories = useSelector((store) => store.product.categories);
+
+    const categoryaydi = [...products].filter((product) => product.rating > 3).slice(0, 4)
 
     const handleProductClick = (product) => {
         const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase();
@@ -26,8 +26,8 @@ const ProductCard_5 = ({ bestSeller }) => {
             <div className="py-12 md:text-left">
                 <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
             </div>
-            <div className="flex flex-wrap items-center justify-center md:flex-row gap-7 md:gap-0 pb-12">
-                {bestSeller?.map((bestItem, index) => (
+            <div className="flex flex-wrap items-center md:justify-between md:flex-row md:gap-7 pb-12">
+                {categoryaydi?.map((bestItem, index) => (
                     <BestSellerCard
                         key={index}
                         name={bestItem.name}
