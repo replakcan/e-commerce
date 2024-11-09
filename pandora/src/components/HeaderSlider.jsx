@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function Component() {
+export default function HeaderSlider() {
   const slides = [
     {
       title: "GROCERIES DELIVERY",
@@ -28,14 +28,14 @@ export default function Component() {
       <CarouselContent>
         {slides.map((slide, index) => (
           <CarouselItem key={index}>
-            <div className="relative h-[400px] md:h-[600px] bg-red-700 overflow-hidden">
+            <div className="relative h-[400px] md:h-[600px] bg-mars overflow-hidden">
               {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-red-700/80" />
+              <div className="absolute inset-0 bg-mars" />
 
               {/* Content */}
               <div className="relative h-full flex flex-col items-center justify-center text-center px-6 md:px-12">

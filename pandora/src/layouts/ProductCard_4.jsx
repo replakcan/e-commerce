@@ -22,10 +22,11 @@ const ProductCard_4 = ({ mostPopi }) => {
     return (
         <div
             onClick={() => handleProductClick(mostPopi)}
-            className="productCard_4 flex flex-col items-center gap-12 md:gap-0">
-            <img className="popularImg" src="./images/productCard/col-md-9.png" />
+            className="productCard_4 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0">
+            <div className="popularImg bg-mars">
+            </div>
             <div className="popular w-full h-full">
-                <div className="h-full flex flex-col justify-center gap-4 bg-light_gray px-8 py-2 text-center">
+                <div className="h-full flex flex-col justify-center gap-4 bg-light_gray p-8 text-center">
                     <Heading variant="h3">MOST POPULAR</Heading>
                     <p>{mostPopi?.description}</p>
                     <img className="py-5" src={mostPopi?.images[0].url} />

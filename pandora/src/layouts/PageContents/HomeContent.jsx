@@ -35,7 +35,7 @@ const HomeContent = () => {
                 <ProductCard_4 mostPopi={mostPopi} />
             </section>
             <div>
-                <ProductCard_5 bestSeller={bestSeller} />
+                <ProductCard_5 products={products} />
                 <Clients />
             </div>
             <section>

@@ -1,7 +1,6 @@
 import ShopItem from "@/components/ShopItem";
 import { useSelector } from "react-redux";
 
-//TODO ShopCard ismini Content olarak degistir proje bittiginde.
 const ShopCard = () => {
 
     const products = useSelector((store) => store.product.productList);

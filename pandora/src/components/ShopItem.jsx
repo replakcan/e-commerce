@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRight } from "lucide-react";
 import { useHistory } from "react-router-dom";
 
 export default function TwoColumnCard({ product, src }) {
@@ -26,7 +27,7 @@ export default function TwoColumnCard({ product, src }) {
                             Learn More
                         </Button>
                     </div>
-                    
+
                     {/* Right Column */}
                     <div className="flex-1">
                         <img

@@ -20,7 +20,8 @@ export default {
 				"footerBG": "#252B42",
 				"light_gray": "#FAFAFA",
 				"brilliant": "#26C2A3",
-				"kum": "#F0E6D2",
+				"mars" : "#D32F2F",
+				"dune": "#F0E6D2",
 
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

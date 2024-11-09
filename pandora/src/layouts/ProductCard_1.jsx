@@ -42,29 +42,34 @@ const ProductCard_1 = ({ products }) => {
     };
 
     return (
-        <div className="productCard flex flex-col md:grid md:grid-cols-3 md:grid-rows-[min-content_1fr]">
-            <img className=" md:col-start-1 col-end-2 md:row-span-full bg-center bg-no-repeat w-full h-full" src="./images/productCard/card-cover-5.png" />
-            <nav className="productNav flex flex-col items-center md:col-start-2 col-end-4 md:row-span-1 md:flex-row md:justify-between md:px-7 md:py-6 border-b-1 border-blue-500 gap-6 pt-24 flex-wrap pb-12">
-                <div className="flex flex-col md:flex-row items-center justify-between grow">
+        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] border rounded-3xl overflow-hidden">
+            <div className="md:col-start-1 col-end-2 md:row-span-full bg-brilliant">
+                {/* <img className=" md:col-start-1 col-end-2 md:row-span-full bg-center bg-no-repeat w-full h-full overflow-hidden" src="./images/productCard/card-cover-5.png" /> */}
+            </div>
+            <nav className="productNav flex flex-col items-center md:col-start-2 col-end-4 md:row-span-1 md:flex-row md:justify-between md:px-7 md:py-6 gap-6 pt-24 flex-wrap pb-12 border-b border-mars mx-7">
+                <div className="flex flex-col md:flex-row items-center justify-between grow ">
                     <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
-                    <div className="flex gap-8">
-                        <a href="">Men</a>
-                        <a href="">Women</a>
-                        <a href="">Accessories</a>
+                </div>
+                <div className="flex gap-3 justify-between">
+                    <div>
+                        <Button size="icon" className="text-mars" variant="link">men</Button>
+                        <Button size="icon" className="text-mars" variant="link">women</Button>
+                    </div>
+                    <div>
+                        <Button
+                            disabled={altLimit === 0}
+                            onClick={setLimitsDown}
+                            variant="outline" size="icon"><ChevronLeft />
+                        </Button>
+                        <Button
+                            disabled={ustLimit === 24}
+                            onClick={setLimitsUp}
+                            variant="outline" size="icon"><ChevronRight />
+                        </Button>
                     </div>
                 </div>
-                <div className="flex gap-3">
-                    <Button
-                        onClick={setLimitsDown}
-                        variant="outline" size="icon"><ChevronLeft />
-                    </Button>
-                    <Button
-                        onClick={setLimitsUp}
-                        variant="outline" size="icon"><ChevronRight />
-                    </Button>
-                </div>
             </nav>
-            <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row md:justify-between pt-2 md:pl-7 gap-7 md:gap-0">
+            <div className="productContent flex flex-col items-center flex-wrap md:col-span-2 md:flex-row md:justify-between pt-2 md:pl-7 gap-7 md:gap-0 md:pr-7">
                 {mostSoldProducts?.map((msp, index) => {
                     return <ShopItemVer
                         src={msp.images[0].url}

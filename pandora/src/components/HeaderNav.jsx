@@ -9,6 +9,9 @@ import { LogIn, LogOut, UserPlus, Home } from "lucide-react";
 import { setUser } from "@/redux/actions/clientActions";
 import HamburgerMenu from "./MenuHamburger";
 
+
+//TODO gravatar url'sini başka componentten export edebilirsin
+
 const HeaderNav = () => {
     const user = useSelector((store) => store.client.user);
     let history = useHistory();
@@ -29,7 +32,7 @@ const HeaderNav = () => {
     };
 
     return (
-        <div className="text-brilliant flex flex-col items-center md:flex-row md:px-[10%] p-9 md:py-0 relative bg-kum">
+        <div className="text-brilliant flex flex-col items-center md:flex-row md:px-[10%] p-9 md:py-0 relative bg-dune">
             <div className="header-nav flex justify-between items-center gap-4 w-full">
                 <Heading variant="h3" className="text-[#26C2A3]">E-commencero</Heading>
             </div>
