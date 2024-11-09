@@ -35,7 +35,7 @@ const BestSellerCard = ({ name, src, description, price, onClick }) => {
                 />
                 {/* Overlay Text */}
                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-brilliant text-lg font-semibold">Go to Product Details</p>
+                    <p className="text-brilliant text-lg font-semibold">click to see product details</p>
                 </div>
             </div>
 
