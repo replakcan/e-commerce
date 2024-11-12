@@ -17,7 +17,6 @@ export const teamMembers = [
 
 ]
 
-
 export const featureCards = [
     {
         title: "Easy to use",
@@ -94,3 +93,46 @@ export const footerMidContact = {
         },
     ]
 }
+
+export const blogCards = [
+    {
+        blog_id: 1,
+        place: "Londra",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, id vitae error dolorem eaque explicabo dolor animi harum ratione debitis, tempore eveniet magnam iure quod, dolores praesentium sequi aperiam optio?",
+        date: "22 April 2021",
+        comment_count: 10,
+        src: "./images/blog/london.jpeg",
+        links: [
+            "fa fa-taxi",
+            "fa fa-subway",
+            "fa fa-plane",
+        ]
+    },
+    {
+        blog_id: 2,
+        place: "Istanbul",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, id vitae error dolorem eaque explicabo dolor animi harum ratione debitis, tempore eveniet magnam iure quod, dolores praesentium sequi aperiam optio?",
+        date: "22 April 2021",
+        comment_count: 10,
+        src: "./images/blog/istanbul.jpeg",
+        links: [
+            "fa fa-taxi",
+            "fa fa-subway",
+            "fa fa-plane",
+        ]
+    },
+    {
+        blog_id: 3,
+        place: "Melbourne",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, id vitae error dolorem eaque explicabo dolor animi harum ratione debitis, tempore eveniet magnam iure quod, dolores praesentium sequi aperiam optio?",
+        date: "22 April 2021",
+        comment_count: 10,
+        src: "./images/blog/melbourne.jpeg",
+        links: [
+            "fa fa-taxi",
+            "fa fa-subway",
+            "fa fa-plane",
+        ]
+    },
+
+]

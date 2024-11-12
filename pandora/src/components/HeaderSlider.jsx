@@ -1,25 +1,35 @@
-"use client";
-
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useHistory } from "react-router-dom";
+
 
 export default function HeaderSlider() {
+
+  const history = useHistory();
+
+  const redirectToShop = () => {
+    history.push("/shop");
+  }
+
   const slides = [
     {
-      title: "GROCERIES DELIVERY",
-      description: "We know how large objects will act, but things on a small scale just do not act that way.",
+      title: "NEW SEASON COLLECTION",
+      description: "Discover our latest collection featuring the newest fashion trends and timeless elegance. Find pieces that will make you stand out.",
       image: "/placeholder.svg?height=600&width=1200",
+      btnText: "Explore Now"
     },
     {
-      title: "FAST DELIVERY",
-      description: "Get your favorite food delivered to your doorstep in minutes.",
+      title: "EXCLUSIVE DISCOUNTS",
+      description: "Don’t miss the biggest discounts of the year! Upgrade your wardrobe with stylish pieces at special prices.",
       image: "/placeholder.svg?height=600&width=1200",
+      btnText: "Shop Discounts"
     },
     {
-      title: "FRESH FOOD",
-      description: "We ensure that all our food items are fresh and of the highest quality.",
+      title: "STYLE INSPIRATION",
+      description: "Get inspired with daily style tips for a chic and unique look. Dive into the world of fashion!",
       image: "/placeholder.svg?height=600&width=1200",
+      btnText: "View Style Tips"
     },
   ];
 
@@ -46,9 +56,10 @@ export default function HeaderSlider() {
                   {slide.description}
                 </p>
                 <Button
+                  onClick={redirectToShop}
                   size="lg"
                 >
-                  Start Now
+                  {slide.btnText}
                 </Button>
               </div>
             </div>

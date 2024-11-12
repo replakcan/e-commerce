@@ -1,30 +1,37 @@
 import React from 'react';
 import Heading from './ui/heading';
+import { Button } from './ui/button';
+import { CalendarHeart, MessageCircleMore } from 'lucide-react';
 
-const BlogCard = () => {
+const BlogCard = ({ src, place, description, links, date, comment_count }) => {
     return (
         <div className='blogCard border flex flex-col gap-2 p-1 md:w-min grow w-[80%]'>
-            <img src="https://placehold.co/350x350" alt="" />
+            <div className='w-max-[350px] aspect-[16/9] overflow-hidden'>
+                <img className='w-full h-full object-cover' src={src} alt="" />
+            </div>
             <div className='flex flex-col gap-3 p-8'>
                 <nav className='flex gap-3'>
-                    <a href="">Google</a>
-                    <a href="">Trending</a>
-                    <a href="">New</a>
+                    {links.map((link, index) => {
+                        return <i
+                            key={index}
+                            className={link}>
+                        </i>
+                    })}
                 </nav>
-                <Heading variant='h4'>Loudest à la Madison #1 (L'integral)</Heading>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, aperiam, alias ipsam facilis eius, dolores unde sunt maxime laboriosam recusandae voluptates illo nesciunt veritatis nemo dicta consectetur quo. Quos, quo!</p>
+                <Heading variant='h4'>{place}</Heading>
+                <p>{description}</p>
                 <div className='flex justify-between'>
-                    <div className="flex gap-2">
-                        <i className="fa-solid fa-clock"></i>
-                        <p>22 April 2021</p>
+                    <div className="flex gap-2 items-center">
+                        <CalendarHeart />
+                        <p>{date}</p>
                     </div>
-                    <div className="flex gap-2">
-                        <i className="fa-solid fa-clock"></i>
-                        <p>10 comments</p>
+                    <div className="flex gap-2 items-center">
+                        <MessageCircleMore />
+                        <p>{comment_count} comments</p>
 
                     </div>
                 </div>
-                <a>Learn More</a>
+                <Button variant="link">Learn More</Button>
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import BlogCard from "@/components/BlogCard";
 import Heading from "@/components/ui/heading";
+import { blogCards } from "@/data";
 
 const Blog = () => {
 
@@ -9,9 +10,16 @@ const Blog = () => {
                 <Heading variant="h1">We Are All Around The World</Heading>
             </div>
             <div className="flex flex-col flex-wrap items-center gap-3 md:flex-row justify-between pb-24">
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+                {blogCards.map((blogcard) => {
+                    return <BlogCard
+                        key={blogcard.id}
+                        place={blogcard.place}
+                        description={blogcard.description}
+                        links={blogcard.links}
+                        date={blogcard.date}
+                        comment_count={blogcard.comment_count}
+                        src={blogcard.src} />
+                })}
             </div>
         </>
     )
