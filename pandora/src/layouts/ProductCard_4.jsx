@@ -20,17 +20,17 @@ const ProductCard_4 = ({ mostPopi }) => {
 
     return (
         <div
-            onClick={() => handleProductClick(mostPopi)}
-            className="productCard_4 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 cursor-pointer transition-colors duration-300 hover:bg-gray-300"
+
+            className="productCard_4 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 "
         >
             <div className="popularImg bg-mars" >
                 <img
                     className="w-full h-full object-cover object-[80%]"
                     src="./images/productCard/pexels-photo-845434.jpeg" alt="" />
             </div>
-
             <div className="popular w-full h-full">
-                <div className="h-full flex flex-col justify-center gap-4 bg-light_gray p-8 text-center">
+                <div className="h-full flex flex-col justify-center gap-4 bg-light_gray p-8 text-center cursor-pointer transition-colors duration-300 hover:bg-gray-300"
+                    onClick={() => handleProductClick(mostPopi)}>
                     <Heading variant="h3">MOST POPULAR</Heading>
                     <p>{mostPopi?.description}</p>
 

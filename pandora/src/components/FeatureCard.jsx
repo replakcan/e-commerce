@@ -7,7 +7,7 @@ const FeatureCard = ({title, description}) => {
             <i className="fa-solid fa-credit-card rounded-full p-3 bg-[#E74040] text-white border-transparent" />
             <div className="flex flex-col gap-1 text-left">
                 <Heading variant="h6">{title}</Heading>
-                <p className="w-[60%]">{description}</p>
+                <p className="w-[60%] hidden lg:contents ">{description}</p>
             </div>
         </div>
     )

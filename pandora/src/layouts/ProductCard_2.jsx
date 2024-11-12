@@ -21,8 +21,8 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
 
     return (
         <div
-            onClick={() => handleProductClick(mostPopi_2)}
-            className="productCard_2 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 cursor-pointer transition-colors duration-300 hover:bg-gray-300"
+
+            className="productCard_2 border rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0"
         >
             <div className="prc1 h-full w-full bg-mars">
                 <img
@@ -30,7 +30,9 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
                     src="./images/productCard/home-card-pics-1.jpeg" alt="" />
             </div>
 
-            <div className="prc2 h-full flex flex-col justify-center bg-light_gray p-8 text-center">
+            <div
+                onClick={() => handleProductClick(mostPopi_2)}
+                className="prc2 h-full flex flex-col justify-center bg-light_gray p-8 text-center cursor-pointer transition-colors duration-300 hover:bg-gray-300">
                 <Heading variant="h3">MOST POPULAR</Heading>
                 <p>{mostPopi_2?.description}</p>
                 <div className="relative border rounded-xl overflow-hidden group">
@@ -40,7 +42,7 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
                         alt={`${mostPopi_2?.name}`}
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p className="text-brilliant text-lg font-bold">click to see <br/>product details</p>
+                        <p className="text-brilliant text-lg font-bold">click to see <br />product details</p>
                     </div>
                 </div>
 
