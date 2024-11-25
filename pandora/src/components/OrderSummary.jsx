@@ -37,7 +37,7 @@ const OrderSumm = () => {
     card_expire_month: cart.payment.expire_month,
     card_expire_year: cart.payment.expire_year,
     card_ccv: cart.payment.card_ccv,
-    price: siparisToplam, // örnek fiyat
+    price: siparisToplam,
     products: cart.cart.map((item) => ({
       product_id: item.product.id,
       count: item.count,
@@ -61,21 +61,21 @@ const OrderSumm = () => {
       style: {
         background: "linear-gradient(to right, #D32F2F, #26C2A3)",
         color: "white",
-      }
+      },
     });
     setTimeout(() => {
       history.push("/shop");
     }, 3000);
     cart.cart = [];
     cart.payment = {};
-    cart. address = {};
+    cart.address = {};
   };
 
   const isPreviousOrdersPage = location.pathname === "/confirm-order";
 
   return (
     <div className="order-box h-fit border border-grey-200 p-2 flex flex-col gap-1 md:min-w-[240px]">
-      <h1 className="font-bold pb-2 border-b border-red-300">SİPARİŞ ÖZETİ</h1>
+      <h1 className="font-bold pb-2 border-b border-red-300">ORDER SUMMARY</h1>
       <div className="flex justify-between items-center">
         <h2>Product TOTAL:</h2> <span>{orderTotal}$</span>
       </div>
@@ -85,7 +85,7 @@ const OrderSumm = () => {
       {orderTotal >= 200 && (
         <div className="flex justify-between items-center">
           <h2 className="italic text-ikincil max-w-[50%]">
-            200 dolar ve üzeri siparislerde kargo bedava
+            Free shipping on orders over $200
           </h2>
           <span className="italic">{shippingTotal * -1}$</span>
         </div>
@@ -96,13 +96,13 @@ const OrderSumm = () => {
       </div>
       {!isPreviousOrdersPage && cart.cart.length > 0 && (
         <Button onClick={handleConfirmOrder} variant="destructive">
-          Sepeti Onayla <ChevronRight />
+          Confirm Order <ChevronRight />
         </Button>
       )}
       {cartAddress.title && (
         <div>
           <p>
-            Teslimat Adresi:{" "}
+            Delivery Address:{" "}
             <span className="font-bold text-ikincil">{cartAddress.title}</span>
           </p>
         </div>
@@ -110,7 +110,7 @@ const OrderSumm = () => {
       {cartPayment.name_on_card && (
         <div>
           <p>
-            Ödeme Yöntemi:{" "}
+            Payment Method:{" "}
             <span className="font-bold text-ikincil">
               {cartPayment.name_on_card}
             </span>
@@ -119,25 +119,25 @@ const OrderSumm = () => {
       )}
       {cartAddress.title && cartPayment.name_on_card && (
         <div>
-          <Button onClick={sendOrder}>Siparişi Tamamla</Button>
+          <Button onClick={sendOrder}>Complete Order</Button>
         </div>
       )}
       {location.pathname === "/confirm-order" &&
         (!cartAddress.title || !cartPayment.name_on_card) && (
           <div className="text-red-500 font-semibold mt-2">
             {!cartAddress.title && !cartPayment.name_on_card && (
-              <p className="text-destructive underline font-bold text-5xl">
-                Kart ve adres seçiniz.
+              <p className="text-destructive font-bold text-xl">
+                Please select your address and payment method
               </p>
             )}
             {!cartAddress.title && cartPayment.name_on_card && (
-              <p className="text-destructive underline font-bold text-5xl">
-                Adres seçiniz.
+              <p className="text-destructive font-bold text-xl">
+                Please select your address
               </p>
             )}
             {cartAddress.title && !cartPayment.name_on_card && (
-              <p className="text-destructive underline font-bold text-5xl">
-                Kart seçiniz.
+              <p className="text-destructive font-bold text-xl">
+                Please select your payment method
               </p>
             )}
           </div>

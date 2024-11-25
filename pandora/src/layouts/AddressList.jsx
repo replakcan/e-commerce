@@ -1,8 +1,6 @@
 import AddressInfo from "@/components/AddressInfo";
-import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { setAddress } from "@/redux/actions/shoppingCartActions";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 

@@ -130,7 +130,7 @@ const HeaderNav = () => {
             onClick={() => history.push("/previous-orders")}
             className="text-black font-bold -mr-5"
           >
-            prevOrders
+            Order History
           </Button>
         )}
       </div>
