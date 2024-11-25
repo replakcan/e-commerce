@@ -37,7 +37,7 @@ function App() {
   }, [])
 
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col bg-[#ECECEC]'>
       <HeaderNav />
       <Switch>
         <Route path="/shop/:gender/:categoryName/:categoryId/:productNameSlug/:productId">

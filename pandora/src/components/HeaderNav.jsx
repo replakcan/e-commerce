@@ -40,7 +40,7 @@ const HeaderNav = () => {
     <div className="text-brilliant flex flex-col items-center md:flex-row md:px-[10%] p-9 md:py-0 relative bg-dune">
       <div className="header-nav flex justify-between items-center gap-4 w-full">
         <Heading variant="h3" className="text-[#26C2A3]">
-          E-commencero
+          Pandora
         </Heading>
         <div className="loggedIn flex items-center">
           {Object.keys(user).length > 0 && (
