@@ -31,6 +31,7 @@ function App() {
       dispatch(autoLogin(token))
     }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
