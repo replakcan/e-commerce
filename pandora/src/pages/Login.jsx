@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useLocation } from "react-router-dom";
-import Toastify from "toastify-js";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const user = useSelector((store) => store.client.user);
@@ -36,18 +36,13 @@ const Login = () => {
       const previousPage = location.state?.from?.pathname || "/";
       history.replace(previousPage); // replace kullanımı
 
-      // Hoşgeldiniz bildirimi göster
-      Toastify({
-        text: `${user.name} hoşgeldiniz`,
-        duration: 3000,
-        close: true,
-        gravity: "top",
-        position: "left",
-        stopOnFocus: true,
+      toast(`${user.name} hoşgeldiniz`, {
+        autoClose: 2500,
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-      }).showToast();
+          background: "linear-gradient(to right, #D32F2F, #26C2A3)",
+          color: "white",
+        }
+      });
 
       // Token'ı sakla
       if (rememberMe && user.token) {

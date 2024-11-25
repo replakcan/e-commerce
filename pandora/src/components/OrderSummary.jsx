@@ -56,13 +56,19 @@ const OrderSumm = () => {
   const sendOrder = () => {
     console.log("orderData:", orderData);
     dispatch(createOrder(orderData, user.token));
-    toast("Siparişiniz alındı, ana sayfaya yönlendiriliyorsunuz", {
+    toast("Siparişiniz oluşturuldu, mağazaya yönlendiriliyorsunuz", {
       autoClose: 3000,
+      style: {
+        background: "linear-gradient(to right, #D32F2F, #26C2A3)",
+        color: "white",
+      }
     });
     setTimeout(() => {
-      history.push("/");
+      history.push("/shop");
     }, 3000);
     cart.cart = [];
+    cart.payment = {};
+    cart. address = {};
   };
 
   const isPreviousOrdersPage = location.pathname === "/confirm-order";

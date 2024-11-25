@@ -8,6 +8,7 @@ import md5 from "crypto-js/md5";
 import { LogIn, LogOut, UserPlus, Home } from "lucide-react";
 import { setUser } from "@/redux/actions/clientActions";
 import HamburgerMenu from "./MenuHamburger";
+import { toast } from "react-toastify";
 
 const HeaderNav = () => {
   const user = useSelector((store) => store.client.user);
@@ -26,6 +27,13 @@ const HeaderNav = () => {
     dispatch(setUser({}));
     history.push("/");
     localStorage.removeItem("token");
+    toast(`${user.name} aufwiedersehen!`, {
+      autoClose: 2500,
+      style: {
+        background: "linear-gradient(to right, #D32F2F, #26C2A3)",
+        color: "white",
+      }
+    });
   };
 
   return (
