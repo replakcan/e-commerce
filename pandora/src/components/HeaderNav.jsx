@@ -118,8 +118,9 @@ const HeaderNav = () => {
         {Object.keys(user).length > 0 && (
           <Button
             size=""
-            variant="outline"
+            variant="link"
             onClick={() => history.push("/previous-orders")}
+            className="text-black font-bold -mr-5"
           >
             prevOrders
           </Button>

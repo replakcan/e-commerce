@@ -22,7 +22,7 @@ const PreviousOrders = () => {
   }, [dispatch, userToken])
 
   return (
-    <div className="p-4 sm:p-6 max-w-4xl mx-auto h-min-lvh">
+    <div className="p-4 sm:p-6 max-w-4xl mx-auto min-h-lvh">
       <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Your Previous Orders</h2>
       {orders.length ? (
         <div className="space-y-4">
