@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import Heading from './ui/heading';
 import { Button } from './ui/button';
 import { CalendarHeart, MessageCircleMore } from 'lucide-react';

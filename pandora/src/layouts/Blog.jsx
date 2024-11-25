@@ -12,7 +12,7 @@ const Blog = () => {
             <div className="flex flex-col flex-wrap items-center gap-3 md:flex-row justify-between pb-24">
                 {blogCards.map((blogcard) => {
                     return <BlogCard
-                        key={blogcard.id}
+                        key={blogcard.blog_id}
                         place={blogcard.place}
                         description={blogcard.description}
                         links={blogcard.links}
