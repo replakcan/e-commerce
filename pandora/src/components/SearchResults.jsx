@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "@/redux/actions/productActions";
 import { useState, useEffect } from "react";
 import { Input } from "./ui/input";
+import Heading from "./ui/heading";
 
 const SearchResults = () => {
     const dispatch = useDispatch();
@@ -27,8 +28,8 @@ const SearchResults = () => {
     };
 
     return (
-        <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:py-6">
-            <p> Showing all {total} results</p>
+        <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:py-6 border-b pb-2">
+            <Heading  variant="h4"> Showing all <span className="text-2xl text-brilliant">{total}</span> results</Heading>
             <div className="search-icon-btns flex flex-row items-center gap-3">
                 <p>Views:</p>
                 <Button variant="outline" size="iconsqr"><LayoutGrid /></Button>

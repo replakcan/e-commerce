@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { Button } from '@/components/ui/button';
 import { addAddress } from '@/redux/actions/clientActions';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -115,9 +116,9 @@ function AddAddressForm({ onAddressAdded }) {
                                 <input
                                     type="text"
                                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    {...register('district', { required: 'District is required' })}
+                                    {...register('District', { required: 'District is required' })}
                                 />
-                                {errors.district && <p className="text-red-500 text-sm">{errors.district.message}</p>}
+                                {errors.District && <p className="text-red-500 text-sm">{errors.District.message}</p>}
                             </div>
 
                             {/* Neighborhood Field */}
@@ -126,9 +127,9 @@ function AddAddressForm({ onAddressAdded }) {
                                 <input
                                     type="text"
                                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                                    {...register('neighborhood', { required: 'Neighborhood is required' })}
+                                    {...register('Neighborhood', { required: 'Neighborhood is required' })}
                                 />
-                                {errors.neighborhood && <p className="text-red-500 text-sm">{errors.neighborhood.message}</p>}
+                                {errors.Neighborhood && <p className="text-red-500 text-sm">{errors.Neighborhood.message}</p>}
                             </div>
 
                             {/* Address Field */}

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useDispatch, useSelector } from "react-redux";
 import { Trash } from "lucide-react";
 import { deleteCreditCard, fetchCreditCards } from "@/redux/actions/clientActions";
@@ -33,14 +34,14 @@ const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card, 
                 />
             ) : (
                 <div onClick={onClick} className="flex flex-col flex-wrap">
-                    <p><span className="text-danger font-bold">Kart Numarası:</span> **** **** **** {card_no.slice(-4)}</p>
-                    <p><span className="text-danger font-bold">Kart Üzerindeki İsim:</span> {name_on_card}</p>
-                    <p><span className="text-danger font-bold">Son Kullanma Tarihi:</span> {expire_month}/{expire_year}</p>
+                    <p><span className="text-danger font-bold">Card Number:</span> **** **** **** {card_no.slice(-4)}</p>
+                    <p><span className="text-danger font-bold">Name:</span> {name_on_card}</p>
+                    <p><span className="text-danger font-bold">Expiry Date:</span> {expire_month}/{expire_year}</p>
                 </div>
             )}
             <div className="flex flex-col gap-4 justify-between items-end">
                 {!isEditing && (
-                    <Button onClick={handleEditClick} variant="outline">Kartı Düzenle</Button>
+                    <Button onClick={handleEditClick} variant="outline">Edit Payment Method</Button>
                 )}
                 {!isEditing && (
                     <Button onClick={deleteCard} variant="destructive" size="iconsqr">

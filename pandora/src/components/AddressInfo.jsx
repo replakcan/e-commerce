@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Trash } from "lucide-react";
@@ -39,16 +40,16 @@ const AddressInfo = ({ title, name, surname, phone, city, district, neighborhood
                 >
                     <Heading variant="h2">{title}</Heading>
                     <Heading variant="h4">{name} {surname}</Heading>
-                    <p><span className="text-danger font-bold">phone:</span> {phone}</p>
-                    <p><span className="text-danger font-bold">city:</span> {city}</p>
-                    <p><span className="text-danger font-bold">district:</span> {district}</p>
-                    <p><span className="text-danger font-bold">neighborhood:</span> {neighborhood}</p>
-                    <p className="max-w-[200px]"><span className="text-danger font-bold">address:</span> {address}</p>
+                    <p><span className="text-danger font-bold">Phone:</span> {phone}</p>
+                    <p><span className="text-danger font-bold">City:</span> {city}</p>
+                    <p><span className="text-danger font-bold">District:</span> {district}</p>
+                    <p><span className="text-danger font-bold">Neighborhood:</span> {neighborhood}</p>
+                    <p className="max-w-[200px]"><span className="text-danger font-bold">Address:</span> {address}</p>
                 </div>
             )}
             <div className="flex flex-col justify-between items-end">
                 {!isEditing && (
-                    <Button onClick={handleEditClick} variant="outline">Adresi Duzenle</Button>
+                    <Button onClick={handleEditClick} variant="outline">Edit Address</Button>
                 )}
                 {!isEditing && <Button onClick={deleteAddressInfo} variant="destructive" size="iconsqr">
                     <Trash />

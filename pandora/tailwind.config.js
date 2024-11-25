@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-dupe-keys */
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ["class"],
@@ -22,6 +24,10 @@ export default {
 				"brilliant": "#26C2A3",
 				"mars" : "#D32F2F",
 				"dune": "#F0E6D2",
+				"forestShadow": "#0E1514",
+				"chocolateNoir": "#262020",
+				"velvetAubergine": "#190B14",
+				"earthlyMocha": "#110904",
 
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',

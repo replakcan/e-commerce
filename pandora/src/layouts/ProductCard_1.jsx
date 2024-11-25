@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import ShopItemVer from "@/components/ShopItemVer";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
@@ -42,10 +43,10 @@ const ProductCard_1 = ({ products }) => {
     };
 
     return (
-        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] border rounded-3xl overflow-hidden">
+        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] md:rounded-3xl overflow-hidden bg-white">
             <div className="md:col-start-1 col-end-2 md:row-span-full bg-brilliant">
                 <img
-                    className="w-full h-full object-cover object-[50%]"
+                    className="w-full h-[200px] lg:h-full  object-cover object-[50%] "
                     src="./images/productCard/pexels-photo-794064.jpeg" />
             </div>
             <nav className="productNav flex flex-col items-center md:col-start-2 col-end-4 md:row-span-1 md:flex-row md:justify-between md:px-7 md:py-6 gap-6 pt-24 flex-wrap pb-12 border-b border-mars mx-7">

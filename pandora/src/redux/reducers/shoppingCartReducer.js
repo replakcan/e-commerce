@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import { DECREMENT_COUNT, INCREMENT_COUNT, REMOVE_FROM_CART, SET_ADDRESS, SET_CART, SET_PAYMENT, SET_PREV_ORDERS, TOGGLE_CHECKED } from "../actions/shoppingCartActions";
 
 const initialState = {

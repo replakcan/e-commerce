@@ -18,6 +18,8 @@ import HeaderNav from './components/HeaderNav';
 import PrivateRoute from './components/PrivateRoute';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { fetchCategories } from './redux/actions/productActions';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -31,10 +33,11 @@ function App() {
       dispatch(autoLogin(token))
     }
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col bg-[#ECECEC]'>
       <HeaderNav />
       <Switch>
         <Route path="/shop/:gender/:categoryName/:categoryId/:productNameSlug/:productId">
@@ -78,6 +81,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      <ToastContainer/>
     </main >
 
   )

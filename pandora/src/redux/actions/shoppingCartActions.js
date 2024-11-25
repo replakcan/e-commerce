@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axiosInstance from "@/services/axiosInstance";
 
 export const SET_CART = 'SET_CART';

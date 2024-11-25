@@ -5,7 +5,7 @@ import { CalendarHeart, MessageCircleMore } from 'lucide-react';
 
 const BlogCard = ({ src, place, description, links, date, comment_count }) => {
     return (
-        <div className='blogCard border flex flex-col gap-2 p-1 md:w-min grow w-[80%]'>
+        <div className='blogCard border flex flex-col gap-2 p-1 md:w-min grow w-[80%] bg-white'>
             <div className='w-max-[350px] aspect-[16/9] overflow-hidden'>
                 <img className='w-full h-full object-cover' src={src} alt="" />
             </div>
