@@ -17,9 +17,9 @@ const Clients = () => {
                 <Heading variant="h3">Subscribe For Latest Newsletter</Heading>
                 <p>The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th</p>
                 <div className="flex flex-wrap justify-center gap-8 md:flex-row">
-                    <img height="32" width="48" src="https://cdn.simpleicons.org/reddit/gray" />
                     <img height="32" width="48" src="https://cdn.simpleicons.org/amazonwebservices/gray" />
-                    <img height="32" width="48" src="https://cdn.simpleicons.org/w3schools/gray" />
+                    <img height="32" width="48" src="https://cdn.simpleicons.org/docker/gray" />
+                    <img height="32" width="48" src="https://cdn.simpleicons.org/reddit/gray" />
                 </div>
 
             </div>
