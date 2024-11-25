@@ -26,7 +26,7 @@ const CreateOrderPage = () => {
     };
 
     return (
-        <section className="flex flex-col lg:flex-row gap-8 lg:gap-12 p-6 lg:px-16 lg:py-12">
+        <section className="flex flex-col lg:flex-row gap-8 lg:gap-12 p-6 lg:px-16 lg:py-12 min-h-lvh">
             <div className="w-full lg:w-2/3 space-y-6">
                 <div className="bg-white shadow-lg rounded-lg p-6 space-y-4">
                     <div className="flex justify-between items-center border-b pb-4">
