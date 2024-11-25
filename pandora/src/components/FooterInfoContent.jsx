@@ -6,7 +6,7 @@ const FooterInfoContent = () => {
 
     return (
 
-        <div className="footer-info-content flex flex-col lg:flex-row justify-start items-start gap-12">
+        <div className="footer-info-content flex flex-col md:flex-row justify-start items-start gap-12">
             {footerMidContent.map((content, index) => {
                 return <FooterInfoCard
                     key={index}
