@@ -18,6 +18,8 @@ import HeaderNav from './components/HeaderNav';
 import PrivateRoute from './components/PrivateRoute';
 import { autoLogin, fetchRoles } from './redux/actions/clientActions';
 import { fetchCategories } from './redux/actions/productActions';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -79,6 +81,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      <ToastContainer/>
     </main >
 
   )

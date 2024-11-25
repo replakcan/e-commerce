@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { ChevronRight } from "lucide-react";
 import { createOrder } from "@/redux/actions/shoppingCartActions";
+import { toast } from "react-toastify";
 
 const shippingTotal = 7.99;
 let kargoBedeli = 7.99;
@@ -55,6 +56,13 @@ const OrderSumm = () => {
   const sendOrder = () => {
     console.log("orderData:", orderData);
     dispatch(createOrder(orderData, user.token));
+    toast("Siparişiniz alındı, ana sayfaya yönlendiriliyorsunuz", {
+      autoClose: 3000,
+    });
+    setTimeout(() => {
+      history.push("/");
+    }, 3000);
+    cart.cart = [];
   };
 
   const isPreviousOrdersPage = location.pathname === "/confirm-order";
@@ -78,9 +86,9 @@ const OrderSumm = () => {
       )}
       <div className="flex justify-between items-center">
         <h1 className="text-2xl">ORDER TOTAL:</h1>
-        <span>{siparisToplam}$</span>
+        <span>{siparisToplam.toFixed(2)}$</span>
       </div>
-      {!isPreviousOrdersPage && (
+      {!isPreviousOrdersPage && cart.cart.length > 0 && (
         <Button onClick={handleConfirmOrder} variant="destructive">
           Sepeti Onayla <ChevronRight />
         </Button>
