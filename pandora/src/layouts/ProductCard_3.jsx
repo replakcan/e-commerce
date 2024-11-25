@@ -43,7 +43,7 @@ const ProductCard_3 = ({ products }) => {
         history.push(`/shop/${category.gender === "k" ? "kadin" : "erkek"}/${categoryName}/${product.category_id}/${productNameSlug}/${product.id}`);
     };
     return (
-        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] border md:rounded-3xl overflow-hidden">
+        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] md:rounded-3xl overflow-hidden bg-white">
             <div className="md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3 bg-brilliant">
                 <img
                     className="w-full h-[200px] lg:h-full object-cover object-[55%]  "

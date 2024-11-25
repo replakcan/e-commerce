@@ -24,7 +24,7 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
   };
 
   return (
-    <div className="productCard_2 border md:rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 ">
+    <div className="productCard_2 md:rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 ">
       <div className="prc1 h-full w-full bg-mars">
         <img
           className="w-full h-full object-cover"

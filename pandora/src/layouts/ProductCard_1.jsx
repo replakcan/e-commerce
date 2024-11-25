@@ -43,7 +43,7 @@ const ProductCard_1 = ({ products }) => {
     };
 
     return (
-        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] border md:rounded-3xl overflow-hidden">
+        <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] md:rounded-3xl overflow-hidden bg-white">
             <div className="md:col-start-1 col-end-2 md:row-span-full bg-brilliant">
                 <img
                     className="w-full h-[200px] lg:h-full  object-cover object-[50%] "
