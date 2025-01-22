@@ -9,7 +9,7 @@ import { Menu } from "lucide-react";
 import { useHistory } from "react-router-dom";
 
 export default function HamburgerMenu() {
-    const history = useHistory();
+  const history = useHistory();
 
   return (
     <DropdownMenu>
@@ -20,13 +20,22 @@ export default function HamburgerMenu() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56 bg-dune ">
-        <DropdownMenuItem className="hover:bg-mars hover:text-white" onClick={() => history.push("/about")}>
+        <DropdownMenuItem
+          className="hover:bg-mars hover:text-white"
+          onClick={() => history.push("/about")}
+        >
           About
         </DropdownMenuItem>
-        <DropdownMenuItem className="hover:bg-mars hover:text-white" onClick={() => history.push("/contact")}>
+        <DropdownMenuItem
+          className="hover:bg-mars hover:text-white"
+          onClick={() => history.push("/contact")}
+        >
           Contact
         </DropdownMenuItem>
-        <DropdownMenuItem className="hover:bg-mars hover:text-white" onClick={() => history.push("/team")}>
+        <DropdownMenuItem
+          className="hover:bg-mars hover:text-white"
+          onClick={() => history.push("/team")}
+        >
           Team
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -51,7 +51,6 @@ const SignUp = () => {
       >
         <h1 className="text-2xl font-bold mb-6 text-center">Sign Up</h1>
 
-        {/* Name Input */}
         <div className="mb-4">
           <label
             htmlFor="name"
@@ -77,7 +76,6 @@ const SignUp = () => {
           )}
         </div>
 
-        {/* Email Input */}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -98,7 +96,6 @@ const SignUp = () => {
           )}
         </div>
 
-        {/* Password Input with Eye Icon */}
         <div className="mb-4 relative">
           <label
             htmlFor="password"
@@ -161,7 +158,6 @@ const SignUp = () => {
           )}
         </div>
 
-        {/* Role Selection */}
         <div className="mb-4">
           <label
             htmlFor="role"
@@ -187,7 +183,6 @@ const SignUp = () => {
           )}
         </div>
 
-        {/* Conditional Store Fields */}
         {role === "store" && (
           <>
             {/* Store Name Input */}
@@ -218,7 +213,6 @@ const SignUp = () => {
               )}
             </div>
 
-            {/* Store Phone Input */}
             <div className="mb-4">
               <label
                 htmlFor="storePhone"
@@ -247,7 +241,6 @@ const SignUp = () => {
               )}
             </div>
 
-            {/* Store Tax ID Input */}
             <div className="mb-4">
               <label
                 htmlFor="storeTaxId"
@@ -276,7 +269,6 @@ const SignUp = () => {
               )}
             </div>
 
-            {/* Store Bank Account Input */}
             <div className="mb-4">
               <label
                 htmlFor="storeBankAccount"
@@ -306,10 +298,7 @@ const SignUp = () => {
           </>
         )}
 
-        <Button
-          type="submit"
-          className="w-full"
-        >
+        <Button type="submit" className="w-full">
           Submit
         </Button>
       </form>

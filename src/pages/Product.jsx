@@ -1,12 +1,11 @@
-
 import ProductContent from "@/layouts/PageContents/ProductContent";
 
 const Product = () => {
-    return (
-        <>
-            <ProductContent/>
-        </>
-    )
-}
+  return (
+    <>
+      <ProductContent />
+    </>
+  );
+};
 
 export default Product;

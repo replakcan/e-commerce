@@ -32,7 +32,7 @@ const HeaderNav = () => {
       style: {
         background: "linear-gradient(to right, #D32F2F, #26C2A3)",
         color: "white",
-      }
+      },
     });
   };
 

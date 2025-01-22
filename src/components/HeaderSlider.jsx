@@ -1,35 +1,42 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useHistory } from "react-router-dom";
 
-
 export default function HeaderSlider() {
-
   const history = useHistory();
 
   const redirectToShop = () => {
     history.push("/shop");
-  }
+  };
 
   const slides = [
     {
       title: "NEW SEASON COLLECTION",
-      description: "Discover our latest collection featuring the newest fashion trends and timeless elegance. Find pieces that will make you stand out.",
+      description:
+        "Discover our latest collection featuring the newest fashion trends and timeless elegance. Find pieces that will make you stand out.",
       image: "/placeholder.svg?height=600&width=1200",
-      btnText: "Explore Now"
+      btnText: "Explore Now",
     },
     {
       title: "EXCLUSIVE DISCOUNTS",
-      description: "Don’t miss the biggest discounts of the year! Upgrade your wardrobe with stylish pieces at special prices.",
+      description:
+        "Don’t miss the biggest discounts of the year! Upgrade your wardrobe with stylish pieces at special prices.",
       image: "/placeholder.svg?height=600&width=1200",
-      btnText: "Shop Discounts"
+      btnText: "Shop Discounts",
     },
     {
       title: "STYLE INSPIRATION",
-      description: "Get inspired with daily style tips for a chic and unique look. Dive into the world of fashion!",
+      description:
+        "Get inspired with daily style tips for a chic and unique look. Dive into the world of fashion!",
       image: "/placeholder.svg?height=600&width=1200",
-      btnText: "View Style Tips"
+      btnText: "View Style Tips",
     },
   ];
 
@@ -55,10 +62,7 @@ export default function HeaderSlider() {
                 <p className="text-sm md:text-base text-white/90 mb-8 max-w-md">
                   {slide.description}
                 </p>
-                <Button
-                  onClick={redirectToShop}
-                  size="lg"
-                >
+                <Button onClick={redirectToShop} size="lg">
                   {slide.btnText}
                 </Button>
               </div>

@@ -1,11 +1,11 @@
 import ContactContent from "@/layouts/PageContents/ContactContent";
 
 const Contact = () => {
-    return (
-        <>
-            <ContactContent />
-        </>
-    )
-}
+  return (
+    <>
+      <ContactContent />
+    </>
+  );
+};
 
 export default Contact;

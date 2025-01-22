@@ -1,11 +1,10 @@
 import TeamContent from "@/layouts/PageContents/TeamContent";
 
 const Team = () => {
-
-    return (
-        <>
-            <TeamContent />
-        </>
-    )
-}
+  return (
+    <>
+      <TeamContent />
+    </>
+  );
+};
 export default Team;

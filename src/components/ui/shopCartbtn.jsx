@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -48,15 +48,23 @@ const CartButton = () => {
                   className="w-16 h-16 object-cover rounded-md"
                 />
                 <div className="space-y-1">
-                  <h4 className="text-sm font-medium leading-none">{item.product.name}</h4>
-                  <p className="text-sm text-muted-foreground">{item.product.description}</p>
+                  <h4 className="text-sm font-medium leading-none">
+                    {item.product.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    {item.product.description}
+                  </p>
                   <p className="text-sm">Adet: {item.count}</p>
-                  <p className="text-sm font-semibold">{item.product.price} $</p>
+                  <p className="text-sm font-semibold">
+                    {item.product.price} $
+                  </p>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-sm text-muted-foreground">Sepetinizde ürün yok.</p>
+            <p className="text-sm text-muted-foreground">
+              Sepetinizde ürün yok.
+            </p>
           )}
         </ScrollArea>
         <DropdownMenuSeparator />

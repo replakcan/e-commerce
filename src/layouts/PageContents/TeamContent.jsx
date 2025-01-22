@@ -5,22 +5,20 @@ import TeamMembers from "../TeamMembers";
 import TeamGrid from "../TeamGrid";
 
 const TeamContent = () => {
-
-    return (
-        <>
-            <section className="content flex flex-col gap-20">
-                <TeamGridHead />
-            </section>
-            <div className="py-8">
-                <TeamGrid />
-            </div>
-            <section>
-                <TeamMemberHead />
-                <TeamMembers />
-                <TrialCard />
-            </section>
-        </>
-    )
-
-}
+  return (
+    <>
+      <section className="content flex flex-col gap-20">
+        <TeamGridHead />
+      </section>
+      <div className="py-8">
+        <TeamGrid />
+      </div>
+      <section>
+        <TeamMemberHead />
+        <TeamMembers />
+        <TrialCard />
+      </section>
+    </>
+  );
+};
 export default TeamContent;

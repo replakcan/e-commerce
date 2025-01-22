@@ -1,10 +1,10 @@
 import AboutContent from "@/layouts/PageContents/AboutContent";
 
 const About = () => {
-    return (
-        <>
-            <AboutContent />
-        </>
-    )
-}
+  return (
+    <>
+      <AboutContent />
+    </>
+  );
+};
 export default About;
