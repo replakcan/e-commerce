@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import ProductDescription from "@/components/ProductDescription";
 import Clients from "../Clients";
 import MoreProducts from "../MoreProducts";
