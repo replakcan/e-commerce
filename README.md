@@ -13,11 +13,18 @@
 
 ## Features
   1. Fetches shop products from an actual backend server,
+  
   2. There are 500+ products in total, app doesn't fetch all data at once to prevent performance loss,
-    1. Solves this issue with ***pagination*** and default limit / ofset parameters;
+
+     - Solves this issue with ***pagination*** and default limit / ofset parameters;
+  
   3. ***Protected Route*** to finish the order
-    1. User needs to be logged in to complete shop order,
-    2. Auth token is saved at ***localStorage***, verifies if token is there on componentDidMount and auto logins if so;
+
+     - User needs to be logged in to complete shop order,
+
+     - Auth token is saved at ***localStorage***, verifies if token is there on componentDidMount and auto logins if so;
+  
   4. ***Responsive Design***
-    1. Uses both _flexbox_ and _grid_ for component layout;
+
+     - Uses both _flexbox_ and _grid_ for component layout;
   
