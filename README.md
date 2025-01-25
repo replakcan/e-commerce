@@ -26,5 +26,5 @@
   
   4. ***Responsive Design***
 
-     - Uses both _flexbox_ and _grid_ for component layout;
+     - Uses both ***flexbox*** and ***grid*** for component layout;
   
