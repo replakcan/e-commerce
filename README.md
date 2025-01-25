@@ -1,4 +1,4 @@
-# Pandora e-commerce platform
+# Pandora || e-commerce platform
 
 ## Tools
   - React
