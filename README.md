@@ -12,7 +12,7 @@
   - Formatter: eslint
 
 ## Features
-  1. Fetches shop products from an actual backend server,
+  1. Fetches shop products from an actual backend service,
   
   2. There are 500+ products in total, app doesn't fetch all data at once to prevent performance loss,
 
