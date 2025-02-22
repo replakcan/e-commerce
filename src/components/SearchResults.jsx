@@ -12,19 +12,18 @@ const SearchResults = () => {
   const total = useSelector((store) => store.product.total);
   const filtre = useSelector((store) => store.product.filter);
 
-  // Local state to temporarily store input value
   const [inputValue, setInputValue] = useState(filtre);
 
   useEffect(() => {
-    setInputValue(filtre); // Initialize input value with filter value from Redux
+    setInputValue(filtre);
   }, [filtre]);
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value); // Update only local state
+    setInputValue(e.target.value);
   };
 
   const handleFilter = () => {
-    dispatch(setFilter(inputValue)); // Update Redux state on button click
+    dispatch(setFilter(inputValue));
   };
 
   return (

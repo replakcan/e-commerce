@@ -40,14 +40,12 @@ const ProductCard_4 = ({ mostPopi }) => {
           <Heading variant="h3">MOST POPULAR</Heading>
           <p>{mostPopi?.description}</p>
 
-          {/* Image Container with Hover Overlay */}
           <div className="relative border rounded-xl overflow-hidden group">
             <img
               className="py-5 transition-transform duration-300 transform group-hover:scale-105 group-hover:blur-sm"
               src={mostPopi?.images[0].url}
               alt={`${mostPopi?.name}`}
             />
-            {/* Overlay Text */}
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <p className="text-brilliant text-lg font-bold">
                 click to see <br />

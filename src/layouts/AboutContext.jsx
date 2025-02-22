@@ -1,5 +1,4 @@
 import Heading from "@/components/ui/heading";
-/* import VideoComponent from "@/components/VideoComponent"; */
 
 const AboutContext = () => {
   return (
@@ -42,7 +41,6 @@ const AboutContext = () => {
           </Heading>
         </div>
       </div>
-      {/* <VideoComponent /> */}
       <div></div>
     </div>
   );

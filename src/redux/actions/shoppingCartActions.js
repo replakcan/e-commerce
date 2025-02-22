@@ -59,10 +59,9 @@ export const createOrder = (data, token) => {
         },
       })
       .then((res) => {
-        console.log("sipariş başarılı bir şekilde kaydedildi", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -78,7 +77,7 @@ export const fetchPreviousOrders = (token) => {
         dispatch(setPrevOrders(res.data));
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };

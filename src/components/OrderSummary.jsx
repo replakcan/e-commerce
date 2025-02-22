@@ -54,7 +54,6 @@ const OrderSumm = () => {
   };
 
   const sendOrder = () => {
-    console.log("orderData:", orderData);
     dispatch(createOrder(orderData, user.token));
     toast("Siparişiniz oluşturuldu, mağazaya yönlendiriliyorsunuz", {
       autoClose: 3000,

@@ -8,8 +8,7 @@ import { useHistory, useParams } from "react-router-dom";
 const MoreProducts = ({ bestSeller }) => {
   const dispatch = useDispatch();
   let history = useHistory();
-  /* const products = useSelector((store) => store.product.productList)
-    const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4); */
+
   const { categoryId, gender, categoryName } = useParams();
 
   const handleProductClick = (product) => {

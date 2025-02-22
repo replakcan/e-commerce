@@ -28,13 +28,10 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
   const onSubmit = async (data) => {
     const updatedData = { id, ...data };
     try {
-      // Adresi güncelleme işlemini bekliyoruz
       await dispatch(updateAddress(updatedData, userToken));
 
-      // Güncelleme başarılı olursa adres listesini yeniden yükle
       await dispatch(fetchAddressList(userToken));
 
-      // onClose fonksiyonunu çağırarak formu kapatabiliriz
       if (onClose) onClose();
     } catch (error) {
       console.error("Failed to update address:", error);
@@ -48,7 +45,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
     >
       <h2 className="text-2xl font-bold mb-6 text-center">Update Address</h2>
 
-      {/* Address Title Field */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           Address Title
@@ -63,7 +59,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* Name & Surname Fields */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           Name & Surname
@@ -87,7 +82,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* Phone Field */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">Phone</label>
         <input
@@ -100,7 +94,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* City Field */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           City (İl)
@@ -115,7 +108,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* District Field */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           District (İlçe)
@@ -130,7 +122,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* Neighborhood Field */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           Neighborhood (Mahalle)
@@ -147,7 +138,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* Address Field */}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           Address
@@ -162,7 +152,6 @@ const AddressUpdateForm = ({ id, addressData, onClose }) => {
         )}
       </div>
 
-      {/* Submit Button */}
       <div className="flex justify-between">
         <Button onClick={onClose} variant="outline">
           Cancel

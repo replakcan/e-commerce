@@ -6,14 +6,13 @@ import { useDispatch } from "react-redux";
 
 const SignUp = () => {
   const dispatch = useDispatch();
-
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+  const [showPassword, setShowPassword] = useState(false);
 
   const role = watch("role");
 
@@ -35,8 +34,6 @@ const SignUp = () => {
     }
 
     dispatch(signUpNewUser(formattedData));
-
-    console.log(formattedData);
   };
 
   const togglePasswordVisibility = () => {
@@ -106,10 +103,10 @@ const SignUp = () => {
           <div className="flex items-center">
             <input
               id="password"
-              type={showPassword ? "text" : "password"} // Toggles between text and password
+              type={showPassword ? "text" : "password"}
               className={`mt-1 block w-full p-2 border ${
                 errors.password ? "border-red-500" : "border-gray-300"
-              } rounded-md pr-10`} // Right padding for icon space
+              } rounded-md pr-10`}
               {...register("password", {
                 required: "Password is required",
                 minLength: {
@@ -185,7 +182,6 @@ const SignUp = () => {
 
         {role === "store" && (
           <>
-            {/* Store Name Input */}
             <div className="mb-4">
               <label
                 htmlFor="storeName"

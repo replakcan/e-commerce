@@ -53,7 +53,7 @@ export default function ShoppingCartReducer(state = initialState, action) {
         };
         return { ...state, cart: updatedCart };
       }
-      return state; // Ürün yoksa state'i değiştirme
+      return state;
     }
 
     case DECREMENT_COUNT: {
@@ -71,12 +71,12 @@ export default function ShoppingCartReducer(state = initialState, action) {
             count: newCount,
           };
         } else {
-          updatedCart.splice(existingProductIndex, 1); // Count 0'a ulaşırsa ürünü kaldır
+          updatedCart.splice(existingProductIndex, 1);
         }
 
         return { ...state, cart: updatedCart };
       }
-      return state; // Ürün yoksa state'i değiştirme
+      return state;
     }
 
     case REMOVE_FROM_CART: {

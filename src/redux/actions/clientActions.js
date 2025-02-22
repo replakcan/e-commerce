@@ -48,7 +48,7 @@ export const fetchRoles = () => {
         });
       })
       .catch((error) => {
-        console.error("Roles could not be fetched:", error);
+        console.error("Roles could not be fetched");
       });
   };
 };
@@ -78,8 +78,6 @@ export const signUpNewUser = (data) => {
           type: SET_USER,
           payload: response.data,
         });
-        console.log("NEWUSER:", response.data);
-        console.log("new user basarili bir sekilde olusturuldu.");
       })
       .catch((error) => {
         console.error("Invalid user:", error);
@@ -101,7 +99,7 @@ export const autoLogin = (token) => {
         });
       })
       .catch((error) => {
-        console.log(error.message);
+        console.error(error.message);
         localStorage.removeItem("token");
         delete axiosInstance.defaults.headers.common["Authorization"];
       });
@@ -116,11 +114,10 @@ export const fetchAddressList = (token) => {
       },
     })
       .then((res) => {
-        console.log("RESRES:", res);
         dispatch(setAddressList(res.data));
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -134,10 +131,9 @@ export const addAddress = (data, token) => {
         },
       })
       .then((res) => {
-        console.log("RESRES:", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -151,10 +147,9 @@ export const deleteAddress = (id, token) => {
         },
       })
       .then((res) => {
-        console.log("RESRES:", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -168,10 +163,9 @@ export const updateAddress = (data, token) => {
         },
       })
       .then((res) => {
-        console.log("RESRES:", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -184,11 +178,10 @@ export const fetchCreditCards = (token) => {
       },
     })
       .then((res) => {
-        console.log("CARDLISTEM NEYMIS:", res);
         dispatch(setCardList(res.data));
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -202,10 +195,9 @@ export const addCreditCard = (data, token) => {
         },
       })
       .then((res) => {
-        console.log("RESRES:", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -219,10 +211,9 @@ export const deleteCreditCard = (id, token) => {
         },
       })
       .then((res) => {
-        console.log("RESRES:", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };
@@ -236,10 +227,9 @@ export const updateCreditCard = (data, token) => {
         },
       })
       .then((res) => {
-        console.log("RESRES:", res);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
 };

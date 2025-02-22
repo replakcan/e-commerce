@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import OrderSumm from "@/components/OrderSummary";
 import SepetItem from "@/components/SepetItem";
 
-//TODO: Sepet ismini cart yap
 const SepetPage = () => {
   const cartItems = useSelector((store) => store.shoppingCart.cart);
 

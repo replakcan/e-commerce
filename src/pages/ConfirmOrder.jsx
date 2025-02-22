@@ -19,7 +19,6 @@ const CreateOrderPage = () => {
     dispatch(fetchCreditCards(userToken));
   }, [dispatch, userToken]);
 
-  // Callback to fetch the address list after adding an address
   const refreshAddressList = () => {
     dispatch(fetchAddressList(userToken));
   };

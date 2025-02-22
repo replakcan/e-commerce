@@ -15,7 +15,6 @@ const SortButton = () => {
   const [selectedOption, setSelectedOption] = useState("Sort By");
   const dispatch = useDispatch();
 
-  // Dropdown options
   const options = [
     { label: "Price: Low to High", value: "price:asc" },
     { label: "Price: High to Low", value: "price:desc" },
@@ -23,10 +22,9 @@ const SortButton = () => {
     { label: "Rating: High to Low", value: "rating:desc" },
   ];
 
-  // Handle option selection
   const handleOptionSelect = (option) => {
     setSelectedOption(option.label);
-    dispatch(setSort(option.value)); // Only update the sort in Redux store
+    dispatch(setSort(option.value));
   };
 
   return (

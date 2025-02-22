@@ -34,7 +34,7 @@ function AddAddressForm({ onAddressAdded }) {
       console.error("Failed to add address:", error);
     }
     reset();
-    setShowForm(false); // Close form after submission
+    setShowForm(false);
   };
 
   const closeForm = () => {
@@ -75,7 +75,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* Name & Surname Fields */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Name & Surname
@@ -101,7 +100,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* Phone Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Phone
@@ -118,7 +116,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* City Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   City (İl)
@@ -137,7 +134,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* District Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   District (İlçe)
@@ -156,7 +152,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* Neighborhood Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Neighborhood (Mahalle)
@@ -175,7 +170,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* Address Field */}
               <div className="mb-6">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Address
@@ -194,7 +188,6 @@ function AddAddressForm({ onAddressAdded }) {
                 )}
               </div>
 
-              {/* Submit and Cancel Buttons */}
               <div className="flex justify-end gap-4">
                 <Button
                   type="button"

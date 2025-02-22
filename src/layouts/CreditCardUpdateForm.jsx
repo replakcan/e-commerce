@@ -29,7 +29,7 @@ const CreditCardUpdateForm = ({ id, cardData, onClose }) => {
     const updatedData = { id, ...data };
     dispatch(updateCreditCard(updatedData, userToken));
     dispatch(fetchCreditCards(userToken));
-    onClose(); // Close form after submission
+    onClose();
   };
 
   return (

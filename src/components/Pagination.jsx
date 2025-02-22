@@ -4,11 +4,10 @@ import { Button } from "./ui/button";
 
 const Pagination = () => {
   const dispatch = useDispatch();
-  const limit = useSelector((store) => store.product.limit) || 1; // Varsayılan değer 1
-  const offset = useSelector((store) => store.product.offset) || 0; // Varsayılan değer 0
-  const total = useSelector((store) => store.product.total) || 0; // Varsayılan değer 0
+  const limit = useSelector((store) => store.product.limit) || 1;
+  const offset = useSelector((store) => store.product.offset) || 0;
+  const total = useSelector((store) => store.product.total) || 0;
 
-  // `totalPages`'i `NaN` olmaması için kontrol ediyoruz
   const totalPages = Math.max(1, Math.ceil(total / limit));
   const currentPage = Math.max(1, Math.floor(offset / limit) + 1);
 
@@ -26,7 +25,7 @@ const Pagination = () => {
 
   const getDisplayedPages = () => {
     if (currentPage === 1) {
-      return [1, 2, 3].slice(0, totalPages); // Sadece mevcut sayfalar kadar göster
+      return [1, 2, 3].slice(0, totalPages);
     } else if (currentPage === totalPages) {
       return [totalPages - 2, totalPages - 1, totalPages].filter(
         (page) => page > 0

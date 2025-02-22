@@ -26,15 +26,14 @@ const Login = () => {
 
   const onSubmit = (data) => {
     dispatch(loginUser(data));
-    setRedirectReady(true); // Yönlendirme durumunu aktif hale getir
+    setRedirectReady(true);
   };
 
   useEffect(() => {
     if (redirectReady && Object.keys(user).length > 0) {
-      // user bilgisi güncellenmiş mi kontrol et
-      // Önceki sayfaya veya ana sayfaya yönlendir
+
       const previousPage = location.state?.from?.pathname || "/";
-      history.replace(previousPage); // replace kullanımı
+      history.replace(previousPage)
 
       toast(`${user.name} hoşgeldiniz`, {
         autoClose: 2500,
@@ -44,11 +43,10 @@ const Login = () => {
         },
       });
 
-      // Token'ı sakla
       if (rememberMe && user.token) {
         setToken(user.token);
       }
-      setRedirectReady(false); // Yönlendirme tamamlandı, durumu sıfırla
+      setRedirectReady(false);
     }
 
     if (user.token) {
@@ -65,7 +63,6 @@ const Login = () => {
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
-        {/* Email Field */}
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2">
             Email
@@ -86,7 +83,6 @@ const Login = () => {
           )}
         </div>
 
-        {/* Password Field */}
         <div className="mb-6 relative">
           <label className="block text-gray-700 font-semibold mb-2">
             Password
@@ -101,7 +97,6 @@ const Login = () => {
           )}
         </div>
 
-        {/* Remember Me Checkbox */}
         <div className="mb-6 flex items-center">
           <input
             type="checkbox"
@@ -114,7 +109,6 @@ const Login = () => {
           </label>
         </div>
 
-        {/* Submit Button */}
         <Button type="submit" className="w-full">
           Login
         </Button>

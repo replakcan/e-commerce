@@ -51,7 +51,7 @@ const ProductCard_3 = ({ products }) => {
     <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] md:rounded-3xl overflow-hidden bg-white">
       <div className="md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3 bg-brilliant">
         <img
-          className="w-full h-[200px] lg:h-full object-cover object-[55%]  "
+          className="w-full h-[200px] lg:h-full object-cover object-[55%]"
           src="./images/productCard/fashion-men-s-individuality-black-and-white-157675.webp"
         />
       </div>

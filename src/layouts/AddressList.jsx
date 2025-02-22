@@ -3,7 +3,6 @@ import Heading from "@/components/ui/heading";
 import { setAddress } from "@/redux/actions/shoppingCartActions";
 import { useDispatch, useSelector } from "react-redux";
 
-//TODO butona tiklayinca adresleri guncelleyecek sekilde kodu duzenle
 const AddresList = () => {
   const addressList = useSelector((store) => store.client.addressList);
   const dispatch = useDispatch();

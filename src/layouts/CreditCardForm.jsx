@@ -30,7 +30,7 @@ function AddCreditCardForm({ onCardAdded }) {
       console.error("Failed to add credit card:", error);
     }
     reset();
-    setShowForm(false); // Close form after submission
+    setShowForm(false);
   };
 
   const closeForm = () => {
@@ -56,7 +56,6 @@ function AddCreditCardForm({ onCardAdded }) {
             </h2>
 
             <form onSubmit={handleSubmit(onSubmit)}>
-              {/* Card Number Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Card Number
@@ -79,7 +78,6 @@ function AddCreditCardForm({ onCardAdded }) {
                 )}
               </div>
 
-              {/* Name on Card Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Name on Card
@@ -98,7 +96,6 @@ function AddCreditCardForm({ onCardAdded }) {
                 )}
               </div>
 
-              {/* Expiration Date Fields */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   Expiration Date
@@ -139,7 +136,6 @@ function AddCreditCardForm({ onCardAdded }) {
                 )}
               </div>
 
-              {/* CVV Field */}
               <div className="mb-4">
                 <label className="block text-gray-700 font-semibold mb-2">
                   CVV
@@ -160,7 +156,6 @@ function AddCreditCardForm({ onCardAdded }) {
                 )}
               </div>
 
-              {/* Submit and Cancel Buttons */}
               <div className="flex justify-end gap-4">
                 <Button
                   type="button"

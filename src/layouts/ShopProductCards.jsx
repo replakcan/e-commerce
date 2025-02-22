@@ -53,5 +53,3 @@ const ShopProductCards = () => {
 };
 
 export default ShopProductCards;
-
-//TODO btn in productDetail doesn't go back to productPage

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ShoppingCart } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
