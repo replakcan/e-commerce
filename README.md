@@ -1,8 +1,30 @@
-# React + Vite
+# Pandora || e-commerce platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Tools
+  - React
+  - react-router
+  - react-hook-form
+  - redux for global state management
+  - redux-thunk, redux-logger
+  - Icons: lucide-react, simple-icons;
+  - CSS: TailwindCSS, shadCN
+  - Notifications: toastify-js
+  - Formatter: eslint
 
-Currently, two official plugins are available:
+## Features
+  1. Fetches shop products from an actual backend service,
+  
+  2. There are 500+ products in total, app doesn't fetch all data at once to prevent performance loss,
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+     - Solves this issue with ***pagination*** and default limit / ofset parameters;
+  
+  3. ***Protected Route*** to finish the order
+
+     - User needs to be logged in to complete shop order,
+
+     - Auth token is saved at ***localStorage***, verifies if token is there on componentDidMount and auto logins if so;
+  
+  4. ***Responsive Design***
+
+     - Uses both ***flexbox*** and ***grid*** for component layout;
+  
