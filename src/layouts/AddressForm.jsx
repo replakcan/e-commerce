@@ -155,7 +155,7 @@ function AddAddressForm({ onAddressAdded }) {
                 <Button type="button" onClick={closeForm} className="bg-gray-400 hover:bg-gray-500">
                   Cancel
                 </Button>
-                <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700">
+                <Button type="submit" className="bg-brilliant hover:bg-black">
                   Submit
                 </Button>
               </div>

@@ -13,7 +13,7 @@ const TeamMemberCard = ({ src, name, role }) => {
           <p className="font-bold text-lg">{role}</p>
         </div>
         <div className="flex gap-4 justify-center pb-8">
-          <img height="32" width="32" src="https://cdn.simpleicons.org/linkedin/1877F2" />
+          <img height="32" width="32" src="https://cdn.simpleicons.org/reddit/fffff" />
           <img height="32" width="32" src="https://cdn.simpleicons.org/instagram/E1306C" />
           <img height="32" width="32" src="https://cdn.simpleicons.org/x" />
         </div>

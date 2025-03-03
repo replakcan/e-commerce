@@ -7,7 +7,7 @@ const BlogCard = ({ src, place, description, links, date, comment_count }) => {
   return (
     <div className="blogCard border flex flex-col gap-2 p-1 md:w-min grow w-[80%] bg-white">
       <div className="w-max-[350px] aspect-[16/9] overflow-hidden">
-        <img className="w-full h-full object-cover" src={src} alt="" />
+        <img className="w-full h-full object-cover" src={src}/>
       </div>
       <div className="flex flex-col gap-3 p-8">
         <nav className="flex gap-3">

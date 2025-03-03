@@ -3,7 +3,7 @@ import Heading from '@/components/ui/heading'
 
 const Clients = () => {
   return (
-    <div className="flex flex-col gap-20 md:flex-row md:justify-between bg-light_gray px-[10%] py-12">
+    <div className="flex flex-col gap-20 md:flex-row md:justify-between bg-light_gray px-[10%] py-16">
       <div className="client-card flex flex-col text-center gap-2 items-center">
         <Heading variant="h3">Subscribe For Latest Newsletter</Heading>
         <p>

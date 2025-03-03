@@ -26,7 +26,7 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
   return (
     <div className="productCard_2 md:rounded-3xl overflow-hidden flex flex-col items-center gap-12 md:gap-0 ">
       <div className="prc1 h-full w-full bg-mars">
-        <img className="w-full h-full object-cover" src="./images/productCard/home-card-pics-1.jpeg" alt="" />
+        <img className="w-full h-full object-cover" src="./images/productCard/home-card-pics-1.jpeg"/>
       </div>
 
       <div
@@ -37,7 +37,7 @@ const ProductCard_2 = ({ mostPopi_2 }) => {
         <p>{mostPopi_2?.description}</p>
         <div className="relative border rounded-xl overflow-hidden group">
           <img
-            className="py-5 transition-transform duration-300 transform group-hover:scale-105 group-hover:blur-sm"
+            className="transition-transform duration-300 transform group-hover:scale-105 group-hover:blur-sm object-cover aspect-[3/4]"
             src={mostPopi_2?.images[0].url}
             alt={`${mostPopi_2?.name}`}
           />

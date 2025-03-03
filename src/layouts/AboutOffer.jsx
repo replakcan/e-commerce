@@ -18,7 +18,7 @@ const AboutOffer = () => {
         <Button variant="outlineBrWh">Button</Button>
       </div>
       <div className="hidden lg:block h-full">
-        <img src="./images/about/workworkwork.png" alt="" />
+        <img src="./images/about/workworkwork.png"/>
       </div>
     </div>
   )

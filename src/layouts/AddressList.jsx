@@ -12,8 +12,8 @@ const AddresList = () => {
   }
 
   return (
-    <div className="">
-      {addressList.length === 0 && <Heading variant="h1">Kayitli adres kaydi bulunamadi.</Heading>}
+    <div >
+      {addressList.length === 0 && <Heading variant="h2">{`Couldn't find any saved address info`}</Heading>}
 
       <div className="flex flex-wrap gap-1">
         {addressList?.map((adres) => {

@@ -5,10 +5,10 @@ import { blogCards } from '@/data'
 const Blog = () => {
   return (
     <>
-      <div className="text-center py-12">
+      <div className="text-center pt-8 pb-4">
         <Heading variant="h1">We Are All Around The World</Heading>
       </div>
-      <div className="flex flex-col flex-wrap items-center gap-3 md:flex-row justify-between pb-24">
+      <div className="flex flex-col flex-wrap items-center gap-3 md:flex-row justify-between py-16">
         {blogCards.map((blogcard) => {
           return (
             <BlogCard

@@ -28,7 +28,7 @@ const ProductCard_5 = ({ products }) => {
 
   return (
     <div className="text-center bg-light_gray md:px-[10%]">
-      <div className="py-12 md:text-left">
+      <div className="pt-8 pb-4 md:text-left">
         <Heading variant="h3">BESTSELLER PRODUCTS</Heading>
       </div>
       <div className="flex flex-wrap items-center md:justify-between md:flex-row md:gap-7 pb-12">

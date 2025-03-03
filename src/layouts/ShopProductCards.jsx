@@ -43,7 +43,7 @@ const ShopProductCards = () => {
           )
         })}
       </div>
-      <div className="flex justify-center items-center py-4">
+      <div className="flex justify-center items-center py-16">
         <Pagination />
       </div>
     </div>

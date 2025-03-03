@@ -34,7 +34,7 @@ const Pagination = () => {
   }
 
   return (
-    <div className="flex items-center justify-center pt-5">
+    <div className="flex items-center justify-center">
       <Button
         size="pagination"
         variant="paginationFirst"

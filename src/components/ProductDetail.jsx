@@ -23,14 +23,14 @@ const ProductDetail = ({ src, name, sell_count, description, price, stock }) => 
   }
 
   return (
-    <div className="flex flex-col gap-2 md:flex-row bg-light_gray md:px-[10%] pb-12">
+    <div className="flex flex-col gap-2 md:flex-row bg-light_gray md:px-[10%] py-16">
       <div className="flex flex-col gap-3 items-center">
         <div className="max-w-[500px]">
-          <img src={src} alt="" />
+          <img className='border-2 border rounded-[2rem] aspect-[3/4] object-cover' src={src} />
         </div>
         <div className="flex gap-4 pt-4 self-start pl-12 md:pl-0">
-          <img className="max-w-[100px] h-min" src={src} alt="" />
-          <img className="max-w-[100px] h-min" src={src} alt="" />
+          <img className="max-w-[100px] aspect-[3/4] object-cover h-min border-2 border rounded-[1rem]" src={src} />
+          <img className="max-w-[100px] aspect-[3/4] object-cover h-min border-2 border rounded-[1rem]" src={src} />
         </div>
       </div>
       <div className="pl-12 pt-5">
@@ -38,10 +38,9 @@ const ProductDetail = ({ src, name, sell_count, description, price, stock }) => 
           <Heading variant="h2">{name}</Heading>
           <div className="flex items-center gap-2">
             <div className="flex gap-2">
-              <Star size={32} color="gold" />
-              <Star size={32} color="gold" />
-              <Star size={32} color="gold" />
-              <Star size={32} color="gold" />
+              {[0, 1, 2, 3].map((el) => (
+                <Star key={el} size={32} color="gold" />
+              ))}
               <StarHalf size={32} color="gold" />
             </div>
             <p className="font-bold">Sell count: {sell_count}</p>
@@ -52,7 +51,7 @@ const ProductDetail = ({ src, name, sell_count, description, price, stock }) => 
             ${price}
           </Heading>
           <p className="font-bold">
-            Availability : <span className="text-ikincil text-xl">{stock} in stock</span>
+            Availability : <span className="text-ikincil text-xl">{stock > 0 && 'in stock'}</span>
           </p>
         </div>
         <p className="pt-3 border-b-4 pb-2 md:w-3/4">{description}</p>

@@ -35,7 +35,9 @@ const CartButton = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-80 bg-dune">
-        <DropdownMenuLabel>Sepetim ({itemCount} Ürün)</DropdownMenuLabel>
+        <DropdownMenuLabel>
+          My Basket ({itemCount == 1 ? `${itemCount} Product` : `${itemCount} Products`})
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <ScrollArea className="h-[300px] w-full rounded-md border p-4">
           {cart.length > 0 ? (
@@ -49,19 +51,19 @@ const CartButton = () => {
                 <div className="space-y-1">
                   <h4 className="text-sm font-medium leading-none">{item.product.name}</h4>
                   <p className="text-sm text-muted-foreground">{item.product.description}</p>
-                  <p className="text-sm">Adet: {item.count}</p>
+                  <p className="text-sm">Piece: {item.count}</p>
                   <p className="text-sm font-semibold">{item.product.price} $</p>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-sm text-muted-foreground">Sepetinizde ürün yok.</p>
+            <p className="text-sm text-muted-foreground">Your basket is empty.</p>
           )}
         </ScrollArea>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
           <Button className="w-full" onClick={goToCart}>
-            Sepete Git
+            Go to Cart
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>

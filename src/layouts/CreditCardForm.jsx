@@ -27,7 +27,7 @@ function AddCreditCardForm({ onCardAdded }) {
       dispatch(addCreditCard(formattedData, userToken))
       if (onCardAdded) onCardAdded()
     } catch (error) {
-      console.error('Failed to add credit card:', error)
+      console.error('Failed to add payment method:', error)
     }
     reset()
     setShowForm(false)
@@ -40,7 +40,7 @@ function AddCreditCardForm({ onCardAdded }) {
 
   return (
     <div className="flex flex-col">
-      <Button onClick={() => setShowForm(!showForm)}>Add Credit Card</Button>
+      <Button onClick={() => setShowForm(!showForm)}>Add Payment Method</Button>
 
       {showForm && (
         <div className="fixed inset-0 z-[10000] flex items-center justify-center bg-black bg-opacity-50">
@@ -48,7 +48,7 @@ function AddCreditCardForm({ onCardAdded }) {
             <button onClick={closeForm} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-6 text-center">Add Credit Card</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Add Payment Method</h2>
 
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-4">
@@ -134,7 +134,7 @@ function AddCreditCardForm({ onCardAdded }) {
                 <Button type="button" onClick={closeForm} className="bg-gray-400 hover:bg-gray-500">
                   Cancel
                 </Button>
-                <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700">
+                <Button type="submit" className="bg-brilliant hover:bg-black">
                   Submit
                 </Button>
               </div>

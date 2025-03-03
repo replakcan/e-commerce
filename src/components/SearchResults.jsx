@@ -27,9 +27,8 @@ const SearchResults = () => {
   }
 
   return (
-    <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between md:py-6 border-b pb-2">
+    <div className="flex flex-col items-center gap-2 md:flex-row md:justify-between border-b py-16">
       <Heading variant="h4">
-        {' '}
         Showing all <span className="text-2xl text-brilliant">{total}</span> results
       </Heading>
       <div className="search-icon-btns flex flex-row items-center gap-3">

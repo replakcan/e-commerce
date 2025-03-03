@@ -10,7 +10,7 @@ const CategoryCard = ({ title, src, gender, category, id }) => {
     >
       <div className="grid w-[80%] grid-cols-3 grid-rows-3 md:max-h-[250px] md:max-w-[250px] overflow-hidden items-center shadow-md hover:shadow-lg transition-shadow duration-300">
         <img
-          className="col-start-1 col-end-4 row-start-1 row-end-4 object-cover aspect-square"
+          className="col-start-1 col-end-4 row-start-1 row-end-4 object-cover aspect-square rounded-lg"
           src={src}
           alt={`${title} image`}
         />

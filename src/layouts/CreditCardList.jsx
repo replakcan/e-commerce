@@ -13,8 +13,8 @@ const CreditCardList = () => {
   }
 
   return (
-    <div className="">
-      {creditCardList.length === 0 && <Heading variant="h1">Kayıtlı kart bulunamadı.</Heading>}
+    <div >
+      {creditCardList.length === 0 && <Heading variant="h2">{`Couldn't find any saved payment method`}</Heading>}
 
       <div className="flex flex-wrap gap-1">
         {creditCardList?.map((card) => {

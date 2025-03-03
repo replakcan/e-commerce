@@ -114,7 +114,7 @@ const CreditCardUpdateForm = ({ id, cardData, onClose }) => {
         </Button>
         <Button
           type="submit"
-          className="bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition duration-300"
+          className="bg-brilliant text-white py-2 rounded-md hover:bg-black transition duration-300"
         >
           Update Card
         </Button>

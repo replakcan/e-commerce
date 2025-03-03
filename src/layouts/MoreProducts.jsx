@@ -19,9 +19,9 @@ const MoreProducts = ({ bestSeller }) => {
   }
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="m-auto bg-light_gray border-b pb-4 text-center">
-        <Heading variant="h2">BESTSELLER PRODUCTS</Heading>
+    <div className="flex flex-col items-center py-16">
+      <div className="m-auto border-b text-center">
+        <Heading className='pb-4' variant="h2">BESTSELLER PRODUCTS</Heading>
       </div>
       <div className="flex flex-col md:flex-row items-center md:w-full md:justify-between  md:px-[10%] flex-wrap md:content-start">
         {bestSeller.map((bestItem, index) => {

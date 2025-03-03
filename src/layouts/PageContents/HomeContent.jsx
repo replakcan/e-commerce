@@ -24,12 +24,12 @@ const HomeContent = () => {
   }, [])
 
   return (
-    <div className="content flex flex-col gap-12">
+    <div className="content flex flex-col">
       <div>
         <HeaderSlider />
         <ShopCard />
       </div>
-      <section className="flex flex-col gap-12">
+      <section className="flex flex-col gap-8">
         <ProductCard_1 products={products} />
         <ProductCard_2 mostPopi_2={mostPopi_2} />
         <ProductCard_3 products={products} />

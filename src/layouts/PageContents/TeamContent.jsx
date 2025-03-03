@@ -10,7 +10,7 @@ const TeamContent = () => {
       <section className="content flex flex-col gap-20">
         <TeamGridHead />
       </section>
-      <div className="py-8">
+      <div className="py-16">
         <TeamGrid />
       </div>
       <section>

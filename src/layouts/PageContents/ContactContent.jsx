@@ -9,7 +9,7 @@ const ContactContent = () => {
         <ContactInfo />
       </section>
       <SupportInfo />
-      <section className="">
+      <section >
         <SupportCall />
       </section>
     </>

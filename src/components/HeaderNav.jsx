@@ -101,7 +101,7 @@ const HeaderNav = () => {
           <Button onClick={() => history.push('/shop')} variant="link" size="sm" className="text-black font-bold -mr-5">
             Shop
           </Button>
-          <ShopButtonWithDropdown className="" />
+          <ShopButtonWithDropdown  />
         </div>
         <CartButton />
 

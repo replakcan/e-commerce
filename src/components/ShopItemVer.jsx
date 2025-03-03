@@ -8,7 +8,7 @@ const ShopItemVer = ({ name, onClick, description, price, src }) => {
       className="shopItemVertical relative flex flex-col md:w-[32%] md:h-[48%] text-center bg-gray-50 w-[80%] border rounded overflow-hidden transition-transform transform hover:scale-95 hover:shadow-inner cursor-pointer"
     >
       <div className="overflow-hidden relative">
-        <img src={src} className="w-full h-full object-cover" alt={`${name}`} />
+        <img src={src} className="w-full h-full aspect-[3/4] border rounded-md object-cover" alt={`${name}`} />
         <div className="absolute inset-0 bg-black bg-opacity-50 text-white flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
           <p className="text-2xl font-semibold text-white">
             click to see <br /> product details

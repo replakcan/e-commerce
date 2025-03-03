@@ -17,10 +17,10 @@ const Categories = () => {
 
   return (
     <>
-      <div className="bg-light_gray md:px-[10%] py-6">
+      <div className="bg-light_gray md:px-[10%] py-8">
         <CategoryTop />
       </div>
-      <div className="flex flex-col items-center gap-0 md:flex-row flex-wrap justify-between bg-light_gray md:px-[10%] md:py-12 row-gap-4 ">
+      <div className="flex flex-col items-center gap-0 md:flex-row flex-wrap justify-between bg-light_gray md:px-[10%] row-gap-4 pt-4 pb-8">
         {topCategories?.map((topcat) => {
           return (
             <CategoryCard

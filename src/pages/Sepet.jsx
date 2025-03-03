@@ -6,7 +6,7 @@ const SepetPage = () => {
   const cartItems = useSelector((store) => store.shoppingCart.cart)
 
   return (
-    <div className="flex flex-col gap-8 px-[10%] py-4 md:flex-row md:justify-between min-h-lvh">
+    <div className="flex flex-col gap-8 px-[10%] py-8 md:flex-row md:justify-between min-h-lvh">
       <div className="sepetUrunu w-full">
         {cartItems?.map((item, index) => (
           <SepetItem key={index} item={item} />

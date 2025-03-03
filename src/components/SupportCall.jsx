@@ -5,7 +5,7 @@ import Heading from './ui/heading'
 
 const SupportCall = () => {
   return (
-    <div className="flex flex-col items-center pb-24">
+    <div className="flex flex-col items-center py-16">
       <CornerRightDown size={124} className="text-primary" />
       <div className="text-center flex flex-col gap-8 items-center">
         <Heading variant="h5">WE Can't WAIT TO MEET YOU</Heading>

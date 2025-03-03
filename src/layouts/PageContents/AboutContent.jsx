@@ -7,8 +7,8 @@ import AboutOffer from '../AboutOffer'
 
 const AboutContent = () => {
   return (
-    <div className="content flex flex-col gap-20">
-      <section className="flex flex-col gap-20">
+    <div className="content flex flex-col">
+      <section className="flex flex-col">
         <AboutInfo />
         <AboutContext />
         <TeamMemberHead />

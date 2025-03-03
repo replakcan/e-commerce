@@ -61,9 +61,9 @@ const ShopContent = () => {
   }, [isParamsLoaded, gender, categoryId, categoryName, sort, filter, limit, offset, dispatch, history])
 
   return (
-    <div className="content flex flex-col gap-20">
+    <div className="content flex flex-col">
       <Categories />
-      <section className="flex flex-col gap-20">
+      <section className="flex flex-col">
         <SearchResults />
         <ShopProductCards />
       </section>

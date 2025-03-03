@@ -3,7 +3,7 @@ import Heading from '@/components/ui/heading'
 
 const AboutInfo = () => {
   return (
-    <div className="flex flex-col gap-3 md:flex-row md:justify-between py-12">
+    <div className="flex flex-col gap-3 md:flex-row md:justify-between">
       <div className="flex flex-col items-center md:w-1/2 md:items-start md:justify-center gap-4 mb-24 px-[10%] md:px-0">
         <Heading variant="h5" className="font-bold hidden md:block">
           ABOUT COMPANY
