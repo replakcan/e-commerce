@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import Heading from "@/components/ui/heading";
+import { Button } from '@/components/ui/button'
+import Heading from '@/components/ui/heading'
 
 const AboutInfo = () => {
   return (
@@ -10,8 +10,7 @@ const AboutInfo = () => {
         </Heading>
         <Heading variant="h1">ABOUT US</Heading>
         <p className="md:w-2/3">
-          We know how large objects will act, but things on a small scale just
-          do not act that way.
+          We know how large objects will act, but things on a small scale just do not act that way.
         </p>
         <Button>Get Quote Now</Button>
       </div>
@@ -19,7 +18,7 @@ const AboutInfo = () => {
         <img src="./images/about/technology 1.png" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AboutInfo;
+export default AboutInfo

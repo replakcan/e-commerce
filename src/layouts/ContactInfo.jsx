@@ -1,4 +1,4 @@
-import Heading from "@/components/ui/heading";
+import Heading from '@/components/ui/heading'
 
 const ContactInfo = () => {
   return (
@@ -9,8 +9,7 @@ const ContactInfo = () => {
           Get in touch <br /> today!
         </Heading>
         <p className="md:w-2/3 w-[60%] md:text-left">
-          We know how large objects will act, but things on a small scale just
-          do not act that way.
+          We know how large objects will act, but things on a small scale just do not act that way.
         </p>
         <div className="md:text-left">
           <p className="font-bold text-black">Phone : +90531</p>
@@ -18,28 +17,16 @@ const ContactInfo = () => {
         </div>
         <div className="socials flex gap-4">
           <img height="32" width="32" src="https://cdn.simpleicons.org/x" />
-          <img
-            height="32"
-            width="32"
-            src="https://cdn.simpleicons.org/facebook/black"
-          />
-          <img
-            height="32"
-            width="32"
-            src="https://cdn.simpleicons.org/instagram/black"
-          />
-          <img
-            height="32"
-            width="32"
-            src="https://cdn.simpleicons.org/linkedin/black"
-          />
+          <img height="32" width="32" src="https://cdn.simpleicons.org/facebook/black" />
+          <img height="32" width="32" src="https://cdn.simpleicons.org/instagram/black" />
+          <img height="32" width="32" src="https://cdn.simpleicons.org/linkedin/black" />
         </div>
       </div>
       <div className="flex justify-center">
         <img src="./images/about/contact/contact_.png" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ContactInfo;
+export default ContactInfo

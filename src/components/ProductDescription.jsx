@@ -1,6 +1,6 @@
-import { ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
-import Heading from "./ui/heading";
+import { ChevronRight } from 'lucide-react'
+import { Button } from './ui/button'
+import Heading from './ui/heading'
 
 const ProductDescription = () => {
   return (
@@ -19,11 +19,10 @@ const ProductDescription = () => {
         <div className="flex flex-col gap-4 col-start-2 col-end-3 md:w-[45%]">
           <Heading variant="h3">the quick fox jumps over</Heading>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic omnis
-            aperiam cum consequuntur cumque, cupiditate quidem distinctio culpa
-            expedita debitis iste assumenda necessitatibus ipsa! Voluptatibus
-            expedita praesentium quidem aperiam, ratione ut, labore ipsam veniam
-            nesciunt iusto fugit, molestiae provident?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic omnis aperiam cum consequuntur cumque,
+            cupiditate quidem distinctio culpa expedita debitis iste assumenda necessitatibus ipsa! Voluptatibus
+            expedita praesentium quidem aperiam, ratione ut, labore ipsam veniam nesciunt iusto fugit, molestiae
+            provident?
           </p>
         </div>
         <div className=" flex flex-col md:flex-row justify-around gap-4 md:w-full">
@@ -31,19 +30,19 @@ const ProductDescription = () => {
             <Heading variant="h3">the quick fox jumps over</Heading>
             <ul>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
             </ul>
@@ -52,19 +51,19 @@ const ProductDescription = () => {
             <Heading variant="h3">the quick fox jumps over</Heading>
             <ul>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
               <li className="flex items-center gap-2">
-                {" "}
+                {' '}
                 <ChevronRight /> the quick fox jumps over the lazy dog
               </li>
             </ul>
@@ -72,7 +71,7 @@ const ProductDescription = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductDescription;
+export default ProductDescription

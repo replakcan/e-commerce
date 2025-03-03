@@ -1,21 +1,21 @@
 /* eslint-disable react/prop-types */
-import Heading from "./ui/heading";
-import { useState } from "react";
+import Heading from './ui/heading'
+import { useState } from 'react'
 
 const BestSellerCard = ({ name, src, description, price, onClick }) => {
-  const [transform, setTransform] = useState("rotateX(0deg) rotateY(0deg)");
+  const [transform, setTransform] = useState('rotateX(0deg) rotateY(0deg)')
 
   const handleMouseMove = (e) => {
-    const { offsetWidth: width, offsetHeight: height } = e.currentTarget;
-    const { offsetX: x, offsetY: y } = e.nativeEvent;
+    const { offsetWidth: width, offsetHeight: height } = e.currentTarget
+    const { offsetX: x, offsetY: y } = e.nativeEvent
 
-    const rotateX = (y / height - 0.5) * -15;
-    const rotateY = (x / width - 0.5) * 15;
+    const rotateX = (y / height - 0.5) * -15
+    const rotateY = (x / width - 0.5) * 15
 
-    setTransform(`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
-  };
+    setTransform(`rotateX(${rotateX}deg) rotateY(${rotateY}deg)`)
+  }
 
-  const handleMouseLeave = () => setTransform("rotateX(0deg) rotateY(0deg)");
+  const handleMouseLeave = () => setTransform('rotateX(0deg) rotateY(0deg)')
 
   return (
     <div
@@ -32,9 +32,7 @@ const BestSellerCard = ({ name, src, description, price, onClick }) => {
           className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-110 group-hover:blur-sm"
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <p className="text-brilliant text-lg font-semibold">
-            click to see product details
-          </p>
+          <p className="text-brilliant text-lg font-semibold">click to see product details</p>
         </div>
       </div>
 
@@ -45,15 +43,11 @@ const BestSellerCard = ({ name, src, description, price, onClick }) => {
         >
           {name}
         </Heading>
-        <p className="transition-colors duration-300 group-hover:text-gray-500">
-          {description}
-        </p>
-        <p className="font-semibold text-gray-900 group-hover:text-blue-600">
-          ${price}
-        </p>
+        <p className="transition-colors duration-300 group-hover:text-gray-500">{description}</p>
+        <p className="font-semibold text-gray-900 group-hover:text-blue-600">${price}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BestSellerCard;
+export default BestSellerCard

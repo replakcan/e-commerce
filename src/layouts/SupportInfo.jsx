@@ -1,5 +1,5 @@
-import SupportCard from "@/components/SupportCard";
-import Heading from "@/components/ui/heading";
+import SupportCard from '@/components/SupportCard'
+import Heading from '@/components/ui/heading'
 
 const SupportInfo = () => {
   return (
@@ -18,6 +18,6 @@ const SupportInfo = () => {
         <SupportCard />
       </div>
     </div>
-  );
-};
-export default SupportInfo;
+  )
+}
+export default SupportInfo

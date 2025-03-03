@@ -1,6 +1,6 @@
-import BlogCard from "@/components/BlogCard";
-import Heading from "@/components/ui/heading";
-import { blogCards } from "@/data";
+import BlogCard from '@/components/BlogCard'
+import Heading from '@/components/ui/heading'
+import { blogCards } from '@/data'
 
 const Blog = () => {
   return (
@@ -20,10 +20,10 @@ const Blog = () => {
               comment_count={blogcard.comment_count}
               src={blogcard.src}
             />
-          );
+          )
         })}
       </div>
     </>
-  );
-};
-export default Blog;
+  )
+}
+export default Blog

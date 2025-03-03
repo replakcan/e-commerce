@@ -1,4 +1,4 @@
-import Heading from "./ui/heading";
+import Heading from './ui/heading'
 
 const TeamMemberHead = () => {
   return (
@@ -8,10 +8,9 @@ const TeamMemberHead = () => {
         <Heading variant="h1">Team</Heading>
       </div>
       <p className="w-1/2">
-        Problems trying to resolve the conflict between the two major realms of
-        Classical physics: Newtonian mechanics
+        Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics
       </p>
     </div>
-  );
-};
-export default TeamMemberHead;
+  )
+}
+export default TeamMemberHead

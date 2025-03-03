@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
-import { CornerRightDown } from "lucide-react";
-import { Button } from "./ui/button";
-import Heading from "./ui/heading";
+import { CornerRightDown } from 'lucide-react'
+import { Button } from './ui/button'
+import Heading from './ui/heading'
 
 const SupportCall = () => {
   return (
@@ -13,6 +13,6 @@ const SupportCall = () => {
         <Button>Try it free now</Button>
       </div>
     </div>
-  );
-};
-export default SupportCall;
+  )
+}
+export default SupportCall

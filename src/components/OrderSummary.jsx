@@ -1,33 +1,33 @@
-import { useHistory, useLocation } from "react-router-dom";
-import { Button } from "./ui/button";
-import { useDispatch, useSelector } from "react-redux";
-import { ChevronRight } from "lucide-react";
-import { createOrder } from "@/redux/actions/shoppingCartActions";
-import { toast } from "react-toastify";
+import { useHistory, useLocation } from 'react-router-dom'
+import { Button } from './ui/button'
+import { useDispatch, useSelector } from 'react-redux'
+import { ChevronRight } from 'lucide-react'
+import { createOrder } from '@/redux/actions/shoppingCartActions'
+import { toast } from 'react-toastify'
 
-const shippingTotal = 7.99;
-let kargoBedeli = 7.99;
+const shippingTotal = 7.99
+let kargoBedeli = 7.99
 
 const OrderSumm = () => {
-  const cartItems = useSelector((store) => store.shoppingCart.cart);
-  const user = useSelector((store) => store.client.user);
-  const history = useHistory();
-  const location = useLocation(); // Mevcut URL'i kontrol etmek için kullanılıyor.
-  const dispatch = useDispatch();
-  const cartAddress = useSelector((store) => store.shoppingCart.address);
-  const cartPayment = useSelector((store) => store.shoppingCart.payment);
-  const cart = useSelector((store) => store.shoppingCart);
+  const cartItems = useSelector((store) => store.shoppingCart.cart)
+  const user = useSelector((store) => store.client.user)
+  const history = useHistory()
+  const location = useLocation()
+  const dispatch = useDispatch()
+  const cartAddress = useSelector((store) => store.shoppingCart.address)
+  const cartPayment = useSelector((store) => store.shoppingCart.payment)
+  const cart = useSelector((store) => store.shoppingCart)
 
   const orderTotal = cartItems
     .filter((item) => item.checked)
     .reduce((total, item) => total + item.product.price * item.count, 0)
-    .toFixed(2);
+    .toFixed(2)
 
   if (orderTotal >= 200) {
-    kargoBedeli = 0;
+    kargoBedeli = 0
   }
 
-  let siparisToplam = parseFloat(orderTotal) + kargoBedeli;
+  let siparisToplam = parseFloat(orderTotal) + kargoBedeli
 
   const orderData = {
     address_id: cart.address.id,
@@ -43,34 +43,34 @@ const OrderSumm = () => {
       count: item.count,
       detail: item.product.name,
     })),
-  };
+  }
 
   const handleConfirmOrder = () => {
     if (Object.keys(user).length === 0) {
-      history.push("/login");
+      history.push('/login')
     } else {
-      history.push("/confirm-order");
+      history.push('/confirm-order')
     }
-  };
+  }
 
   const sendOrder = () => {
-    dispatch(createOrder(orderData, user.token));
-    toast("Siparişiniz oluşturuldu, mağazaya yönlendiriliyorsunuz", {
+    dispatch(createOrder(orderData, user.token))
+    toast('Siparişiniz oluşturuldu, mağazaya yönlendiriliyorsunuz', {
       autoClose: 3000,
       style: {
-        background: "linear-gradient(to right, #D32F2F, #26C2A3)",
-        color: "white",
+        background: 'linear-gradient(to right, #D32F2F, #26C2A3)',
+        color: 'white',
       },
-    });
+    })
     setTimeout(() => {
-      history.push("/shop");
-    }, 3000);
-    cart.cart = [];
-    cart.payment = {};
-    cart.address = {};
-  };
+      history.push('/shop')
+    }, 3000)
+    cart.cart = []
+    cart.payment = {}
+    cart.address = {}
+  }
 
-  const isPreviousOrdersPage = location.pathname === "/confirm-order";
+  const isPreviousOrdersPage = location.pathname === '/confirm-order'
 
   return (
     <div className="order-box h-fit border border-grey-200 p-2 flex flex-col gap-1 md:min-w-[240px]">
@@ -83,9 +83,7 @@ const OrderSumm = () => {
       </div>
       {orderTotal >= 200 && (
         <div className="flex justify-between items-center">
-          <h2 className="italic text-ikincil max-w-[50%]">
-            Free shipping on orders over $200
-          </h2>
+          <h2 className="italic text-ikincil max-w-[50%]">Free shipping on orders over $200</h2>
           <span className="italic">{shippingTotal * -1}$</span>
         </div>
       )}
@@ -101,18 +99,14 @@ const OrderSumm = () => {
       {cartAddress.title && (
         <div>
           <p>
-            Delivery Address:{" "}
-            <span className="font-bold text-ikincil">{cartAddress.title}</span>
+            Delivery Address: <span className="font-bold text-ikincil">{cartAddress.title}</span>
           </p>
         </div>
       )}
       {cartPayment.name_on_card && (
         <div>
           <p>
-            Payment Method:{" "}
-            <span className="font-bold text-ikincil">
-              {cartPayment.name_on_card}
-            </span>
+            Payment Method: <span className="font-bold text-ikincil">{cartPayment.name_on_card}</span>
           </p>
         </div>
       )}
@@ -121,28 +115,21 @@ const OrderSumm = () => {
           <Button onClick={sendOrder}>Complete Order</Button>
         </div>
       )}
-      {location.pathname === "/confirm-order" &&
-        (!cartAddress.title || !cartPayment.name_on_card) && (
-          <div className="text-red-500 font-semibold mt-2">
-            {!cartAddress.title && !cartPayment.name_on_card && (
-              <p className="text-destructive font-bold text-xl">
-                Please select your address and payment method
-              </p>
-            )}
-            {!cartAddress.title && cartPayment.name_on_card && (
-              <p className="text-destructive font-bold text-xl">
-                Please select your address
-              </p>
-            )}
-            {cartAddress.title && !cartPayment.name_on_card && (
-              <p className="text-destructive font-bold text-xl">
-                Please select your payment method
-              </p>
-            )}
-          </div>
-        )}
+      {location.pathname === '/confirm-order' && (!cartAddress.title || !cartPayment.name_on_card) && (
+        <div className="text-red-500 font-semibold mt-2">
+          {!cartAddress.title && !cartPayment.name_on_card && (
+            <p className="text-destructive font-bold text-xl">Please select your address and payment method</p>
+          )}
+          {!cartAddress.title && cartPayment.name_on_card && (
+            <p className="text-destructive font-bold text-xl">Please select your address</p>
+          )}
+          {cartAddress.title && !cartPayment.name_on_card && (
+            <p className="text-destructive font-bold text-xl">Please select your payment method</p>
+          )}
+        </div>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default OrderSumm;
+export default OrderSumm

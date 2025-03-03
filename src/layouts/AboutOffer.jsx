@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Button } from "@/components/ui/button";
-import Heading from "@/components/ui/heading";
+import { Button } from '@/components/ui/button'
+import Heading from '@/components/ui/heading'
 
 const AboutOffer = () => {
   return (
@@ -11,10 +11,9 @@ const AboutOffer = () => {
           Now Let's grow Yours
         </Heading>
         <p className="text-white md:w-[80%] lg:text-left">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius qui
-          aperiam totam, non laudantium harum, voluptate temporibus blanditiis
-          necessitatibus suscipit tempore libero illum corrupti exercitationem
-          voluptas ut facilis, iure neque.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius qui aperiam totam, non laudantium harum,
+          voluptate temporibus blanditiis necessitatibus suscipit tempore libero illum corrupti exercitationem voluptas
+          ut facilis, iure neque.
         </p>
         <Button variant="outlineBrWh">Button</Button>
       </div>
@@ -22,6 +21,6 @@ const AboutOffer = () => {
         <img src="./images/about/workworkwork.png" alt="" />
       </div>
     </div>
-  );
-};
-export default AboutOffer;
+  )
+}
+export default AboutOffer

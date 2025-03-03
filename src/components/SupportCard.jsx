@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button } from './ui/button'
 
 const SupportCard = () => {
   return (
@@ -14,6 +14,6 @@ const SupportCard = () => {
       <p className="font-bold text-black">Get Support</p>
       <Button variant="outlineBorder">Submit Request</Button>
     </div>
-  );
-};
-export default SupportCard;
+  )
+}
+export default SupportCard

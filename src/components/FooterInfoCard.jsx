@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import Heading from "./ui/heading";
+import Heading from './ui/heading'
 
 const FooterInfoCard = ({ title, infosman }) => {
   return (
@@ -14,12 +14,12 @@ const FooterInfoCard = ({ title, infosman }) => {
               <p className="text-white" key={index}>
                 {info}
               </p>
-            );
+            )
           })}
         </ul>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FooterInfoCard;
+export default FooterInfoCard

@@ -19,6 +19,6 @@ const TeamGrid = () => {
         </div>
       </div>
     </>
-  );
-};
-export default TeamGrid;
+  )
+}
+export default TeamGrid

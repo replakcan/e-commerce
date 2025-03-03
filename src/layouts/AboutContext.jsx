@@ -1,4 +1,4 @@
-import Heading from "@/components/ui/heading";
+import Heading from '@/components/ui/heading'
 
 const AboutContext = () => {
   return (
@@ -11,8 +11,7 @@ const AboutContext = () => {
           </Heading>
         </div>
         <p className="md:text-left">
-          Problems trying to resolve the conflict between the two major realms
-          of Classical physics: Newtonian mechanics{" "}
+          Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics{' '}
         </p>
       </div>
       <div className="flex flex-col text-center gap-32 md:flex-row md:justify-around flex-wrap">
@@ -43,6 +42,6 @@ const AboutContext = () => {
       </div>
       <div></div>
     </div>
-  );
-};
-export default AboutContext;
+  )
+}
+export default AboutContext

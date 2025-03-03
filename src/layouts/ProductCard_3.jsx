@@ -1,52 +1,50 @@
 /* eslint-disable react/prop-types */
-import ShopItemVer from "@/components/ShopItemVer";
-import { Button } from "@/components/ui/button";
-import Heading from "@/components/ui/heading";
-import { fetchProductDetails } from "@/redux/actions/productActions";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import ShopItemVer from '@/components/ShopItemVer'
+import { Button } from '@/components/ui/button'
+import Heading from '@/components/ui/heading'
+import { fetchProductDetails } from '@/redux/actions/productActions'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 const ProductCard_3 = ({ products }) => {
-  const [altLimit, setAltLimit] = useState(0);
-  const [ustLimit, setUstLimit] = useState(6);
+  const [altLimit, setAltLimit] = useState(0)
+  const [ustLimit, setUstLimit] = useState(6)
 
   const setLimitsUp = () => {
     if (!(ustLimit === 24)) {
-      setAltLimit((altLimit) => altLimit + 6);
-      setUstLimit((ustLimit) => ustLimit + 6);
+      setAltLimit((altLimit) => altLimit + 6)
+      setUstLimit((ustLimit) => ustLimit + 6)
     }
-  };
+  }
 
   const setLimitsDown = () => {
     if (!(altLimit === 0)) {
-      setAltLimit((altLimit) => altLimit - 6);
-      setUstLimit((ustLimit) => ustLimit - 6);
+      setAltLimit((altLimit) => altLimit - 6)
+      setUstLimit((ustLimit) => ustLimit - 6)
     }
-  };
+  }
 
-  const mostSoldProducts = [...products]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(altLimit, ustLimit);
+  const mostSoldProducts = [...products].sort((a, b) => b.rating - a.rating).slice(altLimit, ustLimit)
 
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const categories = useSelector((store) => store.product.categories);
+  const dispatch = useDispatch()
+  const history = useHistory()
+  const categories = useSelector((store) => store.product.categories)
 
   const handleProductClick = (product) => {
-    const productNameSlug = product.name.replace(/\s+/g, "-").toLowerCase();
+    const productNameSlug = product.name.replace(/\s+/g, '-').toLowerCase()
 
-    const category = categories.find((cat) => cat.id === product.category_id);
-    const categoryName = category.code.slice(2);
+    const category = categories.find((cat) => cat.id === product.category_id)
+    const categoryName = category.code.slice(2)
 
-    dispatch(fetchProductDetails(product.id));
+    dispatch(fetchProductDetails(product.id))
     history.push(
-      `/shop/${category.gender === "k" ? "kadin" : "erkek"}/${categoryName}/${
-        product.category_id
-      }/${productNameSlug}/${product.id}`
-    );
-  };
+      `/shop/${category.gender === 'k' ? 'kadin' : 'erkek'}/${categoryName}/${product.category_id}/${productNameSlug}/${
+        product.id
+      }`
+    )
+  }
   return (
     <div className="productCard flex flex-col lg:grid md:grid-cols-3 md:grid-rows-[min-content_1fr] md:rounded-3xl overflow-hidden bg-white">
       <div className="md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-3 bg-brilliant">
@@ -69,20 +67,10 @@ const ProductCard_3 = ({ products }) => {
             </Button>
           </div>
           <div>
-            <Button
-              disabled={altLimit === 0}
-              onClick={setLimitsDown}
-              variant="outline"
-              size="icon"
-            >
+            <Button disabled={altLimit === 0} onClick={setLimitsDown} variant="outline" size="icon">
               <ChevronLeft />
             </Button>
-            <Button
-              disabled={ustLimit === 24}
-              onClick={setLimitsUp}
-              variant="outline"
-              size="icon"
-            >
+            <Button disabled={ustLimit === 24} onClick={setLimitsUp} variant="outline" size="icon">
               <ChevronRight />
             </Button>
           </div>
@@ -99,11 +87,11 @@ const ProductCard_3 = ({ products }) => {
               name={msp.name}
               key={index}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductCard_3;
+export default ProductCard_3

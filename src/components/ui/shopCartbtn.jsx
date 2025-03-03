@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { ShoppingCart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { ShoppingCart } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,16 +10,16 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from '@/components/ui/dropdown-menu'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 const CartButton = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const history = useHistory();
-  const cart = useSelector((store) => store.shoppingCart.cart);
-  const itemCount = cart.reduce((total, item) => total + item.count, 0);
+  const [isOpen, setIsOpen] = useState(false)
+  const history = useHistory()
+  const cart = useSelector((store) => store.shoppingCart.cart)
+  const itemCount = cart.reduce((total, item) => total + item.count, 0)
 
-  const goToCart = () => history.push("/siparis-ozeti");
+  const goToCart = () => history.push('/siparis-ozeti')
 
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
@@ -47,23 +47,15 @@ const CartButton = () => {
                   className="w-16 h-16 object-cover rounded-md"
                 />
                 <div className="space-y-1">
-                  <h4 className="text-sm font-medium leading-none">
-                    {item.product.name}
-                  </h4>
-                  <p className="text-sm text-muted-foreground">
-                    {item.product.description}
-                  </p>
+                  <h4 className="text-sm font-medium leading-none">{item.product.name}</h4>
+                  <p className="text-sm text-muted-foreground">{item.product.description}</p>
                   <p className="text-sm">Adet: {item.count}</p>
-                  <p className="text-sm font-semibold">
-                    {item.product.price} $
-                  </p>
+                  <p className="text-sm font-semibold">{item.product.price} $</p>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-sm text-muted-foreground">
-              Sepetinizde ürün yok.
-            </p>
+            <p className="text-sm text-muted-foreground">Sepetinizde ürün yok.</p>
           )}
         </ScrollArea>
         <DropdownMenuSeparator />
@@ -74,7 +66,7 @@ const CartButton = () => {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
-};
+  )
+}
 
-export default CartButton;
+export default CartButton

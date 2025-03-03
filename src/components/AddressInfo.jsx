@@ -1,40 +1,29 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Trash } from "lucide-react";
-import { deleteAddress, fetchAddressList } from "@/redux/actions/clientActions";
-import AddressUpdateForm from "@/layouts/AddressUpdateForm";
-import { Button } from "./ui/button";
-import Heading from "./ui/heading";
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Trash } from 'lucide-react'
+import { deleteAddress, fetchAddressList } from '@/redux/actions/clientActions'
+import AddressUpdateForm from '@/layouts/AddressUpdateForm'
+import { Button } from './ui/button'
+import Heading from './ui/heading'
 
-const AddressInfo = ({
-  title,
-  name,
-  surname,
-  phone,
-  city,
-  district,
-  neighborhood,
-  address,
-  id,
-  onClick,
-}) => {
-  const dispatch = useDispatch();
-  const userToken = useSelector((store) => store.client.user.token);
-  const [isEditing, setIsEditing] = useState(false);
+const AddressInfo = ({ title, name, surname, phone, city, district, neighborhood, address, id, onClick }) => {
+  const dispatch = useDispatch()
+  const userToken = useSelector((store) => store.client.user.token)
+  const [isEditing, setIsEditing] = useState(false)
 
   const deleteAddressInfo = () => {
-    dispatch(deleteAddress(id, userToken));
-    dispatch(fetchAddressList(userToken));
-  };
+    dispatch(deleteAddress(id, userToken))
+    dispatch(fetchAddressList(userToken))
+  }
 
   const handleEditClick = () => {
-    setIsEditing(true);
-  };
+    setIsEditing(true)
+  }
 
   const handleCloseEditForm = () => {
-    setIsEditing(false);
-  };
+    setIsEditing(false)
+  }
 
   return (
     <div className="border flex justify-between p-2 w-full cursor-pointer p-4 hover:bg-gray-100 hover:shadow-md transition-all duration-200 rounded-lg">
@@ -69,8 +58,7 @@ const AddressInfo = ({
             <span className="text-danger font-bold">District:</span> {district}
           </p>
           <p>
-            <span className="text-danger font-bold">Neighborhood:</span>{" "}
-            {neighborhood}
+            <span className="text-danger font-bold">Neighborhood:</span> {neighborhood}
           </p>
           <p className="max-w-[200px]">
             <span className="text-danger font-bold">Address:</span> {address}
@@ -84,17 +72,13 @@ const AddressInfo = ({
           </Button>
         )}
         {!isEditing && (
-          <Button
-            onClick={deleteAddressInfo}
-            variant="destructive"
-            size="iconsqr"
-          >
+          <Button onClick={deleteAddressInfo} variant="destructive" size="iconsqr">
             <Trash />
           </Button>
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AddressInfo;
+export default AddressInfo

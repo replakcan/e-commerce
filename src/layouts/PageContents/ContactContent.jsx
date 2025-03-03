@@ -1,6 +1,6 @@
-import SupportCall from "@/components/SupportCall";
-import SupportInfo from "../SupportInfo";
-import ContactInfo from "../ContactInfo";
+import SupportCall from '@/components/SupportCall'
+import SupportInfo from '../SupportInfo'
+import ContactInfo from '../ContactInfo'
 
 const ContactContent = () => {
   return (
@@ -13,6 +13,6 @@ const ContactContent = () => {
         <SupportCall />
       </section>
     </>
-  );
-};
-export default ContactContent;
+  )
+}
+export default ContactContent

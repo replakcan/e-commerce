@@ -1,5 +1,5 @@
-import { Button } from "./ui/button";
-import Heading from "./ui/heading";
+import { Button } from './ui/button'
+import Heading from './ui/heading'
 
 const FooterBottom = () => {
   return (
@@ -12,7 +12,7 @@ const FooterBottom = () => {
         <Button>Contact Us</Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FooterBottom;
+export default FooterBottom

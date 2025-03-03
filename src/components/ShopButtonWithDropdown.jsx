@@ -1,18 +1,18 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { ChevronDown } from 'lucide-react'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu'
 
 export default function ShopDropdown() {
-  const categories = useSelector((store) => store.product.categories);
+  const categories = useSelector((store) => store.product.categories)
 
   return (
     <DropdownMenu>
@@ -28,7 +28,7 @@ export default function ShopDropdown() {
               <h4 className="font-bold mb-2">Kadın</h4>
             </DropdownMenuItem>
             {categories.map((cat, index) => {
-              if (cat.gender === "k") {
+              if (cat.gender === 'k') {
                 return (
                   <DropdownMenuItem key={index} asChild>
                     <Link
@@ -38,9 +38,9 @@ export default function ShopDropdown() {
                       {cat.title}
                     </Link>
                   </DropdownMenuItem>
-                );
+                )
               }
-              return null;
+              return null
             })}
           </DropdownMenuGroup>
           <DropdownMenuGroup>
@@ -48,23 +48,20 @@ export default function ShopDropdown() {
               <h4 className="font-bold mb-2">Erkek</h4>
             </DropdownMenuItem>
             {categories.map((cat, index) => {
-              if (cat.gender === "e") {
+              if (cat.gender === 'e') {
                 return (
                   <DropdownMenuItem key={index} asChild>
-                    <Link
-                      to={`/shop/erkek/${cat.code.slice(2)}/${cat.id}`}
-                      className="cursor-pointer"
-                    >
+                    <Link to={`/shop/erkek/${cat.code.slice(2)}/${cat.id}`} className="cursor-pointer">
                       {cat.title}
                     </Link>
                   </DropdownMenuItem>
-                );
+                )
               }
-              return null;
+              return null
             })}
           </DropdownMenuGroup>
         </div>
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

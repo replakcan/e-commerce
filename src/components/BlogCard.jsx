@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import Heading from "./ui/heading";
-import { Button } from "./ui/button";
-import { CalendarHeart, MessageCircleMore } from "lucide-react";
+import Heading from './ui/heading'
+import { Button } from './ui/button'
+import { CalendarHeart, MessageCircleMore } from 'lucide-react'
 
 const BlogCard = ({ src, place, description, links, date, comment_count }) => {
   return (
@@ -12,7 +12,7 @@ const BlogCard = ({ src, place, description, links, date, comment_count }) => {
       <div className="flex flex-col gap-3 p-8">
         <nav className="flex gap-3">
           {links.map((link, index) => {
-            return <i key={index} className={link}></i>;
+            return <i key={index} className={link}></i>
           })}
         </nav>
         <Heading variant="h4">{place}</Heading>
@@ -30,7 +30,7 @@ const BlogCard = ({ src, place, description, links, date, comment_count }) => {
         <Button variant="link">Learn More</Button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogCard;
+export default BlogCard

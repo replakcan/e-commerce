@@ -1,38 +1,38 @@
-import "./App.css";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Switch, Route } from "react-router-dom";
-import HomePage from "./pages/Home";
-import Contact from "./pages/Contact";
-import Product from "./pages/Product";
-import Shop from "./pages/Shop";
-import Team from "./pages/Team";
-import About from "./pages/About";
-import SepetPage from "./pages/Sepet";
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
-import PreviousOrders from "./pages/PreviousOrders";
-import CreateOrderPage from "./pages/ConfirmOrder";
-import Footer from "./layouts/Footer";
-import HeaderNav from "./components/HeaderNav";
-import PrivateRoute from "./components/PrivateRoute";
-import { autoLogin, fetchRoles } from "./redux/actions/clientActions";
-import { fetchCategories } from "./redux/actions/productActions";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import './App.css'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
+import HomePage from './pages/Home'
+import Contact from './pages/Contact'
+import Product from './pages/Product'
+import Shop from './pages/Shop'
+import Team from './pages/Team'
+import About from './pages/About'
+import SepetPage from './pages/Sepet'
+import SignUp from './pages/SignUp'
+import Login from './pages/Login'
+import PreviousOrders from './pages/PreviousOrders'
+import CreateOrderPage from './pages/ConfirmOrder'
+import Footer from './layouts/Footer'
+import HeaderNav from './components/HeaderNav'
+import PrivateRoute from './components/PrivateRoute'
+import { autoLogin, fetchRoles } from './redux/actions/clientActions'
+import { fetchCategories } from './redux/actions/productActions'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
-  const dispatch = useDispatch();
-  const token = JSON.parse(localStorage.getItem("token"));
+  const dispatch = useDispatch()
+  const token = JSON.parse(localStorage.getItem('token'))
   useEffect(() => {
-    dispatch(fetchRoles());
-    dispatch(fetchCategories());
+    dispatch(fetchRoles())
+    dispatch(fetchCategories())
     if (token) {
-      dispatch(autoLogin(token));
+      dispatch(autoLogin(token))
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <main className="flex flex-col bg-[#ECECEC]">
@@ -81,7 +81,7 @@ function App() {
       <Footer />
       <ToastContainer />
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

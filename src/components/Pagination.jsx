@@ -1,39 +1,37 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setOffset } from "@/redux/actions/productActions";
-import { Button } from "./ui/button";
+import { useDispatch, useSelector } from 'react-redux'
+import { setOffset } from '@/redux/actions/productActions'
+import { Button } from './ui/button'
 
 const Pagination = () => {
-  const dispatch = useDispatch();
-  const limit = useSelector((store) => store.product.limit) || 1;
-  const offset = useSelector((store) => store.product.offset) || 0;
-  const total = useSelector((store) => store.product.total) || 0;
+  const dispatch = useDispatch()
+  const limit = useSelector((store) => store.product.limit) || 1
+  const offset = useSelector((store) => store.product.offset) || 0
+  const total = useSelector((store) => store.product.total) || 0
 
-  const totalPages = Math.max(1, Math.ceil(total / limit));
-  const currentPage = Math.max(1, Math.floor(offset / limit) + 1);
+  const totalPages = Math.max(1, Math.ceil(total / limit))
+  const currentPage = Math.max(1, Math.floor(offset / limit) + 1)
 
   const handlePageClick = (pageNumber) => {
-    const newOffset = limit * (pageNumber - 1);
-    dispatch(setOffset(newOffset));
-  };
+    const newOffset = limit * (pageNumber - 1)
+    dispatch(setOffset(newOffset))
+  }
 
-  const handleFirstClick = () => handlePageClick(1);
+  const handleFirstClick = () => handlePageClick(1)
   const handleNextClick = () => {
     if (currentPage < totalPages) {
-      handlePageClick(currentPage + 1);
+      handlePageClick(currentPage + 1)
     }
-  };
+  }
 
   const getDisplayedPages = () => {
     if (currentPage === 1) {
-      return [1, 2, 3].slice(0, totalPages);
+      return [1, 2, 3].slice(0, totalPages)
     } else if (currentPage === totalPages) {
-      return [totalPages - 2, totalPages - 1, totalPages].filter(
-        (page) => page > 0
-      );
+      return [totalPages - 2, totalPages - 1, totalPages].filter((page) => page > 0)
     } else {
-      return [currentPage - 1, currentPage, currentPage + 1];
+      return [currentPage - 1, currentPage, currentPage + 1]
     }
-  };
+  }
 
   return (
     <div className="flex items-center justify-center pt-5">
@@ -50,9 +48,7 @@ const Pagination = () => {
         <Button
           size="pagination"
           key={page}
-          variant={
-            page === currentPage ? "paginationOther" : "paginationCurrent"
-          }
+          variant={page === currentPage ? 'paginationOther' : 'paginationCurrent'}
           onClick={() => handlePageClick(page)}
         >
           {page}
@@ -68,7 +64,7 @@ const Pagination = () => {
         Next
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination

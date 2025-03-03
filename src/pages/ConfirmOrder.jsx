@@ -1,31 +1,28 @@
-import OrderSumm from "@/components/OrderSummary";
-import AddAddressForm from "@/layouts/AddressForm";
-import AddresList from "@/layouts/AddressList";
-import AddCreditCardForm from "@/layouts/CreditCardForm";
-import CreditCardList from "@/layouts/CreditCardList";
-import {
-  fetchAddressList,
-  fetchCreditCards,
-} from "@/redux/actions/clientActions";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import OrderSumm from '@/components/OrderSummary'
+import AddAddressForm from '@/layouts/AddressForm'
+import AddresList from '@/layouts/AddressList'
+import AddCreditCardForm from '@/layouts/CreditCardForm'
+import CreditCardList from '@/layouts/CreditCardList'
+import { fetchAddressList, fetchCreditCards } from '@/redux/actions/clientActions'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 const CreateOrderPage = () => {
-  const dispatch = useDispatch();
-  const userToken = useSelector((store) => store.client.user.token);
+  const dispatch = useDispatch()
+  const userToken = useSelector((store) => store.client.user.token)
 
   useEffect(() => {
-    dispatch(fetchAddressList(userToken));
-    dispatch(fetchCreditCards(userToken));
-  }, [dispatch, userToken]);
+    dispatch(fetchAddressList(userToken))
+    dispatch(fetchCreditCards(userToken))
+  }, [dispatch, userToken])
 
   const refreshAddressList = () => {
-    dispatch(fetchAddressList(userToken));
-  };
+    dispatch(fetchAddressList(userToken))
+  }
 
   const refreshCardList = () => {
-    dispatch(fetchCreditCards(userToken));
-  };
+    dispatch(fetchCreditCards(userToken))
+  }
 
   return (
     <section className="flex flex-col lg:flex-row gap-8 lg:gap-12 p-6 lg:px-16 lg:py-12 min-h-lvh">
@@ -53,7 +50,7 @@ const CreateOrderPage = () => {
         <OrderSumm />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default CreateOrderPage;
+export default CreateOrderPage

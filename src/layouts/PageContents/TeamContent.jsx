@@ -1,8 +1,8 @@
-import TeamMemberHead from "@/components/TeamMemberHead";
-import TeamGridHead from "@/components/TeamGridHead";
-import TrialCard from "@/components/TrialCard";
-import TeamMembers from "../TeamMembers";
-import TeamGrid from "../TeamGrid";
+import TeamMemberHead from '@/components/TeamMemberHead'
+import TeamGridHead from '@/components/TeamGridHead'
+import TrialCard from '@/components/TrialCard'
+import TeamMembers from '../TeamMembers'
+import TeamGrid from '../TeamGrid'
 
 const TeamContent = () => {
   return (
@@ -19,6 +19,6 @@ const TeamContent = () => {
         <TrialCard />
       </section>
     </>
-  );
-};
-export default TeamContent;
+  )
+}
+export default TeamContent

@@ -1,5 +1,5 @@
-import HeaderNav from "@/components/HeaderNav";
-import HeaderSlider from "@/components/HeaderSlider";
+import HeaderNav from '@/components/HeaderNav'
+import HeaderSlider from '@/components/HeaderSlider'
 
 const Header = () => {
   return (
@@ -9,7 +9,7 @@ const Header = () => {
       </div>
       <HeaderSlider />
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

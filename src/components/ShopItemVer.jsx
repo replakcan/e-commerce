@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import Heading from "./ui/heading";
+import Heading from './ui/heading'
 
 const ShopItemVer = ({ name, onClick, description, price, src }) => {
   return (
@@ -21,7 +21,7 @@ const ShopItemVer = ({ name, onClick, description, price, src }) => {
         <p className="text-gray-900 font-semibold">${price}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ShopItemVer;
+export default ShopItemVer

@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
-import OrderSumm from "@/components/OrderSummary";
-import SepetItem from "@/components/SepetItem";
+import { useSelector } from 'react-redux'
+import OrderSumm from '@/components/OrderSummary'
+import SepetItem from '@/components/SepetItem'
 
 const SepetPage = () => {
-  const cartItems = useSelector((store) => store.shoppingCart.cart);
+  const cartItems = useSelector((store) => store.shoppingCart.cart)
 
   return (
     <div className="flex flex-col gap-8 px-[10%] py-4 md:flex-row md:justify-between min-h-lvh">
@@ -16,7 +16,7 @@ const SepetPage = () => {
         <OrderSumm />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SepetPage;
+export default SepetPage

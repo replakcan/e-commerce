@@ -1,20 +1,18 @@
-import CategoryCard from "@/components/CategoryCard";
-import CategoryTop from "@/components/CategoryTop";
-import { useSelector } from "react-redux";
+import CategoryCard from '@/components/CategoryCard'
+import CategoryTop from '@/components/CategoryTop'
+import { useSelector } from 'react-redux'
 
 const Categories = () => {
-  const fetchState = useSelector((store) => store.product.fetchState);
-  const categories = useSelector((store) => store.product.categories);
-  const topCategories = [...categories]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 5);
+  const fetchState = useSelector((store) => store.product.fetchState)
+  const categories = useSelector((store) => store.product.categories)
+  const topCategories = [...categories].sort((a, b) => b.rating - a.rating).slice(0, 5)
 
-  if (fetchState === "FETCHING") {
-    return <span className="loader"></span>;
+  if (fetchState === 'FETCHING') {
+    return <span className="loader"></span>
   }
 
-  if (fetchState === "FAILED") {
-    return <p>Failed to load products.</p>;
+  if (fetchState === 'FAILED') {
+    return <p>Failed to load products.</p>
   }
 
   return (
@@ -31,13 +29,13 @@ const Categories = () => {
               key={topcat.id}
               title={topcat.title}
               src={topcat.img}
-              gender={topcat.gender === "e" ? "erkek" : "kadın"}
+              gender={topcat.gender === 'e' ? 'erkek' : 'kadın'}
             />
-          );
+          )
         })}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Categories;
+export default Categories

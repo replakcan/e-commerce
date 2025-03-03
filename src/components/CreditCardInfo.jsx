@@ -1,38 +1,28 @@
 /* eslint-disable react/prop-types */
-import { useDispatch, useSelector } from "react-redux";
-import { Trash } from "lucide-react";
-import {
-  deleteCreditCard,
-  fetchCreditCards,
-} from "@/redux/actions/clientActions";
-import { useState } from "react";
-import CreditCardUpdateForm from "@/layouts/CreditCardUpdateForm";
-import { Button } from "./ui/button";
+import { useDispatch, useSelector } from 'react-redux'
+import { Trash } from 'lucide-react'
+import { deleteCreditCard, fetchCreditCards } from '@/redux/actions/clientActions'
+import { useState } from 'react'
+import CreditCardUpdateForm from '@/layouts/CreditCardUpdateForm'
+import { Button } from './ui/button'
 
-const CreditCardInfo = ({
-  id,
-  card_no,
-  expire_month,
-  expire_year,
-  name_on_card,
-  onClick,
-}) => {
-  const dispatch = useDispatch();
-  const userToken = useSelector((store) => store.client.user.token);
-  const [isEditing, setIsEditing] = useState(false);
+const CreditCardInfo = ({ id, card_no, expire_month, expire_year, name_on_card, onClick }) => {
+  const dispatch = useDispatch()
+  const userToken = useSelector((store) => store.client.user.token)
+  const [isEditing, setIsEditing] = useState(false)
 
   const deleteCard = () => {
-    dispatch(deleteCreditCard(id, userToken));
-    dispatch(fetchCreditCards(userToken));
-  };
+    dispatch(deleteCreditCard(id, userToken))
+    dispatch(fetchCreditCards(userToken))
+  }
 
   const handleEditClick = () => {
-    setIsEditing(true);
-  };
+    setIsEditing(true)
+  }
 
   const handleCloseEditForm = () => {
-    setIsEditing(false);
-  };
+    setIsEditing(false)
+  }
 
   return (
     <div className="flex border justify-between p-2 w-full cursor-pointer p-4 hover:bg-gray-100 hover:shadow-md transition-all duration-200 rounded-lg">
@@ -45,15 +35,13 @@ const CreditCardInfo = ({
       ) : (
         <div onClick={onClick} className="flex flex-col flex-wrap">
           <p>
-            <span className="text-danger font-bold">Card Number:</span> ****
-            **** **** {card_no.slice(-4)}
+            <span className="text-danger font-bold">Card Number:</span> **** **** **** {card_no.slice(-4)}
           </p>
           <p>
             <span className="text-danger font-bold">Name:</span> {name_on_card}
           </p>
           <p>
-            <span className="text-danger font-bold">Expiry Date:</span>{" "}
-            {expire_month}/{expire_year}
+            <span className="text-danger font-bold">Expiry Date:</span> {expire_month}/{expire_year}
           </p>
         </div>
       )}
@@ -70,7 +58,7 @@ const CreditCardInfo = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CreditCardInfo;
+export default CreditCardInfo

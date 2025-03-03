@@ -1,4 +1,4 @@
-import Heading from "./ui/heading";
+import Heading from './ui/heading'
 
 const PopularItem = () => {
   return (
@@ -12,7 +12,7 @@ const PopularItem = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PopularItem;
+export default PopularItem

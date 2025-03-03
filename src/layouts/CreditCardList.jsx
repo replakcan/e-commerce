@@ -1,22 +1,20 @@
-import CreditCardInfo from "@/components/CreditCardInfo";
-import Heading from "@/components/ui/heading";
-import { setPayment } from "@/redux/actions/shoppingCartActions";
-import { useDispatch, useSelector } from "react-redux";
+import CreditCardInfo from '@/components/CreditCardInfo'
+import Heading from '@/components/ui/heading'
+import { setPayment } from '@/redux/actions/shoppingCartActions'
+import { useDispatch, useSelector } from 'react-redux'
 
 const CreditCardList = () => {
-  const creditCardList = useSelector((store) => store.client.creditCards);
+  const creditCardList = useSelector((store) => store.client.creditCards)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const chooseCreditCard = (card) => {
-    dispatch(setPayment(card));
-  };
+    dispatch(setPayment(card))
+  }
 
   return (
     <div className="">
-      {creditCardList.length === 0 && (
-        <Heading variant="h1">Kayıtlı kart bulunamadı.</Heading>
-      )}
+      {creditCardList.length === 0 && <Heading variant="h1">Kayıtlı kart bulunamadı.</Heading>}
 
       <div className="flex flex-wrap gap-1">
         {creditCardList?.map((card) => {
@@ -30,11 +28,11 @@ const CreditCardList = () => {
               name_on_card={card.name_on_card}
               id={card.id}
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CreditCardList;
+export default CreditCardList

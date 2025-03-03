@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import Heading from "./ui/heading";
+import Heading from './ui/heading'
 
 const FeatureCard = ({ title, description }) => {
   return (
@@ -10,7 +10,7 @@ const FeatureCard = ({ title, description }) => {
         <p className="w-[60%]">{description}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FeatureCard;
+export default FeatureCard

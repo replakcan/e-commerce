@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useSelector } from "react-redux";
-import { Redirect, Route } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import { Redirect, Route } from 'react-router-dom'
 
 function PrivateRoute({ children, ...rest }) {
-  const user = useSelector((store) => store.client.user);
+  const user = useSelector((store) => store.client.user)
 
   return (
     <Route
@@ -14,14 +14,14 @@ function PrivateRoute({ children, ...rest }) {
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: '/login',
               state: { from: location },
             }}
           />
-        );
+        )
       }}
     />
-  );
+  )
 }
 
-export default PrivateRoute;
+export default PrivateRoute

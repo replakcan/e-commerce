@@ -1,32 +1,25 @@
 /* eslint-disable react/prop-types */
-import { useDispatch, useSelector } from "react-redux";
-import { Button } from "./ui/button";
-import Heading from "./ui/heading";
-import { setCart } from "@/redux/actions/shoppingCartActions";
-import { Eye, Heart, ShoppingCart, Star, StarHalf } from "lucide-react";
+import { useDispatch, useSelector } from 'react-redux'
+import { Button } from './ui/button'
+import Heading from './ui/heading'
+import { setCart } from '@/redux/actions/shoppingCartActions'
+import { Eye, Heart, ShoppingCart, Star, StarHalf } from 'lucide-react'
 
-const ProductDetail = ({
-  src,
-  name,
-  sell_count,
-  description,
-  price,
-  stock,
-}) => {
-  const dispatch = useDispatch();
-  const fetchState = useSelector((store) => store.product.fetchState);
-  const productToAdd = useSelector((store) => store.product.currentProduct);
+const ProductDetail = ({ src, name, sell_count, description, price, stock }) => {
+  const dispatch = useDispatch()
+  const fetchState = useSelector((store) => store.product.fetchState)
+  const productToAdd = useSelector((store) => store.product.currentProduct)
 
   const handleAddToCart = () => {
-    dispatch(setCart(productToAdd));
-  };
-
-  if (fetchState === "FETCHING") {
-    return <span className="loader"></span>;
+    dispatch(setCart(productToAdd))
   }
 
-  if (fetchState === "FAILED") {
-    return <p>Failed to load products.</p>;
+  if (fetchState === 'FETCHING') {
+    return <span className="loader"></span>
+  }
+
+  if (fetchState === 'FAILED') {
+    return <p>Failed to load products.</p>
   }
 
   return (
@@ -59,8 +52,7 @@ const ProductDetail = ({
             ${price}
           </Heading>
           <p className="font-bold">
-            Availability :{" "}
-            <span className="text-ikincil text-xl">{stock} in stock</span>
+            Availability : <span className="text-ikincil text-xl">{stock} in stock</span>
           </p>
         </div>
         <p className="pt-3 border-b-4 pb-2 md:w-3/4">{description}</p>
@@ -74,6 +66,6 @@ const ProductDetail = ({
         </div>
       </div>
     </div>
-  );
-};
-export default ProductDetail;
+  )
+}
+export default ProductDetail

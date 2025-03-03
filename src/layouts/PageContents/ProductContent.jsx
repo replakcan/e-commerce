@@ -1,34 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import ProductDescription from "@/components/ProductDescription";
-import Clients from "../Clients";
-import MoreProducts from "../MoreProducts";
-import ProductDetail from "@/components/ProductDetail";
-import { useDispatch, useSelector } from "react-redux";
-import { Button } from "@/components/ui/button";
-import { useHistory, useParams } from "react-router-dom";
-import { useEffect } from "react";
-import {
-  fetchProductDetails,
-  fetchProductsByUserChoices,
-} from "@/redux/actions/productActions";
+import ProductDescription from '@/components/ProductDescription'
+import Clients from '../Clients'
+import MoreProducts from '../MoreProducts'
+import ProductDetail from '@/components/ProductDetail'
+import { useDispatch, useSelector } from 'react-redux'
+import { Button } from '@/components/ui/button'
+import { useHistory, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { fetchProductDetails, fetchProductsByUserChoices } from '@/redux/actions/productActions'
 
 const ProductContent = () => {
-  const productInfo = useSelector((store) => store.product.currentProduct);
-  const history = useHistory();
-  const { categoryId, productId } = useParams();
-  const dispatch = useDispatch();
-  const products = useSelector((store) => store.product.productList);
-  const bestSeller = [...products]
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 4);
+  const productInfo = useSelector((store) => store.product.currentProduct)
+  const history = useHistory()
+  const { categoryId, productId } = useParams()
+  const dispatch = useDispatch()
+  const products = useSelector((store) => store.product.productList)
+  const bestSeller = [...products].sort((a, b) => b.rating - a.rating).slice(0, 4)
   const handleBackClick = () => {
-    history.goBack();
-  };
+    history.goBack()
+  }
 
   useEffect(() => {
-    dispatch(fetchProductsByUserChoices(categoryId));
-    dispatch(fetchProductDetails(productId));
-  }, []);
+    dispatch(fetchProductsByUserChoices(categoryId))
+    dispatch(fetchProductDetails(productId))
+  }, [])
 
   return (
     <>
@@ -55,6 +50,6 @@ const ProductContent = () => {
       </div>
       <Clients />
     </>
-  );
-};
-export default ProductContent;
+  )
+}
+export default ProductContent

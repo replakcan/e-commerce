@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
-import Heading from "./ui/heading";
+import { Link } from 'react-router-dom'
+import Heading from './ui/heading'
 
 const CategoryCard = ({ title, src, gender, category, id }) => {
   return (
@@ -22,7 +22,7 @@ const CategoryCard = ({ title, src, gender, category, id }) => {
         </div>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default CategoryCard;
+export default CategoryCard

@@ -1,4 +1,4 @@
-import Heading from "./ui/heading";
+import Heading from './ui/heading'
 
 const CategoryTop = () => {
   return (
@@ -10,7 +10,7 @@ const CategoryTop = () => {
         </p>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default CategoryTop;
+export default CategoryTop

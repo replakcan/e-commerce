@@ -1,5 +1,5 @@
-import FooterBottom from "@/components/FooterBottom";
-import FooterMid from "@/components/FooterMid";
+import FooterBottom from '@/components/FooterBottom'
+import FooterMid from '@/components/FooterMid'
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
       <FooterMid />
       <FooterBottom />
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

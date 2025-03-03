@@ -1,5 +1,5 @@
-import { ChevronRight } from "lucide-react";
-import Heading from "./ui/heading";
+import { ChevronRight } from 'lucide-react'
+import Heading from './ui/heading'
 
 const TeamGridHead = () => {
   return (
@@ -12,6 +12,6 @@ const TeamGridHead = () => {
         Team
       </p>
     </div>
-  );
-};
-export default TeamGridHead;
+  )
+}
+export default TeamGridHead
